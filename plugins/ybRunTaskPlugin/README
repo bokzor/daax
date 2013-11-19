@@ -1,0 +1,56 @@
+ybRunTaskPlugin
+=============================
+
+The ybRunTaskPlugin allow you to run a task within an action, just like you'd be doing in a task
+
+Installation
+------------
+
+  * Install the plugin
+
+        $ symfony plugin:install ybRunTaskPlugin
+
+  * Add the plugin to the loaded plugin in your config/ProjectConfiguration.class.php
+        $this->enablePlugins('ybRunTaskPlugin');
+
+
+  * Clear your cache
+
+        $ symfony cc
+
+
+
+Usage
+-----
+
+You can now run a task from an action
+
+        class homeActions extends sfActions
+        {
+            public function executeRuntask(sfWebRequest $request) {
+                $ret = $this->runTask('generate:task', 'hello');
+                if(null != $ret) {
+                    $this->msg = $ret->getMessage();
+                } else {
+                    $this->msg = 'doing fine ?';
+                }
+            }
+        }
+
+Explanation
+-----------
+
+For now, the method returns nothing if the task ran fine. Otherwise it returns an exception.
+
+
+TODO
+----
+
+Maybe catch the logSection events, store them and return them to the action.
+
+
+
+Thanks
+------
+
+Thanks to Garfield-Fr on #symfony-fr@freenode and [Nicolas loeuillet](http://nicolas.loeuillet.org/dev/php/symfony-1-2-executer-une-tache-dans-un-module/ "Symfony 1.1 execute une tache dans un module") for small pieces of code.

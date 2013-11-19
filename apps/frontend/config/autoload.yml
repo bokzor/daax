@@ -1,0 +1,5 @@
+autoload:
+  websocket:
+    name: websocket
+    path: %SF_LIB_DIR%/vendor/HTTP
+    recursive: on

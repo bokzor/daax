@@ -1,0 +1,295 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: home, action: index }
+
+commande:
+  url: /commande
+  param: { module: home, action: index }
+
+inscription:
+  url:  /inscription
+  param: { module: home, action: inscription}
+
+payment:
+  url: /payment
+  param: { module: commande, action: payment }
+
+stat:
+  url: /stat
+  param: { module: stat, action: index }
+
+## listing
+gestion_commande:
+  url: /gestion/commande
+  param: { module: commande, action: listing }
+
+gestion_stock:
+  url:  /gestion/stock
+  param: { module: element, action: listing }
+
+gestion_article:
+  url:  /gestion/article
+  param: { module: article, action: listing }
+
+gestion_utilisateur:
+  url:  /gestion/utilisateur
+  param: { module: utilisateur, action: listing }
+
+gestion_tools:
+  url: /gestion/outils
+  param: { module: tools, action: listing }
+
+gestion_floor:
+  url: /gestion/floor
+  param: { module: floor, action: edit }
+
+## fin listing
+
+## ajout
+new_utilisateur:
+  url: /new/utilisateur
+  param: { action: new, module: utilisateur }
+
+## ajout
+new_model:
+  url: /new/:model
+  param: { action: new, module: tools }
+## fin ajout
+
+## update
+
+update_utilisateur:
+  url: /update/sfGuardRegister/:id
+  param: { module: utilisateur, action: update }
+
+update_model:
+  url: /update/:model/:id
+  param: { action: update, module: tools }
+  requirements:
+    id: \d+
+
+## fin update
+
+## edit
+edit_utilisateur:
+  url: /edit/utilisateur/:id
+  param: { action: edit, module: utilisateur }
+  requirements:
+    id: \d+
+
+edit_model:
+  url: /edit/:model/:id
+  param: { action: edit, module: tools }
+  requirements:
+    id: \d+
+
+
+edit_floor:
+  url: /edit/floor
+  param: { module: floor, action: sap }
+
+
+## fin edit
+
+## create
+
+create_utilisateur:
+  url: /create/sfGuardRegister
+  param: { module: utilisateur, action: create }
+
+create_model:
+  url: /create/:model
+  param: { action: create, module: tools }
+
+
+
+## fin create
+
+## supression
+
+delete_model:
+  url: /delete/:model/:id
+  param: { action: delete, module: tools }
+  requirements:
+    id: \d+
+## fin supression
+
+##connection et logout
+
+check_login:
+  url: /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+## gestion des commandes, offrir, archives, imprimer
+
+supplement_article:
+  url: /article/supplement
+  param: { module: article, action: supplement }
+
+add_commentaire:
+  url: /commande/commentaire
+  param: { module: commande, action: commentaire}
+
+get_commandes_table_id:
+  url: /get/commande/table_id/:table_id.:sf_format
+  param: { module: commande, action: get }
+  requirements:
+    table_id: \d+
+    sf_format: (json)
+
+live_commande:
+  url: /live/commande/:type
+  param: { module: commande, action: liveJson }
+
+full_live_commande:
+  url: /live
+  param: { module: commande, action: fullLive }
+
+full_live_commande_json_print:
+  url: /live/:id.json
+  param: { module: commande, action: fullLiveJson }
+  requirements:
+    id: \d+
+
+full_live_commande_json:
+  url: /live.json
+  param: { module: commande, action: fullLiveJson }
+
+get_one_commande:
+  url: /get/commande/id/:id.:sf_format
+  param: { module: commande, action: getOne }
+  requirements:
+    id: \d+
+    sf_format: (json)
+
+archiver_commande_table_id:
+  url: /commande/archiver/:table_id
+  param: { module: commande, action: archiver }
+  requirements:
+    table_id: \d+
+    sf_method: [POST]
+
+archiver_commande_id:
+  url: /commande/archiver/commande/:id
+  param: { module: commande, action: archiver }
+  requirements:
+    table_id: \d+
+    sf_method: [POST]
+
+imprimer_commandes:
+  url: /imprimer/commandes
+  param: { module: commande, action: imprimerCommandes }
+  requirements:
+    sf_method: [POST]
+
+imprimer_commande:
+  url: /imprimer/commande
+  param: { module: commande, action: imprimer }
+
+set_statut_commande:
+  url: /set/statut/commande/:id/:statut
+  param: { module: commande, action: setStatut }
+  requirements:
+    id: \d+
+    statut: \d+
+    sf_method: [POST]
+
+enregistrer_commande:
+  url: /save/commande/:table_id
+  param: { module: commande, action: new }
+
+
+javascript:
+  url: /js.:sf_format
+  param: { module: js, action: index, sf_format: js }
+
+article_element_form:
+  url: /article_element_form
+  param: { module: article, action: ArticleElement }
+
+category_imprimante_form:
+  url: /category_imprimante_form
+  param: { module: category, action: CategoryImprimante }
+## fin gestion commande
+        
+#default:
+#  url: /:module/:action
+
+#default2:
+#  url: /:module/:action/:id
+
+# action pour cloturer la caisse
+cloture:
+  url: /cloture
+  param: { module: commande, action: cloture }
+
+
+## web service
+  
+ws_list:
+  url: /rest/:model.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: list }
+  requirements:
+    sf_method: [GET]
+    sf_format: (?:html|xml|json)
+
+ws_create:
+  url: /rest/:model.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: create }
+  requirements:
+    sf_method: [POST]
+    sf_format: (?:html|xml|json)
+
+ws_get:
+  url: /rest/:model/:id.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: get, column: id }
+  requirements:
+    id: \d+
+    sf_method: [GET]
+    sf_format: (?:html|xml|json)
+
+ws_update:
+  url: /rest/:model/:id.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: update, column: id }
+  requirements:
+    id: \d+
+    sf_method: [PUT]
+    sf_format: (?:html|xml|json)
+
+ws_delete:
+  url: /rest/:model/:id.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: delete, column: id }
+  requirements:
+    id: \d+
+    sf_method: [DELETE]
+    sf_format: (?:html|xml|json)
+
+test:
+  url: /test
+  param: { module: commande, action: test }
+
+test2:
+  url: /test2
+  param: { module: commande, action: test2 }
+
+websocket:
+  url: /websocket
+  param: { module: websocket, action: index }
+
+websocketTest:
+  url: /websocketTest
+  param: { module: websocket, action: test }
+## web service

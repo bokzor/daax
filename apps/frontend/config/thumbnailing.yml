@@ -1,0 +1,31 @@
+all:
+  .settings:
+    formats:
+# -------------------------------------------------------------------------------
+# --- // 404 image
+      default:
+        quality:                    25
+        mime_type:                  image/gif
+        transformations:
+          - { adapter: GD, transformation: create, param: { x: 250, y: 200 } }
+          - { adapter: GD, transformation: text,   param: { text: '404', x: 10, y:  50, size: 72, font: accid___, color: '#FF0000', angle: 0 } }
+          - { adapter: GD, transformation: text,   param: { text: 'Image could not be found', x: 10, y:  120, size: 12, font: accid___, color: '#FF0000', angle: 0 } }
+# -------------------------------------------------------------------------------
+# --- // original image. no transformation
+      original:
+        quality:                    100
+        mime_type:                  image/jpg
+        transformations:            []
+      mini-thumb-home: 
+        quality:                    75
+        mime_type:                  image/jpg
+        transformations:
+          - { adapter: GD, transformation: thumbnail, param: { width: 80, height: 64, method: center }}
+
+      mon_format_1:
+        quality:                25
+        mime_type:              image/png
+        transformations:
+          - { adapter: GD, transformation: crop, param: { left: 90, top: 72, width: 120, height: 120 }}
+          - { adapter: GD, transformation: rotate, param: { angle: 20, background: "#FFFFFF" }}
+          - { adapter: GD, transformation: crop, param: { left: 17, top: 17, width: 120, height: 120 }}

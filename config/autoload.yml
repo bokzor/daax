@@ -1,0 +1,5 @@
+autoload:
+    facebook:
+        name: facebook
+        path: %SF_LIB_DIR%/vendor/php-sdk/src
+        recursive: off

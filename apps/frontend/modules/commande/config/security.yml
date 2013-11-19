@@ -1,0 +1,48 @@
+index:
+  is_secure:   true
+  credentials: client
+
+listing:
+  is_secure:   true
+  credentials: client
+  
+getOne:
+  is_secure: true
+  credentials: client
+  
+new:
+  is_secure: true
+  credentials: client
+
+payment:
+  is_secure: true
+  credentials: serveur
+  
+archiver:
+  is_secure: true
+  credentials: serveur
+  
+get:
+  is_secure: true
+  credentials: serveur
+  
+imprimerCommandes:
+  is_secure: true
+  credentials: serveur
+  
+setStatut:
+  is_secure: true
+  credentials: serveur
+  
+delete:
+  is_secure: true
+  crendentials: manager
+  
+fullLive:
+  is_secure: false
+  credentials: serveur
+  
+liveJson:
+  is_secure: true
+  credentials: client
+  

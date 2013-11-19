@@ -1,0 +1,188 @@
+sfGuardGroup:
+  actAs: [Timestampable]
+  columns:
+    name:
+      type: string(255)
+      unique: true
+    description: string(1000)
+  relations:
+    Users:
+      class: sfGuardUser
+      refClass: sfGuardUserGroup
+      local: group_id
+      foreign: user_id
+      foreignAlias: Groups
+    Permissions:
+      class: sfGuardPermission
+      local: group_id
+      foreign: permission_id
+      refClass: sfGuardGroupPermission
+      foreignAlias: Groups
+
+sfGuardPermission:
+  actAs: [Timestampable]
+  columns:
+    name:
+      type: string(255)
+      unique: true
+    description: string(1000)
+
+sfGuardGroupPermission:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  actAs: [Timestampable]
+  columns:
+    group_id:
+      type: integer
+      primary: true
+    permission_id:
+      type: integer
+      primary: true
+  relations:
+    Group:
+      class: sfGuardGroup
+      local: group_id
+      onDelete: CASCADE
+    Permission:
+      class: sfGuardPermission
+      local: permission_id
+      onDelete: CASCADE
+
+sfGuardUser:
+  actAs: [Timestampable]
+  columns:
+    email_address:  { type: string(255) }
+    avatar:         { type: string(255), default: default.png }
+    first_name:     { type: string(30) }
+    last_name:      { type: string(30) }
+    tel:            { type: string(20) }
+    country:        { type: string(30) }
+    street:         { type: string(255) }
+    postal_code:    { type: integer }
+    city:           { type: string(255) }
+    genre:          { type: enum, values: ['M', 'F'] }
+    username:       { type: string(128), notnull: true, unique: true }
+    algorithm:      { type: string(128), default: sha1, notnull: true }
+    salt:           { type: string(128) }
+    password:       { type: string(128) }
+    is_active:      { type: boolean, default: 1 }
+    is_super_admin: { type: boolean, default: false }
+    last_login:     { type: timestamp }
+    tva:            { type: string(100) }
+    date_naissance: { type: date }
+    credit:         { type: integer, default: 0 }
+    identifiant:    { type: integer, unique: true }
+    code:           { type: integer(4), unsigned: true, unique: true }
+  indexes:
+    is_active_idx:
+      fields: [is_active]
+  relations:
+    Groups:
+      class: sfGuardGroup
+      local: user_id
+      foreign: group_id
+      refClass: sfGuardUserGroup
+      foreignAlias: Users
+    Permissions:
+      class: sfGuardPermission
+      local: user_id
+      foreign: permission_id
+      refClass: sfGuardUserPermission
+      foreignAlias: Users
+
+sfGuardUserGroup:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  actAs: [Timestampable]
+  columns:
+    user_id:
+      type: integer
+      primary: true
+    group_id:
+      type: integer
+      primary: true
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+    Group:
+      class: sfGuardGroup
+      local: group_id
+      onDelete: CASCADE
+
+
+sfGuardUserPermission:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  actAs: [Timestampable]
+  columns:
+    user_id:
+      type: integer
+      primary: true
+    permission_id:
+      type: integer
+      primary: true
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+    Permission:
+      class: sfGuardPermission
+      local: permission_id
+      onDelete: CASCADE
+
+
+
+
+sfGuardRememberKey:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  actAs: [Timestampable]
+  columns:
+    user_id: integer
+    remember_key: string(32)
+    ip_address: string(50)
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreignAlias: RememberKeys
+      foreignType: one
+      onDelete: CASCADE
+
+sfGuardForgotPassword:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  actAs: [Timestampable]
+  columns:
+    user_id:
+      type: integer
+      notnull: true
+    unique_key: string(255)
+    expires_at:
+      type: timestamp
+      notnull: true
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      type: one
+      foreignType: one
+      foreignAlias: ForgotPassword
+      onDelete: CASCADE
+      
+      
+
+

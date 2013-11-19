@@ -1,0 +1,3 @@
+<script>
+	chargerPage('commande');
+</script>

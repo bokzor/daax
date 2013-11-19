@@ -1,0 +1,8 @@
+
+
+all:
+  recaptcha:
+    enabled:        true
+    # visit http://recaptcha.net/
+    public_key:     6LfF1NgSAAAAAO6LyfagqWotPvNxHn2p4XjBpJNG
+    private_key:    6LfF1NgSAAAAAAzOjaDT8uSGMPnDLJkQiHpPpzE1

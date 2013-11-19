@@ -1,0 +1,10 @@
+.DS_Store
+*.log
+*.cache
+lib/vendor/php-sdk/*
+web/sf*
+web/uploads/*
+cache/*
+plugins/.*
+log/*
+config/databases.yml
