@@ -1,0 +1,4801 @@
+Article:
+  Article_1:
+    name: Barbar
+    img: barbar.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-28 21:05:37'
+    updated_at: '2013-11-10 18:55:11'
+    slug: barbar
+  Article_2:
+    name: 'Westmalle Triple'
+    img: westmalle.gif
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-28 21:05:37'
+    updated_at: '2013-11-08 22:43:45'
+    slug: westmalle
+  Article_3:
+    name: 'Bush ambrée'
+    img: bush.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-28 21:05:37'
+    updated_at: '2013-11-08 21:09:06'
+    slug: bush-ambree
+  Article_4:
+    name: 'Triple karmeliet'
+    img: karmeliet.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-11-11 18:45:00'
+    slug: triple-karmeliet
+  Article_5:
+    name: Kwak
+    img: kwak.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-11-11 18:45:00'
+    slug: kwak
+  Article_6:
+    name: Orval
+    img: orval.png
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-11-14 13:31:20'
+    slug: orval
+  Article_7:
+    name: 'Coca Cola'
+    img: 2eabb63bd1cbb74fb238b44e77700c1b2cd539ea.png
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 10:51:22'
+    updated_at: '2013-11-14 13:33:03'
+    slug: coca-cola
+  Article_8:
+    name: 'Schweppes Tonic'
+    img: 2762d64c01705311d4487deb473e5ce333931a29.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:43:34'
+    updated_at: '2013-11-13 19:41:02'
+    slug: shweppes-tonic
+  Article_9:
+    name: 'Schweppes Agrum'''
+    img: f511480ef47df8ed0dda4bef96a300f88bcbf9a7.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:44:33'
+    updated_at: '2013-11-11 16:26:00'
+    slug: shweppes-agrume
+  Article_10:
+    name: Gini
+    img: cc13a38f59af47796b61f754b4ad234c5c503d21.gif
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:44:58'
+    updated_at: '2013-11-08 22:43:45'
+    slug: gini
+  Article_11:
+    name: Fanta
+    img: 66728c98c5ef46fdd6884b9dfc747aa7a756332c.png
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:45:14'
+    updated_at: '2013-11-09 13:30:54'
+    slug: fanta
+  Article_12:
+    name: Sprite
+    img: 214a665b33bd8de4028e29f00f2b6f055a24d111.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:53:06'
+    updated_at: '2013-11-02 22:14:13'
+    slug: sprite
+  Article_13:
+    name: 'Canada Dry'
+    img: ab24cb65186d70b4c6e69ba8107b301ac0e582c4.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:53:29'
+    updated_at: '2013-11-14 13:31:19'
+    slug: canada-dry
+  Article_14:
+    name: 'Coca Cola Light'
+    img: 730fe24b728989d7583f748f0545ec19ba630f8e.png
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:53:50'
+    updated_at: '2013-11-13 19:41:02'
+    slug: coca-cola-light
+  Article_15:
+    name: 'Ice Tea Green'
+    img: 3458fec5e810a6d7f634ff415c3f42695a6badca.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:54:38'
+    updated_at: '2013-11-12 13:49:35'
+    slug: ice-tea-green
+  Article_16:
+    name: 'Ice Tea'
+    img: d578829d260363b34f36dc6a76094bec5e7d5d13.gif
+    is_publish: false
+    Category: Category_2
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:55:02'
+    updated_at: '2013-11-12 13:47:36'
+    slug: ice-tea
+  Article_17:
+    name: 'Ice Tea Pêche'
+    img: cd78a9b8636905a9cbb4e7294ace51d7227101aa.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:55:23'
+    updated_at: '2013-11-09 17:50:30'
+    slug: ice-tea-peche
+  Article_18:
+    name: 'Coca Cola Zero'
+    img: 04b12eda408c946956bb4462f38bb67457ad619c.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:55:49'
+    updated_at: '2013-11-13 13:23:58'
+    slug: coca-cola-zero
+  Article_19:
+    name: Oasis
+    img: a25d89cb47daf81519a9335ece0347003999201c.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:56:21'
+    updated_at: '2013-11-13 13:23:58'
+    slug: oasis
+  Article_20:
+    name: 'Red Bull'
+    img: f800e94f9e426d92070b0ae9b87b44c15296248e.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 13:56:44'
+    updated_at: '2013-11-13 23:22:10'
+    slug: red-bull
+  Article_21:
+    name: 'Minute Maid Orange'
+    img: 79eb3f322d429ab03680952b73472cdfa473f511.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:51:19'
+    updated_at: '2013-11-09 13:30:54'
+    slug: minute-maid-orange
+  Article_22:
+    name: 'minute Maid Pomme'
+    img: da2778935a31b1a6ea1cccd5ac45e66d8411db32.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:51:32'
+    updated_at: '2013-10-13 00:03:01'
+    slug: minute-maid-pomme
+  Article_23:
+    name: 'Minute Maid Pomme-Cerise'
+    img: e0c08ba87e814979ac8d01b7ee137eb57118426d.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:52:05'
+    updated_at: '2013-11-08 22:27:43'
+    slug: minute-maid-pomme-cerise
+  Article_24:
+    name: 'Minute Maid Tomate'
+    img: c0b8c1669dd25fb429f64823913af0e752c26ed9.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:52:24'
+    updated_at: '2013-11-13 19:41:02'
+    slug: minute-maid-tomate
+  Article_25:
+    name: 'Minute Maid Multivitamines'
+    img: 02abeefe000c317f7b476d6c7817a1c0a75f2416.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:52:39'
+    updated_at: '2013-11-05 16:21:18'
+    slug: minute-maid-multivitamines
+  Article_26:
+    name: 'Minute Maid Ananas'
+    img: 1259df9ae4746ec2bb460a3e732710e8254e76d6.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:52:55'
+    updated_at: '2013-11-04 22:36:37'
+    slug: minute-maid-ananas
+  Article_27:
+    name: 'Looza Fraise'
+    img: 58c6995eb4898e429a15524c7e20baf0a6fb6897.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:53:11'
+    updated_at: '2013-11-10 13:04:01'
+    slug: looza-fraise
+  Article_28:
+    name: 'Cécemel Chaud'
+    img: 85254903ea1ee42db045406e56be14682af85313.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:53:44'
+    updated_at: '2013-11-11 17:22:43'
+    slug: cecemel-chaud
+  Article_29:
+    name: Cappuccino
+    img: 893ec18944fa2f49679fc3824ff8a7ddce033634.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:54:04'
+    updated_at: '2013-11-11 15:46:43'
+    slug: cappuccino
+  Article_30:
+    name: 'Stella 25cl'
+    img: cfa4bfda998e190045896bc64d66f11c6226aaf9.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:54:54'
+    updated_at: '2013-11-13 23:22:09'
+    slug: stella-jupiler-25cl
+  Article_31:
+    name: 'Stella 33cl'
+    img: 94ddf258baa0e88bee33be7f1ff83824414406b0.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:55:07'
+    updated_at: '2013-11-08 22:07:52'
+    slug: stella-jupiler-33cl
+  Article_32:
+    name: 'Stella 50cl'
+    img: d153fbace39d2a7388ce67d51f3f5fdd471f32aa.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:55:25'
+    updated_at: '2013-11-03 17:13:05'
+    slug: stella-jupiler-50cl
+  Article_33:
+    name: 'Kriek Belle-Vue'
+    img: 0777c42dd20035224e120e809aa907bb92f491e9.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:55:42'
+    updated_at: '2013-11-12 18:30:43'
+    slug: kriek-belle-vue
+  Article_34:
+    name: 'Hoegaarden Blanche'
+    img: dc7f01996dc0dd681a0547b1cb426fcde1c43a4a.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:55:55'
+    updated_at: '2013-11-13 14:40:36'
+    slug: hoegaarden-blanche
+  Article_35:
+    name: 'Hoegaarden Rosée'
+    img: c5f27dfc0bf0d14179b48c6a5880c279fbf23a51.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:56:10'
+    updated_at: '2013-11-09 11:20:14'
+    slug: hoegaarden-rosee
+  Article_36:
+    name: 'Leffe bl. 25cl'
+    img: e4e232cb8d6bc773a08c0b9f62839c303feb0c4a.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:56:30'
+    updated_at: '2013-11-12 16:31:27'
+    slug: leffe-blonde-25cl
+  Article_37:
+    name: 'Leffe bl. 33cl'
+    img: e4e232cb8d6bc773a08c0b9f62839c303feb0c4a.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:56:57'
+    updated_at: '2013-11-07 15:36:34'
+    slug: leffe-blonde-33cl
+  Article_38:
+    name: 'Leffe bl. 50cl'
+    img: e4e232cb8d6bc773a08c0b9f62839c303feb0c4a.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '4.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:57:16'
+    updated_at: '2013-11-11 18:45:00'
+    slug: leffe-blonde-50cl
+  Article_39:
+    name: 'Belle-Vue Framboise'
+    img: cb369f9ae902e7f467ef5a51b695ca9b9d7ae3bf.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:58:42'
+    updated_at: '2013-11-10 18:55:11'
+    slug: belle-vue-framboise
+  Article_40:
+    name: 'Hoegaarden Citron'
+    img: a31a121853e7906725499e67a8b258d059eac281.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:59:03'
+    updated_at: '2013-11-13 23:42:39'
+    slug: hoegaarden-citron
+  Article_41:
+    name: 'Hoegaarden Rosée 0.0%'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:59:25'
+    updated_at: '2013-09-21 16:18:42'
+    slug: hoegaarden-rosee-0-0
+  Article_42:
+    name: 'Belle-Vue Gueuze'
+    img: 314b7b59beb8b356b25d429f22097d8041fbf7cc.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 20:59:42'
+    updated_at: '2013-10-12 13:00:18'
+    slug: belle-vue-gueuze
+  Article_43:
+    name: 'Lindemans Pêche'
+    img: 9c69224257eb76dc3f5a090d424d7866fd2c47ae.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:00:07'
+    updated_at: '2013-11-11 18:45:00'
+    slug: lindemans-peche
+  Article_44:
+    name: 'Gueuze mort subite bouchonnée'
+    img: 6778f50f7c3c4ed335cd6281e35f5a3ef43adb18.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:00:41'
+    updated_at: '2013-11-11 12:19:41'
+    slug: gueuze-mort-subite-bouchonnee
+  Article_45:
+    name: 'Hoegaarden Rosée OW 0,75l'
+    img: a5bcd18d854a48ec0b9a8d8a06ceb81d16d14e40.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:01:13'
+    updated_at: '2013-11-01 21:38:02'
+    slug: hoegaarden-rosee-ow-0-75l
+  Article_46:
+    name: 'Gauloise Blonde'
+    img: 398ebaa473f80f37ed7cfbb7ded5378fd00417d5.png
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:02:14'
+    updated_at: '2013-11-07 23:53:23'
+    slug: gauloise-blonde
+  Article_47:
+    name: Duvel
+    img: 57f2715c9b91059a32e7e8c1381fe88d4a5fcbd0.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:02:28'
+    updated_at: '2013-11-13 19:41:02'
+    slug: duvel
+  Article_48:
+    name: Julius
+    img: e9eaf9239087df26f326fecea68302ff61309205.gif
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:04:28'
+    updated_at: '2013-11-10 18:55:11'
+    slug: julius
+  Article_49:
+    name: 'Cuvée des trolls'
+    img: 3c0eb7706064a82356727e68c4a2586f4e86f4b7.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:04:42'
+    updated_at: '2013-11-12 14:38:51'
+    slug: cuvee-des-trolls
+  Article_50:
+    name: 'Bass Pale Ale'
+    img: 4d4140aba1f00eca43e547965550ef2cbe27c27a.png
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:05:06'
+    updated_at: '2013-10-02 14:14:18'
+    slug: bass-pale-ale
+  Article_51:
+    name: 'Hoegaarden Grand Cru'
+    img: 0ece1b6bbf6b9a43c7aeb4d1e2c15422f3fcd387.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:06:17'
+    updated_at: '2013-11-01 19:55:43'
+    slug: hoegaarden-grand-cru
+  Article_52:
+    name: 'Vieux Temps'
+    img: 7272f826b63d5238951cbace794ee21ecd4a0358.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:06:43'
+    updated_at: '2013-11-07 23:53:24'
+    slug: vieux-temps
+  Article_53:
+    name: 'Horse Ale'
+    img: 18882780b0fec0fafc6dcbda3c15a00e8f6eaa08.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:07:44'
+    updated_at: '2013-10-02 20:01:52'
+    slug: horse-ale
+  Article_54:
+    name: 'Gauloise Ambrée'
+    img: 0743e6d9191549160a38b0868e48e72ab9ad68d3.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:08:03'
+    updated_at: '2013-11-11 18:45:00'
+    slug: gauloise-ambree
+  Article_55:
+    name: 'Kasteel Brune'
+    img: 80ddd44736986b1513edd2496e12bd33b477d5c1.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:09:51'
+    updated_at: '2013-09-27 10:56:05'
+    slug: kasteel-brune
+  Article_56:
+    name: 'Gauloise Brune'
+    img: 59774b6e1224b047e3152b32ec7c544448f3d8d8.gif
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:10:43'
+    updated_at: '2013-10-02 20:02:42'
+    slug: gauloise-brune
+  Article_57:
+    name: 'Scotch CTS'
+    img: d0ffd73627f667aa9f02b4e455b1ae453d7ee7c4.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:11:27'
+    updated_at: '2013-11-07 14:39:40'
+    slug: scotch-cts
+  Article_58:
+    name: 'Leffe Brune'
+    img: 9d7c6bac096df20714366a79536133dc505198ec.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:11:49'
+    updated_at: '2013-11-08 18:28:32'
+    slug: leffe-brune
+  Article_59:
+    name: 'Leffe 9'
+    img: a38c848d066ec1fb4670c71a284185f8ee8724a8.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:12:10'
+    updated_at: '2013-11-08 13:13:52'
+    slug: leffe-9
+  Article_60:
+    name: 'Leffe Triple'
+    img: 7223f87c6e928eb9164d243a023b31a575ed1e04.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:12:26'
+    updated_at: '2013-11-10 18:13:06'
+    slug: leffe-triple
+  Article_61:
+    name: 'Leffe Radieuse'
+    img: a919dc62979e309ad745f1ff70b49c574efa9043.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:13:00'
+    updated_at: '2013-11-11 17:13:29'
+    slug: leffe-radieuse
+  Article_62:
+    name: 'Chimay Blanche'
+    img: dcec4969bf7bb5f388c0fb213271c8e1e8106726.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:13:14'
+    updated_at: '2013-11-11 12:19:41'
+    slug: chimay-blanche
+  Article_63:
+    name: 'Chimay Bleue'
+    img: 040992d5161dce7d6db898e7b190b4f90d5f5ed5.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:14:02'
+    updated_at: '2013-11-14 13:31:19'
+    slug: chimay-bleue
+  Article_64:
+    name: Rodenbach
+    img: 96f4cad2d44bf9ccf3df53d541bb382fb8061d4f.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:18:17'
+    updated_at: '2013-11-02 18:43:10'
+    slug: rodenbach
+  Article_65:
+    name: 'Kasteel Rouge'
+    img: 42f545404c903b06140576a0fc7ab065e0c4b96f.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:19:10'
+    updated_at: '2013-11-06 22:39:35'
+    slug: kasteel-rouge
+  Article_66:
+    name: Carlsbrg
+    img: c70ee5292e6dfa2a463b41344bf3c65c7b38ec21.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:19:53'
+    updated_at: '2013-10-31 17:15:04'
+    slug: carlsbrg
+  Article_67:
+    name: Corona
+    img: 6b4cce501cdb7840bea0e30855cd29ce1ef784a2.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:20:44'
+    updated_at: '2013-11-06 20:25:45'
+    slug: corona
+  Article_68:
+    name: Ricard
+    img: adf6875b4ee7518ed64b301f71ec09ddaca270a5.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:21:08'
+    updated_at: '2013-10-02 20:13:12'
+    slug: ricard
+  Article_69:
+    name: 'Martini Bianco'
+    img: 91394e267787075923570cca5bb16b9d272eb16a.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:21:46'
+    updated_at: '2013-11-13 21:43:19'
+    slug: martini-bianco
+  Article_70:
+    name: Campari
+    img: 8ae5cd6ad18882469843ee5081774eac8472f02e.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:22:07'
+    updated_at: '2013-10-02 20:13:54'
+    slug: campari
+  Article_71:
+    name: 'Get 27'
+    img: 4ee3c8020bea447d4ac7290e1eecbd790d2139fc.png
+    is_publish: false
+    Category: Category_3
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:22:42'
+    updated_at: '2013-11-07 15:42:03'
+    slug: get-27
+  Article_72:
+    name: Malibu
+    img: c591ef9ea4b52f36edecd541b8b6b32042b1bd9f.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:23:17'
+    updated_at: '2013-11-04 23:14:22'
+    slug: malibu
+  Article_73:
+    name: Batida
+    img: 2e5c76821e64f603a1c9c5126c7d04ffde540acf.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:23:41'
+    updated_at: '2013-10-31 14:36:29'
+    slug: batida
+  Article_74:
+    name: Safari
+    img: 2328d6e9580d5aaf0283153e0d94c07b891372ad.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:24:13'
+    updated_at: '2013-11-04 14:12:02'
+    slug: safari
+  Article_75:
+    name: 'Porto blanc'
+    img: e086738ce8f19e7b43632eb73f2a084db2bc4761.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:24:37'
+    updated_at: '2013-11-04 15:23:21'
+    slug: porto-blanc
+  Article_76:
+    name: 'Porto rouge'
+    img: f18d20605848ded782c91ac4f5a749d65a29db60.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:24:59'
+    updated_at: '2013-11-08 22:27:43'
+    slug: porto-rouge
+  Article_77:
+    name: 'Havana club 3ans (blanc)'
+    img: 32b41d75527159fa860c18fc12a569b96efa0cb1.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:25:50'
+    updated_at: '2013-11-13 19:41:02'
+    slug: havana-club-3ans-blanc
+  Article_78:
+    name: 'Havana Club Especial (brun)'
+    img: 5dbfd7bafbaa253890d4f776bfea85b1384e0cd1.png
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:26:21'
+    updated_at: '2013-11-13 23:42:39'
+    slug: havana-club-especial-brun
+  Article_79:
+    name: 'Havana Club 7ans (brun)'
+    img: 85bafbe9513a0ba90ec191d23c8144ef4668e78c.png
+    is_publish: false
+    Category: Category_3
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:26:47'
+    updated_at: '2013-11-04 12:59:54'
+    slug: havana-club-7ans-brun
+  Article_80:
+    name: 'Cayes Poire Cannelle'
+    img: 4e564cc93b56ac47bec3fb557547db2dec4f8305.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:27:25'
+    updated_at: '2013-11-03 00:39:02'
+    slug: cayes-poire-cannelle
+  Article_81:
+    name: 'Cayes Citron Gingembre'
+    img: 853d6d763ddf16a6b794c34c75f436e4ef373f93.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:27:54'
+    updated_at: '2013-11-02 23:50:45'
+    slug: cayes-citron-gingembre
+  Article_82:
+    name: 'Dictador 12'
+    img: bb95ac21433cb970a7c4de0b89d99fec8a536cf0.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:28:25'
+    updated_at: '2013-10-09 16:53:58'
+    slug: dictador-12
+  Article_83:
+    name: 'J.M. VSOP'
+    img: e8395b00e8c6a0c2671bf986c12e072a459e3820.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:29:10'
+    updated_at: '2013-10-09 16:54:34'
+    slug: j-m-vsop
+  Article_84:
+    name: 'J.M. XO'
+    img: 8e6004d06190fc39c4252cc9645cd85fea8ec212.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '8.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:29:42'
+    updated_at: '2013-10-09 16:55:06'
+    slug: j-m-xo
+  Article_85:
+    name: 'Angostura 1919'
+    img: bbde99414ba7c69338337d13d99e385498a8399f.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '5.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:30:20'
+    updated_at: '2013-10-09 16:55:41'
+    slug: angostura-1919
+  Article_86:
+    name: 'Clément VSOP'
+    img: 7f79ed68077028b6386157419552fccb0248fd2b.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-08-31 21:30:44'
+    updated_at: '2013-10-09 16:56:09'
+    slug: clement-vsop
+  Article_87:
+    name: 'Jupiler 25cl'
+    img: dd851c598b6a5d3291fd875841257d94e3834e63.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:15:21'
+    updated_at: '2013-11-14 09:34:11'
+    slug: jupiler-25cl
+  Article_88:
+    name: 'Jupiler 33cl'
+    img: dd851c598b6a5d3291fd875841257d94e3834e63.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:15:42'
+    updated_at: '2013-11-14 13:52:42'
+    slug: jupiler-33cl
+  Article_89:
+    name: 'Jupiler 50cl'
+    img: dd851c598b6a5d3291fd875841257d94e3834e63.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:16:05'
+    updated_at: '2013-11-12 18:30:43'
+    slug: jupiler-50cl
+  Article_90:
+    name: 'Plantation Barbados 2000'
+    img: 3a01671be256cbad501f12c41e25a159ea20c90e.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:24:34'
+    updated_at: '2013-11-06 23:16:12'
+    slug: plantation-barbados-2000
+  Article_91:
+    name: Beefeater
+    img: 376a236c968685bed4cf9239cabfa17c9f8d0f82.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:25:38'
+    updated_at: '2013-11-13 19:41:02'
+    slug: beefeater
+  Article_92:
+    name: 'Citadelle Classic'
+    img: 642fc6c781b7c0784053ebbfd4daf47e7a489db5.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:25:59'
+    updated_at: '2013-11-06 23:16:12'
+    slug: citadelle-classic
+  Article_93:
+    name: 'The Duke Bio'
+    img: 64868f97ff4a63359688dd4830ce5e7951173038.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:26:16'
+    updated_at: '2013-11-04 15:25:48'
+    slug: the-duke-bio
+  Article_94:
+    name: 'Mombasa Club'
+    img: b1b80e80937ee3c38755d4dcc7b0366350d6ca61.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:26:32'
+    updated_at: '2013-11-04 15:26:20'
+    slug: mombasa-club
+  Article_95:
+    name: 'Ballantine''s'
+    img: 538ef2a2c0beae8b030735e398cd1df2c7ea5ec5.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:27:25'
+    updated_at: '2013-11-10 13:04:01'
+    slug: ballantine-s
+  Article_96:
+    name: 'Chivas Regal 12'
+    img: 78244beb76d07b137ccb07dec42154a21a78e0f1.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:29:20'
+    updated_at: '2013-11-07 18:36:58'
+    slug: chivas-regal-12
+  Article_97:
+    name: 'Chivas Regal 18'
+    img: 875ea635c5422cf8789cd60a7fde873629dda740.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '8.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:29:49'
+    updated_at: '2013-11-04 15:27:44'
+    slug: chivas-regal-18
+  Article_98:
+    name: 'Four roses Bourbon'
+    img: 1475dfbcfe11bbcae4eaeda1a92dffb4992304da.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:30:08'
+    updated_at: '2013-11-04 15:28:14'
+    slug: four-roses-bourbon
+  Article_99:
+    name: 'Jack Daniel''s'
+    img: f701f3d7337572f925acec7736c40acc7a1d51ca.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:30:26'
+    updated_at: '2013-11-13 19:59:28'
+    slug: jack-daniel-s
+  Article_100:
+    name: Jameson
+    img: 5bb64e3d211864f4608c702feaee6586bdfa7193.gif
+    is_publish: false
+    Category: Category_3
+    prix: '4.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:35:14'
+    updated_at: '2013-11-04 15:29:03'
+    slug: jameson
+  Article_101:
+    name: 'Jameson Select'
+    img: 8d6db6ff6a0d26dee92f8f6922b7d4fc2ac97fcb.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:35:25'
+    updated_at: '2013-11-04 15:29:31'
+    slug: jameson-select
+  Article_102:
+    name: Kilbeggan
+    img: 80fb153563d0835afc0080e78f428fa6b869a355.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:35:54'
+    updated_at: '2013-11-04 15:30:05'
+    slug: kilbeggan
+  Article_103:
+    name: 'Hibiki 12'
+    img: 4d6cb958cbf191f8087c74a6f376993f14867dd0.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '12.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:36:08'
+    updated_at: '2013-11-04 21:36:47'
+    slug: hibiki-12
+  Article_104:
+    name: 'Nikka Coffey Grain'
+    img: 4257dbf48690bb6227a5a89e8a7dbe65d9d2de3b.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '9.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:36:24'
+    updated_at: '2013-11-04 15:31:11'
+    slug: nikka-cofey-grain
+  Article_105:
+    name: 'Bowmore Tempest IV'
+    img: d3f8cd0b274e0004a2ae766f5ad82b25809861e5.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '8.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:37:10'
+    updated_at: '2013-11-04 21:36:47'
+    slug: bowmore-tempest-iv
+  Article_106:
+    name: 'Auchentoshan Valinch'
+    img: 6ba78f132a2f1e440aa53c02b03e49b99c5db215.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '7.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:37:33'
+    updated_at: '2013-11-04 15:32:26'
+    slug: auchentoshan-valinch
+  Article_107:
+    name: 'Auchentoshan Three Wood'
+    img: 5cd2dddf7d93d156cf2d2cfea5ecc02b11681b74.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '8.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:38:14'
+    updated_at: '2013-11-04 15:32:52'
+    slug: auchentoshan-three-wood
+  Article_108:
+    name: 'Greenhore 8'
+    img: a09a3624ee1dd86e113ffe66de071136cb4dc529.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:38:31'
+    updated_at: '2013-11-04 15:33:53'
+    slug: greenhore-8
+  Article_109:
+    name: 'Edradour 10'
+    img: a9bff5f290d4738d74b890d633a529554ed71359.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '7.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:38:46'
+    updated_at: '2013-11-04 15:34:29'
+    slug: edradour-10
+  Article_110:
+    name: 'Deanston 12'
+    img: 2212dc8fccbb021bf9a092b9609ef0b71a3c9c25.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '8.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:39:00'
+    updated_at: '2013-11-07 18:11:20'
+    slug: deanston-12
+  Article_111:
+    name: 'Glen Livet 12'
+    img: 921b9e543322a980f46d911b7751ce26379a4f0a.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:39:22'
+    updated_at: '2013-11-07 18:36:58'
+    slug: glen-livet-12
+  Article_112:
+    name: 'Glen Livet 15'
+    img: 9fd0f4f055367a1a559a61e8c34b23f3feca64e6.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '7.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:39:45'
+    updated_at: '2013-11-04 15:36:18'
+    slug: glen-livet-15
+  Article_113:
+    name: 'Glen Livet Nadurra 16'
+    img: 200debb576151525139b8f9e7c53116a29e9161d.gif
+    is_publish: false
+    Category: Category_3
+    prix: '10.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:40:19'
+    updated_at: '2013-11-04 15:36:48'
+    slug: glen-livet-nadurra-16
+  Article_114:
+    name: 'Glen Livet 18'
+    img: 11384b1e946ca82812b0bb1af9a664e1c44826c4.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '12.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:40:41'
+    updated_at: '2013-11-04 15:38:26'
+    slug: glen-livet-18
+  Article_115:
+    name: 'Absolut Blanche'
+    img: b79e60ea31def5d496c76fd910e0f93a3164efe2.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:41:00'
+    updated_at: '2013-11-13 19:41:02'
+    slug: absolul-blanche
+  Article_116:
+    name: 'Eristoff Rouge'
+    img: fd194ba5e9d6d0802346b8b67eb0a9ceb20467a1.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:41:16'
+    updated_at: '2013-11-13 23:22:10'
+    slug: eristoff-rouge
+  Article_117:
+    name: 'Zubrowska Bison'
+    img: 34b2be87cafcdac109bad72c4ea0fb9dfc94bc08.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:41:31'
+    updated_at: '2013-11-06 20:22:53'
+    slug: zubrowska-bison
+  Article_118:
+    name: 'Obey (vodka belge)'
+    img: 7ac298d2898b5b2d49bb2bc540efdf2ffe4ff3d4.png
+    is_publish: false
+    Category: Category_3
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:41:50'
+    updated_at: '2013-11-04 23:14:45'
+    slug: obey-vodka-belge
+  Article_119:
+    name: 'Absolut Elyx'
+    img: 8940275fa073a1f2d42e1bf8b67fe6758affc13b.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:42:04'
+    updated_at: '2013-11-05 23:13:35'
+    slug: absolut-elyx
+  Article_120:
+    name: 'Tequila Olmeca'
+    img: 3b7496c1511f86ae9fbdd4cc87a1d69bfe887f96.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:42:29'
+    updated_at: '2013-11-10 03:19:11'
+    slug: tequila-olmeca
+  Article_121:
+    name: 'Ocho Reposado'
+    img: e15187f5d33235d36b36f566735c876199343bfc.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:42:49'
+    updated_at: '2013-11-04 15:50:45'
+    slug: ocho-reposado
+  Article_122:
+    name: 'Don fulano reposado'
+    img: b145df7f2afd76318e64e5648ff2aa657c66c2f3.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '9.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:43:07'
+    updated_at: '2013-11-04 15:51:15'
+    slug: don-fulano-reposado
+  Article_123:
+    name: 'Hennesy VS'
+    img: d7c5acde8417b72af47c98d72eb35d4be5f9859f.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:43:21'
+    updated_at: '2013-11-04 15:51:43'
+    slug: hennesy-vs
+  Article_124:
+    name: 'Martel VS'
+    img: b7ec4e01406e3353908bd941969483f59e4f5e1a.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:43:34'
+    updated_at: '2013-11-04 15:52:20'
+    slug: martel-vs
+  Article_125:
+    name: 'Martel VSOP'
+    img: 250ff2aba50cdc88480f0d83b55687147136de57.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '8.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:43:49'
+    updated_at: '2013-11-04 15:52:50'
+    slug: martel-vsop
+  Article_126:
+    name: 'Martel XO'
+    img: 47dd3203e7033fb5211c912663e67678d17951a9.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '20.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:44:07'
+    updated_at: '2013-11-13 21:43:50'
+    slug: martel-xo
+  Article_127:
+    name: 'Peket Blanc'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:44:26'
+    updated_at: '2013-10-11 01:50:26'
+    slug: peket-blanc
+  Article_128:
+    name: Cointreau
+    img: 1e18b91bc2aad440e40bee8f6da7d42299c51a0a.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:44:39'
+    updated_at: '2013-11-04 15:54:11'
+    slug: cointreau
+  Article_129:
+    name: Baileys
+    img: 7adb1a8a715bd8b8203f4efed9b198f82721e706.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:44:53'
+    updated_at: '2013-11-04 15:54:51'
+    slug: baileys
+  Article_130:
+    name: Kahlua
+    img: d48dfe894c6a7969a714e5e399aa6c6ebf19e57e.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:45:11'
+    updated_at: '2013-11-13 23:42:39'
+    slug: kahlua
+  Article_131:
+    name: 'Amaretto Disaronno'
+    img: 3b48c52952e49167a27781583c07ddfc507bcd89.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:45:28'
+    updated_at: '2013-11-08 18:24:23'
+    slug: amaretto-disaronno
+  Article_132:
+    name: 'Jägermeister shot'
+    img: dc95f99edb7b693b8fccd36860ef0d7b13ac8182.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:45:46'
+    updated_at: '2013-11-04 15:56:05'
+    slug: jaegermeister-shot
+  Article_133:
+    name: 'Clément Shrubb'
+    img: 8824a996f40b978ba7acb7530340614b73761e37.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '4.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:46:05'
+    updated_at: '2013-11-04 15:56:42'
+    slug: clement-shrubb
+  Article_134:
+    name: 'Calvados Lecompte'
+    img: c95d874ce396e55b1ec02475ed0da0157690d032.gif
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:46:21'
+    updated_at: '2013-11-04 15:57:26'
+    slug: calvados-lecompte
+  Article_135:
+    name: 'Curaçao Dry Pierre Ferrand'
+    img: f96374a332266e77d566a472fd1e54e4d761986a.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:46:43'
+    updated_at: '2013-11-04 15:57:57'
+    slug: curacao-dry-pierre-ferrand
+  Article_136:
+    name: 'Millz Premium'
+    img: 9418e9033f9761a2ce997bd3ec400a6e3ce35781.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:47:02'
+    updated_at: '2013-11-04 15:58:21'
+    slug: millz-premium
+  Article_137:
+    name: MVSA
+    img: d321b902bd25fea73fd2a282b78b80c1a431032a.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '30.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:47:20'
+    updated_at: '2013-11-07 23:54:47'
+    slug: mvsa
+  Article_138:
+    name: 'MVSA rosé'
+    img: b3afbda7d1eb3a7a6aa63cbdce87b4d71effaf47.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '30.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:47:33'
+    updated_at: '2013-11-04 17:05:53'
+    slug: mvsa-rose
+  Article_139:
+    name: 'Perrier Jouët'
+    img: 6d713bdf2fcd411b094e25621a0b9a3312d1fecb.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '75.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:47:50'
+    updated_at: '2013-11-06 13:26:08'
+    slug: perrier-jouet
+  Article_140:
+    name: 'Chaudfontaine plate'
+    img: b8520f6cd1963e9338ed47dee81af755cf4a766e.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 10:56:33'
+    updated_at: '2013-11-13 23:22:10'
+    slug: chaudfontaine-plate
+  Article_141:
+    name: 'Irish Coffee'
+    img: 21b5f51c4d040e5343fa9c380046fe9867c29752.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 11:16:33'
+    updated_at: '2013-11-13 22:44:28'
+    slug: irish-coffee
+  Article_142:
+    name: 'Baileys Chocolat Chaud'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-05 11:16:50'
+    updated_at: '2013-09-05 11:16:50'
+    slug: baileys-chocolat-chaud
+  Article_143:
+    name: 'Liefmans Goudenband'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-19 14:12:08'
+    updated_at: '2013-11-03 00:03:43'
+    slug: liefmans-goudenband
+  Article_144:
+    name: 'Liefmans Cuvée'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-19 14:12:25'
+    updated_at: '2013-11-02 20:55:06'
+    slug: liefmans-cuvee
+  Article_145:
+    name: Cafe
+    img: 44cbf0d583a1de932b57fd1c563a2e5e842f94bd.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-25 23:44:18'
+    updated_at: '2013-11-14 13:31:20'
+    slug: cafe-1
+  Article_146:
+    name: 'Verre de Vin rosé'
+    img: b1dc22824579d727910ad386057a537a1374e9bf.jpg
+    is_publish: false
+    Category: Category_5
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-26 01:39:09'
+    updated_at: '2013-11-04 12:05:47'
+    slug: vin-rose
+  Article_147:
+    name: 'Verre de Vin Blanc '
+    img: 9c03ac0cac95732afcbc9aa626a97328e3699ad5.jpg
+    is_publish: false
+    Category: Category_5
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-26 01:41:04'
+    updated_at: '2013-11-14 13:31:20'
+    slug: verre-de-vin-blanc
+  Article_148:
+    name: 'Kir Cassis'
+    img: 9b5bbe8f8d24b06f01b4eb064448812d5804bbfa.jpg
+    is_publish: false
+    Category: Category_5
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-26 19:28:41'
+    updated_at: '2013-10-12 13:00:18'
+    slug: kir-cassis
+  Article_149:
+    name: 'Kir Framboise'
+    img: 85d71e54b4b50583fd613ab688d06c787360fdfd.jpg
+    is_publish: false
+    Category: Category_5
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-26 19:30:20'
+    updated_at: '2013-09-26 19:58:29'
+    slug: kir-framboise
+  Article_150:
+    name: 'Verre de Vin Blanc Moelleux'
+    img: de85b59bf97738d40b9aed77ab2cc780cc14d766.jpg
+    is_publish: false
+    Category: Category_5
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-26 19:46:50'
+    updated_at: '2013-11-04 12:06:13'
+    slug: verre-de-vin-blanc-moelleux
+  Article_151:
+    name: 'Verre de vin Rouge'
+    img: 6861bcf6112e355bcc3287f29c1a350f18262e07.jpg
+    is_publish: false
+    Category: Category_5
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-26 20:20:31'
+    updated_at: '2013-11-09 13:29:53'
+    slug: verre-de-vin-rouge
+  Article_152:
+    name: 'Oeil gauche'
+    img: 4af4c9fe1988b1803f1f5ec0cf123e8cec022d2e.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '2540.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-26 22:25:19'
+    updated_at: '2013-11-04 16:34:35'
+    slug: oeil-gauche
+  Article_153:
+    name: 'Portion fromage'
+    img: default.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '4.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-29 16:44:49'
+    updated_at: '2013-11-09 13:27:50'
+    slug: portion-fromage
+  Article_154:
+    name: 'Beefeater 24'
+    img: daa7e11ef061ff5fe2693cba534611afb99ebead.jpg
+    is_publish: false
+    Category: Category_3
+    prix: '6.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-30 14:37:20'
+    updated_at: '2013-11-04 16:35:04'
+    slug: beefeater-24
+  Article_155:
+    name: 'Thomas Henry Edelflower Tonic'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-09-30 14:37:38'
+    updated_at: '2013-11-06 23:16:12'
+    slug: thomas-henry-edelflower-tonic
+  Article_156:
+    name: 'Portion mixte'
+    img: default.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '5.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-10-01 23:46:24'
+    updated_at: '2013-10-02 16:51:04'
+    slug: portion-mixte
+  Article_157:
+    name: 'blanche de Namur'
+    img: 4fc282373e121fe20da9be5087d4dd6fdfd03a2f.gif
+    is_publish: false
+    Category: Category_1
+    prix: '3.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-10-18 12:26:26'
+    updated_at: '2013-11-04 16:35:29'
+    slug: blanche-de-nnamur
+  Article_158:
+    name: 'Lipton earl grey'
+    img: f38ba3a2a3e568d3e083132fb2e7966e48a88d32.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-01 18:08:47'
+    updated_at: '2013-11-04 16:36:09'
+    slug: lipton-earl-grey
+  Article_159:
+    name: Curtius
+    img: 97f31df3f4514b2c82d2944eba17f0ebc20a8121.jpg
+    is_publish: false
+    Category: Category_1
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-01 21:41:33'
+    updated_at: '2013-11-04 16:36:35'
+    slug: curtius
+  Article_160:
+    name: fristi
+    img: df9a39c1c89fcdc3f57f5f51401823ca9c4fd014.png
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-01 22:38:20'
+    updated_at: '2013-11-13 13:23:58'
+    slug: fristi
+  Article_161:
+    name: 'soupe du jour'
+    img: 7d8f0f0d73c9543274237b79ccc251babb8ae932.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 12:24:07'
+    updated_at: '2013-11-14 14:27:22'
+    slug: soupe-du-jour
+  Article_162:
+    name: 'Pâtes aux fromages'
+    img: 3b2395b5cf626b0844d8ace313cd8b4ce685cb3e.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '8.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 12:24:34'
+    updated_at: '2013-11-14 13:33:03'
+    slug: pates-aux-fromages
+  Article_163:
+    name: 'croque de canard'
+    img: 6716827a4475f0553eae1395aaa7463de458f9c8.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '7.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 12:25:39'
+    updated_at: '2013-11-14 13:31:19'
+    slug: croque-de-canard
+  Article_164:
+    name: 'burger de boudin'
+    img: 82b15dbbfd993cbf12dd0b9e4978d4c00eb5167b.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '10.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 12:25:59'
+    updated_at: '2013-11-14 13:31:19'
+    slug: burger-de-boudin
+  Article_165:
+    name: 'Lipton English Breakfast'
+    img: 77c3181fe3aed04ad815ff0f10b57fe4d2a5aa4b.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:20:01'
+    updated_at: '2013-11-04 16:39:40'
+    slug: lipton-english-breakfast
+  Article_166:
+    name: 'Lipton Fruits rouges '
+    img: d5c7429ca6484643637689225f277fa559529f95.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:20:58'
+    updated_at: '2013-11-04 16:40:05'
+    slug: lipton-fruits-rouges
+  Article_167:
+    name: 'Lipton Menthe'
+    img: 5f38239082516cd073a620b9990fc6ce4bdb2b8f.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:21:19'
+    updated_at: '2013-11-09 14:15:26'
+    slug: lipton-menthe
+  Article_168:
+    name: 'Lipton Camomille '
+    img: a5cc837f3ceedae56d8e4094b2b573f228801f9c.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:21:46'
+    updated_at: '2013-11-04 16:42:59'
+    slug: lipton-camomille
+  Article_169:
+    name: 'Lipton Thé vert '
+    img: 29b2046153122dc81f428d474decabde5dded454.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:23:02'
+    updated_at: '2013-11-09 14:15:26'
+    slug: lipton-the-vert
+  Article_170:
+    name: 'Lipton Citron '
+    img: ec430701de0faf129f6c6f74c5fcf9648cad43dd.png
+    is_publish: false
+    Category: Category_4
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:23:49'
+    updated_at: '2013-11-04 16:45:54'
+    slug: lipton-citron
+  Article_171:
+    name: 'Irish Kisses '
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '6.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:24:54'
+    updated_at: '2013-11-04 14:24:54'
+    slug: irish-kisses
+  Article_172:
+    name: 'Rhumba Caliente '
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '6.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:25:19'
+    updated_at: '2013-11-04 14:25:19'
+    slug: rhumba-caliente
+  Article_173:
+    name: 'Amour Intense '
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '6.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:28:32'
+    updated_at: '2013-11-04 14:28:32'
+    slug: amour-intense
+  Article_174:
+    name: 'Passione Italiano '
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '6.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:28:56'
+    updated_at: '2013-11-04 14:28:56'
+    slug: passione-italiano
+  Article_175:
+    name: 'Coco Cabana '
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '6.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:29:20'
+    updated_at: '2013-11-04 14:29:20'
+    slug: coco-cabana
+  Article_176:
+    name: 'Cécemel '
+    img: 93ab313b94e97cab5dbc7e3536a0d580a2180509.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:30:22'
+    updated_at: '2013-11-04 16:48:33'
+    slug: cecemel
+  Article_177:
+    name: Papouasie
+    img: ed7dbee4df1f2f9eccf527bafba0643a04611b7f.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:31:15'
+    updated_at: '2013-11-04 16:33:57'
+    slug: papouasie
+  Article_178:
+    name: Yrgasheffe
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:31:31'
+    updated_at: '2013-11-04 14:31:31'
+    slug: yrgasheffe
+  Article_179:
+    name: Pico
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:31:49'
+    updated_at: '2013-11-04 14:31:49'
+    slug: pico
+  Article_180:
+    name: 'Blue Tawar'
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:32:13'
+    updated_at: '2013-11-11 15:46:43'
+    slug: blue-tawar
+  Article_181:
+    name: 'Lago Azul'
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:32:31'
+    updated_at: '2013-11-04 14:32:31'
+    slug: lago-azul
+  Article_182:
+    name: Kilimandjaro
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:32:48'
+    updated_at: '2013-11-04 14:32:48'
+    slug: kilimandjaro
+  Article_183:
+    name: 'Mare Rouge'
+    img: default.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '3.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:33:04'
+    updated_at: '2013-11-09 13:44:33'
+    slug: mare-rouge
+  Article_184:
+    name: 'Blue Mountain'
+    img: 019764c458af8bf586a9a38088562819d5944539.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 14:33:20'
+    updated_at: '2013-11-09 13:44:33'
+    slug: blue-mountain
+  Article_185:
+    name: 'chaudfontaine pétillante '
+    img: b8520f6cd1963e9338ed47dee81af755cf4a766e.jpg
+    is_publish: false
+    Category: Category_2
+    prix: '2.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-04 16:47:31'
+    updated_at: '2013-11-11 14:29:06'
+    slug: chaudfontaine-petillante
+  Article_186:
+    name: Avisance
+    img: default.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '4.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-09 13:28:17'
+    updated_at: '2013-11-11 14:22:11'
+    slug: aviscence-1
+  Article_187:
+    name: 'petit dej Belge '
+    img: default.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '7.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-11 11:03:10'
+    updated_at: '2013-11-11 12:59:14'
+    slug: petit-dej-belge
+  Article_188:
+    name: 'petit dej Français '
+    img: default.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '7.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-11 11:04:08'
+    updated_at: '2013-11-11 12:59:30'
+    slug: petit-dej-francais
+  Article_189:
+    name: 'Petit dej Anglais '
+    img: default.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '8.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-11 11:04:29'
+    updated_at: '2013-11-11 12:59:45'
+    slug: petit-dej-anglais
+  Article_190:
+    name: viennoiseries
+    img: default.jpg
+    is_publish: false
+    Category: Category_6
+    prix: '5.00'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-11 11:05:04'
+    updated_at: '2013-11-11 11:05:04'
+    slug: viennoiseries
+  Article_191:
+    name: 'Latte Macchiato'
+    img: b1e8628566ab89d28058120cb2827d4b4df607d4.jpg
+    is_publish: false
+    Category: Category_4
+    prix: '2.50'
+    description: '(non chargé)'
+    temps_prepa: null
+    count: '0'
+    created_at: '2013-11-11 15:58:14'
+    updated_at: '2013-11-11 16:00:09'
+    slug: latte-macchiato
+Category:
+  Category_1:
+    name: Biere
+    img: default.jpg
+    father_id: null
+    is_publish: true
+    slug: biere
+    root_id: '1'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  Category_2:
+    name: Soft
+    img: default.jpg
+    father_id: null
+    is_publish: true
+    slug: soft
+    root_id: '2'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  Category_3:
+    name: Alcool
+    img: default.jpg
+    father_id: null
+    is_publish: true
+    slug: alcool
+    root_id: '3'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  Category_4:
+    name: Chaud
+    img: default.jpg
+    father_id: null
+    is_publish: true
+    slug: chaud
+    root_id: '4'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  Category_5:
+    name: Vins
+    img: default.jpg
+    father_id: null
+    is_publish: true
+    slug: vins
+    root_id: '5'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  Category_6:
+    name: Snacks
+    img: default.jpg
+    father_id: null
+    is_publish: true
+    slug: snacks
+    root_id: '6'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+CategoryImprimante:
+  CategoryImprimante_1_1:
+    Category: Category_1
+    Imprimante: Imprimante_1
+  CategoryImprimante_2_1:
+    Category: Category_2
+    Imprimante: Imprimante_1
+  CategoryImprimante_3_1:
+    Category: Category_3
+    Imprimante: Imprimante_1
+  CategoryImprimante_4_1:
+    Category: Category_4
+    Imprimante: Imprimante_1
+  CategoryImprimante_5_1:
+    Category: Category_5
+    Imprimante: Imprimante_1
+  CategoryImprimante_6_2:
+    Category: Category_6
+    Imprimante: Imprimante_2
+Conditionnement:
+  Conditionnement_1:
+    name: 'Au Litre'
+  Conditionnement_2:
+    name: 'A l''unité'
+  Conditionnement_3:
+    name: 'Au kilo'
+Element:
+  Element_1:
+    name: 'Westmalle triple'
+    img: westmalle.gif
+    is_publish: false
+    Category: Category_1
+    stock_minimum: '10.00'
+    stock_actuel: '20.00'
+    Conditionnement: Conditionnement_2
+    nombre_unite: '24.00'
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-28 21:05:37'
+    updated_at: '2013-08-31 19:59:25'
+    slug: westmalle
+  Element_2:
+    name: Barbar
+    img: barbar.jpg
+    is_publish: true
+    Category: Category_1
+    stock_minimum: '10.00'
+    stock_actuel: '24.00'
+    Conditionnement: Conditionnement_2
+    nombre_unite: '24.00'
+    prix_achat: '3.50'
+    reference: null
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+    slug: barbar
+  Element_3:
+    name: 'Bush ambrée'
+    img: bush.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: '10.00'
+    stock_actuel: '24.00'
+    Conditionnement: Conditionnement_2
+    nombre_unite: '24.00'
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-31 20:00:13'
+    slug: bush-ambree
+  Element_4:
+    name: 'Triple Karmeliet'
+    img: karmeliet.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: '10.00'
+    stock_actuel: '24.00'
+    Conditionnement: Conditionnement_2
+    nombre_unite: '24.00'
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-31 20:01:44'
+    slug: triple-karmeliet
+  Element_5:
+    name: Kwak
+    img: kwak.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: '10.00'
+    stock_actuel: '24.00'
+    Conditionnement: Conditionnement_2
+    nombre_unite: '24.00'
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-31 20:02:15'
+    slug: kwak
+  Element_6:
+    name: Orval
+    img: orval.png
+    is_publish: false
+    Category: Category_1
+    stock_minimum: '10.00'
+    stock_actuel: '24.00'
+    Conditionnement: Conditionnement_2
+    nombre_unite: '24.00'
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-31 20:04:16'
+    slug: orval
+  Element_7:
+    name: 'Coca Cola'
+    img: 15480d3a909d631df4442f516b312a334b1166dd.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-83.00'
+    Conditionnement: Conditionnement_2
+    nombre_unite: '24.00'
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 10:50:46'
+    updated_at: '2013-10-28 16:08:30'
+    slug: coca-cola
+  Element_8:
+    name: 'Shweppes Tonic'
+    img: b7e982ef47a36bdd51ecb5df93b5e934b704cbcb.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-19.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:35:55'
+    updated_at: '2013-10-25 22:51:03'
+    slug: shweppes-tonic
+  Element_9:
+    name: Gini
+    img: 92ce2d28d24c1ca085e3d51ed6c43defe5f6c535.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-16.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:36:29'
+    updated_at: '2013-10-27 23:28:18'
+    slug: gini
+  Element_10:
+    name: Fanta
+    img: d03275e723260237e7fe874dde946fec0fbda55a.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-9.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:36:56'
+    updated_at: '2013-10-26 22:25:57'
+    slug: fanta
+  Element_11:
+    name: Sprite
+    img: 8b3d9063514d4f9e71fe1a4ea2b400af125fe97a.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-11.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:37:24'
+    updated_at: '2013-10-27 22:34:21'
+    slug: sprite
+  Element_12:
+    name: 'Canada Dry'
+    img: d37fd702a1092bb2efdf46c7802b781d7466fa92.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: '-12.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:37:56'
+    updated_at: '2013-10-13 12:44:51'
+    slug: canada-dry
+  Element_13:
+    name: 'Coca Cola Light'
+    img: 71853d51109080009405e76a395abf8896ed8e83.png
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-23.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:38:25'
+    updated_at: '2013-10-13 12:02:24'
+    slug: coca-cola-light
+  Element_14:
+    name: 'Shweppes Agrume'
+    img: 1f714be1e1abedba7588e5b05444ea58ece1fa09.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-13.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:39:17'
+    updated_at: '2013-10-12 22:23:14'
+    slug: shweppes-agrume
+  Element_15:
+    name: 'Ice Tea Green'
+    img: aae38a983e2c67c828af5bee49da4477cf87e0f8.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-13.00'
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 13:40:01'
+    updated_at: '2013-10-28 17:35:09'
+    slug: ice-tea-green
+  Element_16:
+    name: 'Ice Tea'
+    img: 08fda0244b5397e030ee401fd2bea5b24f78a72b.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-47.00'
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 13:40:36'
+    updated_at: '2013-10-13 18:38:26'
+    slug: ice-tea
+  Element_17:
+    name: 'Ice Tea Pêche'
+    img: 4d7913bf79fef9bd3b790e4eb73e6af2235df471.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-19.00'
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 13:41:00'
+    updated_at: '2013-10-13 00:22:45'
+    slug: ice-tea-peche
+  Element_18:
+    name: 'Coca Cola Zero'
+    img: 385cd1b230af09b0bff56e3fbd05b1fc04f3dd9e.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-28.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:41:26'
+    updated_at: '2013-10-13 16:30:44'
+    slug: coca-cola-zero
+  Element_19:
+    name: Oasis
+    img: 8c6b6717ff7f2bd950d2261df0e138cf8a56f42d.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-8.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 13:41:53'
+    updated_at: '2013-10-28 17:35:09'
+    slug: oasis
+  Element_20:
+    name: 'Red Bull'
+    img: 161dae73bf653b6124fa6cb29fd2a9f68a59de61.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '-5.00'
+    nombre_unite: null
+    prix_achat: '3.00'
+    reference: ''
+    created_at: '2013-08-31 13:42:14'
+    updated_at: '2013-10-23 13:22:25'
+    slug: red-bull
+  Element_21:
+    name: 'Chaudfontaine Plate'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:31:28'
+    updated_at: '2013-08-31 19:31:28'
+    slug: chaudfontaine-plate
+  Element_22:
+    name: 'Chaudfontaine Pétillante'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:31:56'
+    updated_at: '2013-08-31 19:31:56'
+    slug: chaudfontaine-petillante
+  Element_23:
+    name: 'Minute Maid Orange'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:32:37'
+    updated_at: '2013-08-31 19:32:37'
+    slug: minute-maid-orange
+  Element_24:
+    name: 'Minute Maid Pomme'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:32:57'
+    updated_at: '2013-08-31 19:32:57'
+    slug: minute-maid-pomme
+  Element_25:
+    name: 'Minute Maid Pomme-Cerise'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:33:21'
+    updated_at: '2013-08-31 19:33:21'
+    slug: minute-maid-pomme-cerise
+  Element_26:
+    name: 'Minute Maid Tomate'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:34:04'
+    updated_at: '2013-08-31 19:34:04'
+    slug: minute-maid-tomate
+  Element_27:
+    name: 'Minute Maid Multivitamines'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:34:37'
+    updated_at: '2013-08-31 19:34:37'
+    slug: minute-maid-multivitamines
+  Element_28:
+    name: 'Minute Maid Ananas'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:34:59'
+    updated_at: '2013-08-31 19:34:59'
+    slug: minute-maid-ananas
+  Element_29:
+    name: 'Looza Fraise'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: '24.00'
+    stock_actuel: '24.00'
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:35:17'
+    updated_at: '2013-08-31 19:35:17'
+    slug: looza-fraise
+  Element_30:
+    name: Café
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:36:01'
+    updated_at: '2013-08-31 19:36:01'
+    slug: cafe
+  Element_31:
+    name: 'Cécémel Chaud'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:36:21'
+    updated_at: '2013-08-31 19:36:21'
+    slug: cecemel-chaud
+  Element_32:
+    name: Cappuccino
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:36:45'
+    updated_at: '2013-08-31 19:36:45'
+    slug: cappuccino
+  Element_33:
+    name: 'Lipton English breakfast'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:37:11'
+    updated_at: '2013-08-31 19:37:11'
+    slug: lipton-english-breakfast
+  Element_34:
+    name: 'Lipton Fruit rouge'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:37:34'
+    updated_at: '2013-08-31 19:37:34'
+    slug: lipton-fruit-rouge
+  Element_35:
+    name: 'Lipton Menthe'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:37:49'
+    updated_at: '2013-08-31 19:48:24'
+    slug: lipton-menthe
+  Element_36:
+    name: 'Lipton Earl Gray'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:38:07'
+    updated_at: '2013-08-31 19:38:07'
+    slug: lipton-earl-gray
+  Element_37:
+    name: 'Lipton Camomille'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:38:28'
+    updated_at: '2013-08-31 19:49:18'
+    slug: lipton-camomille
+  Element_38:
+    name: 'Lipton Thé vert'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:39:03'
+    updated_at: '2013-08-31 19:39:03'
+    slug: lipton-the-vert
+  Element_39:
+    name: 'Lipton Citron'
+    img: default.jpg
+    is_publish: false
+    Category: Category_2
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:39:15'
+    updated_at: '2013-08-31 19:39:15'
+    slug: lipton-citron
+  Element_40:
+    name: 'Stella / Jupiler 25cl'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 19:41:15'
+    updated_at: '2013-08-31 19:41:15'
+    slug: stella-jupiler-25cl
+  Element_41:
+    name: 'Stella / Jupiler 33cl'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:41:34'
+    updated_at: '2013-08-31 19:41:34'
+    slug: stella-jupiler-33cl
+  Element_42:
+    name: 'Kriek Belle-Vue'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:42:25'
+    updated_at: '2013-08-31 19:42:25'
+    slug: kriek-belle-vue
+  Element_43:
+    name: 'Hoegaarden Blanche'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:42:46'
+    updated_at: '2013-08-31 19:42:46'
+    slug: hoegaarden-blanche
+  Element_44:
+    name: 'Hoegaarden Rosée'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:43:02'
+    updated_at: '2013-08-31 19:43:02'
+    slug: hoegaarden-rosee
+  Element_45:
+    name: 'Hoegaarden Rosée 0.0%'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:45:10'
+    updated_at: '2013-08-31 19:45:10'
+    slug: hoegaarden-rosee-0-0
+  Element_46:
+    name: 'Belle-Vue Gueuze'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:45:45'
+    updated_at: '2013-08-31 19:45:45'
+    slug: belle-vue-gueuze
+  Element_47:
+    name: 'Lindemans Pêche'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:46:40'
+    updated_at: '2013-08-31 19:46:40'
+    slug: lindemans-peche
+  Element_48:
+    name: 'Belle-Vue Framboise'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:47:02'
+    updated_at: '2013-08-31 19:47:02'
+    slug: belle-vue-framboise
+  Element_49:
+    name: 'Gueuze mort subite bouchonnée 37,5cl'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:47:45'
+    updated_at: '2013-08-31 19:47:45'
+    slug: gueuze-mort-subite-bouchonnee-37-5cl
+  Element_50:
+    name: 'Hoegaarden Rosée OW 0,75l'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 19:50:17'
+    updated_at: '2013-08-31 19:50:17'
+    slug: hoegaarden-rosee-ow-0-75l
+  Element_51:
+    name: 'Gauloise Blonde'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:50:42'
+    updated_at: '2013-08-31 19:50:42'
+    slug: gauloise-blonde
+  Element_52:
+    name: Duvel
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:51:01'
+    updated_at: '2013-08-31 19:51:01'
+    slug: duvel
+  Element_53:
+    name: Julius
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:51:59'
+    updated_at: '2013-08-31 19:51:59'
+    slug: julius
+  Element_54:
+    name: 'Cuvée des trolls'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.00'
+    reference: ''
+    created_at: '2013-08-31 19:52:21'
+    updated_at: '2013-08-31 19:52:56'
+    slug: cuvee-des-trolls
+  Element_55:
+    name: 'Bass Pale Ale'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:52:46'
+    updated_at: '2013-08-31 19:52:46'
+    slug: bass-pale-ale
+  Element_56:
+    name: 'Hoegaarden Grand Cru'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 19:53:19'
+    updated_at: '2013-08-31 19:53:19'
+    slug: hoegaarden-grand-cru
+  Element_57:
+    name: 'Vieux Temps'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:53:54'
+    updated_at: '2013-08-31 19:53:54'
+    slug: vieux-temps
+  Element_58:
+    name: 'Horse Ale'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 19:54:09'
+    updated_at: '2013-08-31 19:54:09'
+    slug: horse-ale
+  Element_59:
+    name: 'Gauloise Ambrée'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:54:26'
+    updated_at: '2013-08-31 19:54:26'
+    slug: gauloise-ambree
+  Element_60:
+    name: 'Kasteel brune'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:55:36'
+    updated_at: '2013-08-31 19:55:36'
+    slug: kasteel-brune
+  Element_61:
+    name: 'Gauloise Brune'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:56:00'
+    updated_at: '2013-08-31 19:56:00'
+    slug: gauloise-brune
+  Element_62:
+    name: 'Scotch CTS'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.00'
+    reference: ''
+    created_at: '2013-08-31 19:56:32'
+    updated_at: '2013-08-31 19:56:32'
+    slug: scotch-cts
+  Element_63:
+    name: 'Leffe Brune'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:56:54'
+    updated_at: '2013-08-31 19:56:54'
+    slug: leffe-brune
+  Element_64:
+    name: 'Leffe 9'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:57:08'
+    updated_at: '2013-08-31 19:57:08'
+    slug: leffe-9
+  Element_65:
+    name: 'Leffe Triple'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:57:28'
+    updated_at: '2013-08-31 19:57:28'
+    slug: leffe-triple
+  Element_66:
+    name: 'Leffe Radieuse'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:57:44'
+    updated_at: '2013-08-31 19:57:44'
+    slug: leffe-radieuse
+  Element_67:
+    name: 'Chimay Blanche'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:58:02'
+    updated_at: '2013-08-31 19:58:02'
+    slug: chimay-blanche
+  Element_68:
+    name: 'Chimay Bleu'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 19:58:16'
+    updated_at: '2013-08-31 19:58:16'
+    slug: chimay-bleu
+  Element_69:
+    name: Rodenbach
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.00'
+    reference: ''
+    created_at: '2013-08-31 20:04:42'
+    updated_at: '2013-08-31 20:04:42'
+    slug: rodenbach
+  Element_70:
+    name: Carlsberg
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 20:05:36'
+    updated_at: '2013-08-31 20:05:36'
+    slug: carlsberg-1
+  Element_71:
+    name: Corona
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:05:50'
+    updated_at: '2013-08-31 20:05:50'
+    slug: corona
+  Element_72:
+    name: Ricard
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 20:06:13'
+    updated_at: '2013-08-31 20:06:13'
+    slug: ricard
+  Element_73:
+    name: 'Martini Bianco'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 20:06:30'
+    updated_at: '2013-08-31 20:06:30'
+    slug: martini-bianco
+  Element_74:
+    name: Campari
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:06:44'
+    updated_at: '2013-08-31 20:06:44'
+    slug: campari
+  Element_75:
+    name: 'Get 27'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.00'
+    reference: ''
+    created_at: '2013-08-31 20:06:58'
+    updated_at: '2013-08-31 20:06:58'
+    slug: get-27
+  Element_76:
+    name: Malibu
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:07:19'
+    updated_at: '2013-08-31 20:07:19'
+    slug: malibu
+  Element_77:
+    name: Batida
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:07:38'
+    updated_at: '2013-08-31 20:07:38'
+    slug: batida
+  Element_78:
+    name: Safari
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:08:03'
+    updated_at: '2013-08-31 20:08:03'
+    slug: safari
+  Element_79:
+    name: 'Porto Blanc'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 20:08:25'
+    updated_at: '2013-08-31 20:08:25'
+    slug: porto-blanc
+  Element_80:
+    name: 'Porto Rouge'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 20:08:39'
+    updated_at: '2013-08-31 20:08:39'
+    slug: porto-rouge
+  Element_81:
+    name: 'Havana Club 3 ans (blanc)'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:09:26'
+    updated_at: '2013-08-31 20:09:26'
+    slug: havana-club-3-ans-blanc
+  Element_82:
+    name: 'Havana Club Especial (brun)'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:09:59'
+    updated_at: '2013-08-31 20:09:59'
+    slug: havana-club-especial-brun
+  Element_83:
+    name: 'Havana Club 7 ans (brun)'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '5.00'
+    reference: ''
+    created_at: '2013-08-31 20:10:28'
+    updated_at: '2013-08-31 20:10:28'
+    slug: havana-club-7-ans-brun
+  Element_84:
+    name: 'Cayes Poire/Cannel'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:10:59'
+    updated_at: '2013-08-31 20:10:59'
+    slug: cayes-poire-cannel
+  Element_85:
+    name: 'Cayes Citron/Gingembre'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:11:27'
+    updated_at: '2013-08-31 20:11:27'
+    slug: cayes-citron-gingembre
+  Element_86:
+    name: 'Dictador 12'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:12:00'
+    updated_at: '2013-08-31 20:12:00'
+    slug: dictador-12
+  Element_87:
+    name: 'J.M. VSOP'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:12:32'
+    updated_at: '2013-08-31 20:12:32'
+    slug: j-m-vsop
+  Element_88:
+    name: 'J.M. XO'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '8.00'
+    reference: ''
+    created_at: '2013-08-31 20:12:52'
+    updated_at: '2013-08-31 20:12:52'
+    slug: j-m-xo
+  Element_89:
+    name: 'Angostura 1919'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '5.50'
+    reference: ''
+    created_at: '2013-08-31 20:13:15'
+    updated_at: '2013-08-31 20:13:15'
+    slug: angostura-1919
+  Element_90:
+    name: 'Clément VSOP'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:13:42'
+    updated_at: '2013-08-31 20:13:42'
+    slug: clement-vsop
+  Element_91:
+    name: 'Plantation Barbados 2000'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:14:07'
+    updated_at: '2013-08-31 20:14:07'
+    slug: plantation-barbados-2000
+  Element_92:
+    name: Beefeater
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:14:26'
+    updated_at: '2013-08-31 20:14:26'
+    slug: beefeater
+  Element_93:
+    name: 'Citadelle Classic'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:14:47'
+    updated_at: '2013-08-31 20:14:47'
+    slug: citadelle-classic
+  Element_94:
+    name: 'The Duke Bio'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:15:16'
+    updated_at: '2013-08-31 20:15:16'
+    slug: the-duke-bio
+  Element_95:
+    name: 'Mombasa Club'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:15:37'
+    updated_at: '2013-08-31 20:15:37'
+    slug: mombasa-club
+  Element_96:
+    name: 'Ballantines''s'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:16:10'
+    updated_at: '2013-08-31 20:16:10'
+    slug: ballantines-s
+  Element_97:
+    name: 'Chivas Regal 12'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:16:26'
+    updated_at: '2013-08-31 20:16:26'
+    slug: chivas-regal-12
+  Element_98:
+    name: 'Chivas Regal 18'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '8.00'
+    reference: ''
+    created_at: '2013-08-31 20:16:45'
+    updated_at: '2013-08-31 20:16:45'
+    slug: chivas-regal-18
+  Element_99:
+    name: 'Four Roses Bourbon'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:17:01'
+    updated_at: '2013-08-31 20:17:01'
+    slug: four-roses-bourbon
+  Element_100:
+    name: 'Jack Daniel''s'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '5.00'
+    reference: ''
+    created_at: '2013-08-31 20:17:18'
+    updated_at: '2013-08-31 20:17:18'
+    slug: jack-daniel-s
+  Element_101:
+    name: Jameson
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.50'
+    reference: ''
+    created_at: '2013-08-31 20:17:36'
+    updated_at: '2013-08-31 20:17:36'
+    slug: jameson
+  Element_102:
+    name: 'Jameson Select'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:18:03'
+    updated_at: '2013-08-31 20:18:03'
+    slug: jameson-select
+  Element_103:
+    name: Kilbeggan
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '5.00'
+    reference: ''
+    created_at: '2013-08-31 20:18:40'
+    updated_at: '2013-08-31 20:18:40'
+    slug: kilbeggan
+  Element_104:
+    name: 'Hibiki 12'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '12.00'
+    reference: ''
+    created_at: '2013-08-31 20:19:11'
+    updated_at: '2013-08-31 20:19:11'
+    slug: hibiki-12
+  Element_105:
+    name: 'Nikka Coffey Grain'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '9.00'
+    reference: ''
+    created_at: '2013-08-31 20:19:34'
+    updated_at: '2013-08-31 20:19:34'
+    slug: nikka-coffey-grain
+  Element_106:
+    name: 'Bowmore Tempest IV'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '8.00'
+    reference: ''
+    created_at: '2013-08-31 20:20:03'
+    updated_at: '2013-08-31 20:20:03'
+    slug: bowmore-tempest-iv
+  Element_107:
+    name: 'Auchentoshan Valinch Limited Edition'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '7.00'
+    reference: ''
+    created_at: '2013-08-31 20:20:43'
+    updated_at: '2013-08-31 20:20:43'
+    slug: auchentoshan-valinch-limited-edition
+  Element_108:
+    name: 'Auchentoshan Three Wood'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '8.00'
+    reference: ''
+    created_at: '2013-08-31 20:21:10'
+    updated_at: '2013-08-31 20:21:10'
+    slug: auchentoshan-three-wood
+  Element_109:
+    name: 'Greenhore 8'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:21:40'
+    updated_at: '2013-08-31 20:21:40'
+    slug: greenhore-8
+  Element_110:
+    name: 'Edradour 10'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '7.00'
+    reference: ''
+    created_at: '2013-08-31 20:22:06'
+    updated_at: '2013-08-31 20:22:06'
+    slug: edradour-10
+  Element_111:
+    name: 'Deanston 12'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '8.00'
+    reference: ''
+    created_at: '2013-08-31 20:22:38'
+    updated_at: '2013-08-31 20:22:38'
+    slug: deanston-12
+  Element_112:
+    name: 'Glen Livet 12'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:22:57'
+    updated_at: '2013-08-31 20:22:57'
+    slug: glen-livet-12
+  Element_113:
+    name: 'Glen Livet 15'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '7.00'
+    reference: ''
+    created_at: '2013-08-31 20:23:15'
+    updated_at: '2013-08-31 20:23:15'
+    slug: glen-livet-15
+  Element_114:
+    name: 'Glen Livet Nadurra 16'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '10.00'
+    reference: ''
+    created_at: '2013-08-31 20:23:43'
+    updated_at: '2013-08-31 20:23:43'
+    slug: glen-livet-nadurra-16
+  Element_115:
+    name: 'Glen Livet 18'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '12.00'
+    reference: ''
+    created_at: '2013-08-31 20:24:03'
+    updated_at: '2013-08-31 20:24:03'
+    slug: glen-livet-18
+  Element_116:
+    name: 'Absolut Blanche'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:24:26'
+    updated_at: '2013-08-31 20:24:26'
+    slug: absolut-blanche
+  Element_117:
+    name: 'Eristoff Rouge'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:24:43'
+    updated_at: '2013-08-31 20:24:43'
+    slug: eristoff-rouge
+  Element_118:
+    name: 'Zubrowka Bison'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.50'
+    reference: ''
+    created_at: '2013-08-31 20:25:02'
+    updated_at: '2013-08-31 20:25:02'
+    slug: zubrowka-bison
+  Element_119:
+    name: Obey
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '5.00'
+    reference: ''
+    created_at: '2013-08-31 20:25:21'
+    updated_at: '2013-08-31 20:25:21'
+    slug: obey
+  Element_120:
+    name: 'Absolut Elyx'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:26:03'
+    updated_at: '2013-08-31 20:26:03'
+    slug: absolut-elyx
+  Element_121:
+    name: 'Olmeca Bianco'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:26:19'
+    updated_at: '2013-08-31 20:26:19'
+    slug: olmeca-bianco
+  Element_122:
+    name: 'Ocho Reposado'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:26:38'
+    updated_at: '2013-08-31 20:26:38'
+    slug: ocho-reposado
+  Element_123:
+    name: 'Don Fulano Reposado'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '9.00'
+    reference: ''
+    created_at: '2013-08-31 20:26:58'
+    updated_at: '2013-08-31 20:26:58'
+    slug: don-fulano-reposado
+  Element_124:
+    name: 'Hennessy VS'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '5.00'
+    reference: ''
+    created_at: '2013-08-31 20:32:08'
+    updated_at: '2013-08-31 20:32:08'
+    slug: hennessy-vs
+  Element_125:
+    name: 'Martell VS'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:32:28'
+    updated_at: '2013-08-31 20:32:28'
+    slug: martell-vs
+  Element_126:
+    name: 'Martell Medaillon VSOP'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '8.00'
+    reference: ''
+    created_at: '2013-08-31 20:32:53'
+    updated_at: '2013-08-31 20:32:53'
+    slug: martell-medaillon-vsop
+  Element_127:
+    name: 'Martell XO Extra'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '20.00'
+    reference: ''
+    created_at: '2013-08-31 20:33:13'
+    updated_at: '2013-08-31 20:33:13'
+    slug: martell-xo-extra
+  Element_128:
+    name: 'Pecket Blanc'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.50'
+    reference: ''
+    created_at: '2013-08-31 20:33:40'
+    updated_at: '2013-08-31 20:33:40'
+    slug: pecket-blanc
+  Element_129:
+    name: Cointreau
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:33:57'
+    updated_at: '2013-08-31 20:33:57'
+    slug: cointreau
+  Element_130:
+    name: Baileys
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:34:15'
+    updated_at: '2013-08-31 20:34:15'
+    slug: baileys
+  Element_131:
+    name: Kahlua
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.50'
+    reference: ''
+    created_at: '2013-08-31 20:34:32'
+    updated_at: '2013-08-31 20:34:32'
+    slug: kahlua
+  Element_132:
+    name: 'Amaretto Disaronno'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.00'
+    reference: ''
+    created_at: '2013-08-31 20:34:55'
+    updated_at: '2013-08-31 20:34:55'
+    slug: amaretto-disaronno
+  Element_133:
+    name: Jägermeister
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '2.00'
+    reference: ''
+    created_at: '2013-08-31 20:35:23'
+    updated_at: '2013-08-31 20:35:23'
+    slug: jaegermeister
+  Element_134:
+    name: 'Clément Shrubb'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '4.50'
+    reference: ''
+    created_at: '2013-08-31 20:35:44'
+    updated_at: '2013-08-31 20:35:44'
+    slug: clement-shrubb
+  Element_135:
+    name: 'Calvados Lecompte'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '6.00'
+    reference: ''
+    created_at: '2013-08-31 20:36:05'
+    updated_at: '2013-08-31 20:36:05'
+    slug: calvados-lecompte
+  Element_136:
+    name: Curaçao
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '5.00'
+    reference: ''
+    created_at: '2013-08-31 20:36:28'
+    updated_at: '2013-08-31 20:36:28'
+    slug: curacao
+  Element_137:
+    name: Cava
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '30.00'
+    reference: ''
+    created_at: '2013-08-31 20:37:14'
+    updated_at: '2013-08-31 20:37:14'
+    slug: cava
+  Element_138:
+    name: 'Cava Rosé'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '30.00'
+    reference: ''
+    created_at: '2013-08-31 20:37:31'
+    updated_at: '2013-08-31 20:37:31'
+    slug: cava-rose
+  Element_139:
+    name: 'Champagne Perrier Jouët'
+    img: default.jpg
+    is_publish: false
+    Category: Category_3
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '75.00'
+    reference: ''
+    created_at: '2013-08-31 20:37:59'
+    updated_at: '2013-08-31 20:37:59'
+    slug: champagne-perrier-jouet
+  Element_140:
+    name: 'Kir Cassis'
+    img: default.jpg
+    is_publish: false
+    Category: Category_5
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: null
+    reference: ''
+    created_at: '2013-09-26 19:13:06'
+    updated_at: '2013-09-26 19:13:06'
+    slug: kir-cassis
+  Element_141:
+    name: 'Blanche de Namur'
+    img: default.jpg
+    is_publish: false
+    Category: Category_1
+    stock_minimum: null
+    stock_actuel: null
+    nombre_unite: null
+    prix_achat: '3.00'
+    reference: ''
+    created_at: '2013-10-18 12:23:37'
+    updated_at: '2013-10-18 12:23:37'
+    slug: blanche-de-namur
+Imprimante:
+  Imprimante_1:
+    name: EPSON_TM_T20
+    description: bar
+    facture: true
+    slug: epson-tm-t20
+  Imprimante_2:
+    name: cuisine
+    description: cuisine
+    facture: false
+    slug: cuisine
+PlanTableImage:
+  PlanTableImage_1:
+    name: floor1.jpg
+    img: floor1.jpg
+    Category: PlanTableImageCategory_1
+  PlanTableImage_2:
+    name: floor2.jpg
+    img: floor2.jpg
+    Category: PlanTableImageCategory_1
+  PlanTableImage_3:
+    name: floor3.jpg
+    img: floor3.jpg
+    Category: PlanTableImageCategory_1
+  PlanTableImage_4:
+    name: floor4.jpg
+    img: floor4.jpg
+    Category: PlanTableImageCategory_1
+  PlanTableImage_5:
+    name: floor5.jpg
+    img: floor5.jpg
+    Category: PlanTableImageCategory_1
+  PlanTableImage_6:
+    name: floor6.png
+    img: floor6.png
+    Category: PlanTableImageCategory_1
+  PlanTableImage_7:
+    name: floor7.png
+    img: floor7.png
+    Category: PlanTableImageCategory_1
+  PlanTableImage_8:
+    name: floor8.png
+    img: floor8.png
+    Category: PlanTableImageCategory_1
+  PlanTableImage_9:
+    name: floor9.png
+    img: floor9.png
+    Category: PlanTableImageCategory_1
+  PlanTableImage_10:
+    name: floor10.png
+    img: floor10.png
+    Category: PlanTableImageCategory_1
+  PlanTableImage_11:
+    name: floor11.jpg
+    img: floor11.jpg
+    Category: PlanTableImageCategory_1
+PlanTableImageCategory:
+  PlanTableImageCategory_1:
+    name: floors
+  PlanTableImageCategory_2:
+    name: decorations
+  PlanTableImageCategory_3:
+    name: chairs
+  PlanTableImageCategory_4:
+    name: tables
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: admin
+    description: 'Groupe Admin'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroup_2:
+    name: manager
+    description: 'Groupe des managers'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroup_3:
+    name: serveur
+    description: 'Groupe des serveurs'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroup_4:
+    name: client
+    description: 'Groupe des clients'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroup_5:
+    name: 'super admin'
+    description: 'Même chose que admin mais peut aussi modifier les utilisateurs'
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_1:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_1
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_1_2:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_2
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_1_3:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_3
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_1_5:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_5
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_2_2:
+    Group: sfGuardGroup_2
+    Permission: sfGuardPermission_2
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_2_3:
+    Group: sfGuardGroup_2
+    Permission: sfGuardPermission_3
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_2_5:
+    Group: sfGuardGroup_2
+    Permission: sfGuardPermission_5
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_3_3:
+    Group: sfGuardGroup_3
+    Permission: sfGuardPermission_3
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_3_5:
+    Group: sfGuardGroup_3
+    Permission: sfGuardPermission_5
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_4_5:
+    Group: sfGuardGroup_4
+    Permission: sfGuardPermission_5
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardGroupPermission_5_1:
+    Group: sfGuardGroup_5
+    Permission: sfGuardPermission_1
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+  sfGuardGroupPermission_5_2:
+    Group: sfGuardGroup_5
+    Permission: sfGuardPermission_2
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+  sfGuardGroupPermission_5_3:
+    Group: sfGuardGroup_5
+    Permission: sfGuardPermission_3
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+  sfGuardGroupPermission_5_5:
+    Group: sfGuardGroup_5
+    Permission: sfGuardPermission_5
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+  sfGuardGroupPermission_5_6:
+    Group: sfGuardGroup_5
+    Permission: sfGuardPermission_6
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: admin
+    description: 'Permissions des admins'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardPermission_2:
+    name: manager
+    description: 'Permissions des managers'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardPermission_3:
+    name: serveur
+    description: 'Permissions des serveurs'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardPermission_5:
+    name: client
+    description: 'Permissions des clients'
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardPermission_6:
+    name: superadmin
+    description: 'Peut Aussi modifier les utilisateurs'
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+sfGuardUser:
+  sfGuardUser_1:
+    email_address: delvaux.f@gmail.com
+    avatar: ca911b3233b13dd5251663bf72d0147833cbcfce.jpg
+    first_name: Florent
+    last_name: Delvaux
+    tel: ''
+    country: ''
+    street: ''
+    postal_code: null
+    city: ''
+    genre: M
+    username: florent
+    algorithm: sha1
+    salt: cc589ae29dcfdf54849f775c7c712815
+    password: 51223254baba006323b1f2634c70dcad5f72c40c
+    is_active: true
+    is_super_admin: true
+    last_login: '2013-11-14 22:53:09'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-11-14 22:53:09'
+  sfGuardUser_2:
+    email_address: stasse.martin@gmail.com
+    avatar: 1f2630fea238cb54e4b24941efeba358cb70e44d.jpg
+    first_name: Martin
+    last_name: Stasse
+    tel: ''
+    country: ''
+    street: ''
+    postal_code: null
+    city: ''
+    genre: M
+    username: martin
+    algorithm: sha1
+    salt: cc589ae29dcfdf54849f775c7c712815
+    password: 63bae4940215cb56e517303f57b60f7f54c73afc
+    is_active: true
+    is_super_admin: true
+    last_login: '2013-10-25 22:29:38'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-11-14 17:37:10'
+  sfGuardUser_3:
+    email_address: cardenosa.jeremie@outlook.com
+    avatar: 35787801885e0923345918bba74578c3526bd965.png
+    first_name: Jérémie
+    last_name: Cardenosa
+    tel: ''
+    country: ''
+    street: ''
+    postal_code: null
+    city: ''
+    genre: M
+    username: jerem
+    algorithm: sha1
+    salt: e3c0c56a6c11c2820c0e9c9861a84ce0
+    password: 271970124693e2f9e74cbb7cc76f22f5bbb9bcd8
+    is_active: true
+    is_super_admin: false
+    last_login: '2013-09-07 11:32:52'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-08-31 10:49:53'
+    updated_at: '2013-09-07 11:32:52'
+  sfGuardUser_4:
+    email_address: ''
+    avatar: d0b30f278867e96db493a70c171d3d8cb4a0a50b.png
+    first_name: Julia
+    last_name: Michaux
+    tel: ''
+    country: ''
+    street: ''
+    postal_code: null
+    city: ''
+    genre: M
+    username: Julia
+    algorithm: sha1
+    salt: a19e5d452b312a6ab6611b136870d17e
+    password: c571b26e9266366011dca8ca3fe7cd6d302fcb27
+    is_active: true
+    is_super_admin: false
+    last_login: '2013-11-14 12:46:02'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-09-04 09:55:36'
+    updated_at: '2013-11-14 12:46:02'
+  sfGuardUser_5:
+    email_address: rz_caroline@hotmail.com
+    avatar: cd9beeaf12c03271b98edb2353f2b2e45be30b0a.png
+    first_name: Caroline
+    last_name: Renouprez
+    tel: ''
+    country: ''
+    street: ''
+    postal_code: null
+    city: ''
+    genre: F
+    username: caroline
+    algorithm: sha1
+    salt: bf476c463c2d81032a4d01eae5bbfef8
+    password: 7cadf1e66963e1eba59413b1c83db16bbae314dc
+    is_active: true
+    is_super_admin: false
+    last_login: '2013-09-27 12:37:50'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-09-05 10:32:46'
+    updated_at: '2013-09-27 12:37:50'
+  sfGuardUser_6:
+    email_address: spartsafas@msn.com
+    avatar: 1c8d4fd6556b65a4aa94dedd805405c1db8f98cc.jpg
+    first_name: Stavros
+    last_name: Partsafas
+    tel: ''
+    country: ''
+    street: ''
+    postal_code: null
+    city: ''
+    genre: M
+    username: stavros
+    algorithm: sha1
+    salt: 5c69fb5daf869eb3c71db930ee257a0b
+    password: e935754047fe5d143cf091ed23df37efcc5725a4
+    is_active: true
+    is_super_admin: false
+    last_login: '2013-11-13 18:38:46'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-09-20 19:15:01'
+    updated_at: '2013-11-13 18:38:46'
+  sfGuardUser_7:
+    email_address: damiensnyers01@gmail.com
+    avatar: cfada8e7df16bcc91f27ecd49e2207e20ca12a6d.png
+    first_name: Damien
+    last_name: Snyers
+    tel: ''
+    country: Belgique
+    street: 'chausée de Dinant 168'
+    postal_code: null
+    city: Namur
+    genre: M
+    username: damien
+    algorithm: sha1
+    salt: 289e9a50bed2d72d48a62f830e32ba47
+    password: b93791b06b87782d7095d487555390630ab3450e
+    is_active: true
+    is_super_admin: false
+    last_login: '2013-11-11 10:55:55'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-09-23 18:33:19'
+    updated_at: '2013-11-11 10:55:55'
+  sfGuardUser_8:
+    email_address: maxime@fmim.be
+    avatar: d57a55b5a4991d38e6b770d9e95b4206ee3c66b0.jpg
+    first_name: 'Kim il young'
+    last_name: gillain
+    tel: ''
+    country: ''
+    street: ''
+    postal_code: null
+    city: ''
+    genre: M
+    username: jaune
+    algorithm: sha1
+    salt: 7cd45ae8f71569dc6826c8ae868cfdf9
+    password: 938cded24d00ad549b3c3209dcd0f74a2e907c64
+    is_active: true
+    is_super_admin: false
+    last_login: '2013-11-03 17:06:04'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-11-03 17:05:56'
+    updated_at: '2013-11-14 22:28:57'
+  sfGuardUser_9:
+    email_address: bigotbb@gmail.com
+    avatar: 6a82fd8e126aa593d419267c66696e63a88ccbb4.jpg
+    first_name: Bryan
+    last_name: Bigot
+    tel: ''
+    country: Belgique
+    street: 'chaussée de louvain 59/4'
+    postal_code: '5000'
+    city: Namur
+    genre: M
+    username: Bryan
+    algorithm: sha1
+    salt: 2b5cfbc3cf50b82dbeb008fdb731c6e4
+    password: 7e166f7ad739a1c498a80b4f1747d0cf05307007
+    is_active: true
+    is_super_admin: false
+    last_login: '2013-11-13 12:22:50'
+    tva: ''
+    date_naissance: null
+    credit: '0'
+    identifiant: null
+    created_at: '2013-11-03 21:34:02'
+    updated_at: '2013-11-14 22:29:09'
+sfGuardUserGroup:
+  sfGuardUserGroup_1_1:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_1
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardUserGroup_1_2:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_2
+    created_at: '2013-11-14 22:31:35'
+    updated_at: '2013-11-14 22:31:35'
+  sfGuardUserGroup_1_3:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 22:31:35'
+    updated_at: '2013-11-14 22:31:35'
+  sfGuardUserGroup_1_4:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_4
+    created_at: '2013-09-05 10:08:49'
+    updated_at: '2013-09-05 10:08:49'
+  sfGuardUserGroup_1_5:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_5
+    created_at: '2013-11-14 22:31:35'
+    updated_at: '2013-11-14 22:31:35'
+  sfGuardUserGroup_2_1:
+    User: sfGuardUser_2
+    Group: sfGuardGroup_1
+    created_at: '2013-08-28 21:05:38'
+    updated_at: '2013-08-28 21:05:38'
+  sfGuardUserGroup_2_2:
+    User: sfGuardUser_2
+    Group: sfGuardGroup_2
+    created_at: '2013-11-14 22:31:44'
+    updated_at: '2013-11-14 22:31:44'
+  sfGuardUserGroup_2_3:
+    User: sfGuardUser_2
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 22:31:44'
+    updated_at: '2013-11-14 22:31:44'
+  sfGuardUserGroup_2_4:
+    User: sfGuardUser_2
+    Group: sfGuardGroup_4
+    created_at: '2013-11-14 17:37:10'
+    updated_at: '2013-11-14 17:37:10'
+  sfGuardUserGroup_2_5:
+    User: sfGuardUser_2
+    Group: sfGuardGroup_5
+    created_at: '2013-11-14 22:31:44'
+    updated_at: '2013-11-14 22:31:44'
+  sfGuardUserGroup_3_2:
+    User: sfGuardUser_3
+    Group: sfGuardGroup_2
+    created_at: '2013-11-14 17:37:32'
+    updated_at: '2013-11-14 17:37:32'
+  sfGuardUserGroup_3_3:
+    User: sfGuardUser_3
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 17:37:32'
+    updated_at: '2013-11-14 17:37:32'
+  sfGuardUserGroup_3_4:
+    User: sfGuardUser_3
+    Group: sfGuardGroup_4
+    created_at: '2013-11-14 17:37:32'
+    updated_at: '2013-11-14 17:37:32'
+  sfGuardUserGroup_4_3:
+    User: sfGuardUser_4
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 17:37:38'
+    updated_at: '2013-11-14 17:37:38'
+  sfGuardUserGroup_4_4:
+    User: sfGuardUser_4
+    Group: sfGuardGroup_4
+    created_at: '2013-11-14 17:37:38'
+    updated_at: '2013-11-14 17:37:38'
+  sfGuardUserGroup_5_3:
+    User: sfGuardUser_5
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 22:31:12'
+    updated_at: '2013-11-14 22:31:12'
+  sfGuardUserGroup_5_4:
+    User: sfGuardUser_5
+    Group: sfGuardGroup_4
+    created_at: '2013-11-14 22:31:12'
+    updated_at: '2013-11-14 22:31:12'
+  sfGuardUserGroup_6_1:
+    User: sfGuardUser_6
+    Group: sfGuardGroup_1
+    created_at: '2013-11-14 17:37:51'
+    updated_at: '2013-11-14 17:37:51'
+  sfGuardUserGroup_6_2:
+    User: sfGuardUser_6
+    Group: sfGuardGroup_2
+    created_at: '2013-11-14 17:37:51'
+    updated_at: '2013-11-14 17:37:51'
+  sfGuardUserGroup_6_3:
+    User: sfGuardUser_6
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 17:37:51'
+    updated_at: '2013-11-14 17:37:51'
+  sfGuardUserGroup_6_4:
+    User: sfGuardUser_6
+    Group: sfGuardGroup_4
+    created_at: '2013-11-14 17:37:51'
+    updated_at: '2013-11-14 17:37:51'
+  sfGuardUserGroup_7_1:
+    User: sfGuardUser_7
+    Group: sfGuardGroup_1
+    created_at: '2013-11-14 17:37:59'
+    updated_at: '2013-11-14 17:37:59'
+  sfGuardUserGroup_7_2:
+    User: sfGuardUser_7
+    Group: sfGuardGroup_2
+    created_at: '2013-11-14 17:37:59'
+    updated_at: '2013-11-14 17:37:59'
+  sfGuardUserGroup_7_3:
+    User: sfGuardUser_7
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 22:31:24'
+    updated_at: '2013-11-14 22:31:24'
+  sfGuardUserGroup_7_4:
+    User: sfGuardUser_7
+    Group: sfGuardGroup_4
+    created_at: '2013-11-14 22:31:24'
+    updated_at: '2013-11-14 22:31:24'
+  sfGuardUserGroup_8_3:
+    User: sfGuardUser_8
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 22:32:07'
+    updated_at: '2013-11-14 22:32:07'
+  sfGuardUserGroup_8_4:
+    User: sfGuardUser_8
+    Group: sfGuardGroup_4
+    created_at: '2013-11-14 22:28:57'
+    updated_at: '2013-11-14 22:28:57'
+  sfGuardUserGroup_9_3:
+    User: sfGuardUser_9
+    Group: sfGuardGroup_3
+    created_at: '2013-11-14 22:31:58'
+    updated_at: '2013-11-14 22:31:58'
+  sfGuardUserGroup_9_4:
+    User: sfGuardUser_9
+    Group: sfGuardGroup_4
+    created_at: '2013-11-14 22:29:09'
+    updated_at: '2013-11-14 22:29:09'
+StatutCommande:
+  StatutCommande_1:
+    name: 'A payer'
+  StatutCommande_2:
+    name: 'En préparation'
+  StatutCommande_3:
+    name: Offerte
+  StatutCommande_4:
+    name: Payée
+  StatutCommande_5:
+    name: Prête
+Supplement:
+  Supplement_1:
+    name: 'Double Dose'
+    fois_prix: '2.00'
+    plus_prix: '0.00'
+    is_publish: '1'
+    slug: double-dose
+  Supplement_2:
+    name: Grenadine
+    fois_prix: '1.00'
+    plus_prix: '0.00'
+    is_publish: '1'
+    slug: grenadine

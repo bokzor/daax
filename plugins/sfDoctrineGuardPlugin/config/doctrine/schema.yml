@@ -53,7 +53,7 @@ sfGuardGroupPermission:
 sfGuardUser:
   actAs: [Timestampable]
   columns:
-    email_address:  { type: string(255) }
+    email_address:  { type: string(255), notnull: false }
     avatar:         { type: string(255), default: default.png }
     first_name:     { type: string(30) }
     last_name:      { type: string(30) }

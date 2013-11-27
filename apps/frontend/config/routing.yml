@@ -31,11 +31,19 @@ gestion_stock:
   url:  /gestion/stock
   param: { module: element, action: listing }
 
+gestion_element:
+  url:  /gestion/element
+  param: { module: element, action: listing }
+
 gestion_article:
   url:  /gestion/article
   param: { module: article, action: listing }
 
 gestion_utilisateur:
+  url:  /gestion/utilisateur
+  param: { module: utilisateur, action: listing }
+
+gestion_sfGuardUser:
   url:  /gestion/utilisateur
   param: { module: utilisateur, action: listing }
 
@@ -47,6 +55,21 @@ gestion_floor:
   url: /gestion/floor
   param: { module: floor, action: edit }
 
+gestion_supplement:
+  url: /gestion/supplement
+  param: { module: tools, action: listing }
+
+gestion_category:
+  url: /gestion/category
+  param: { module: tools, action: listing }
+
+gestion_fournisseur:
+  url: /gestion/fournisseur
+  param: { module: tools, action: listing }
+
+gestion_imprimante:
+  url: /gestion/imprimante
+  param: { module: tools, action: listing }
 ## fin listing
 
 ## ajout
@@ -111,6 +134,12 @@ create_model:
 
 ## supression
 
+delete_utilisateur:
+  url: /delete/utilisateur/:id
+  param: { action: delete, module: tools, model: sfGuardUser }
+  requirements:
+    id: \d+
+
 delete_model:
   url: /delete/:model/:id
   param: { action: delete, module: tools }
@@ -130,9 +159,12 @@ sf_guard_signout:
 
 ## gestion des commandes, offrir, archives, imprimer
 
+# affiche les supplements possible pour un article
 supplement_article:
-  url: /article/supplement
-  param: { module: article, action: supplement }
+  url: /article/supplement/:id
+  param: { module: supplement, action: supplement }
+  requirements:
+    id: \d+
 
 add_commentaire:
   url: /commande/commentaire

@@ -39,7 +39,7 @@ delete:
   crendentials: manager
   
 fullLive:
-  is_secure: false
+  is_secure: true
   credentials: serveur
   
 liveJson:

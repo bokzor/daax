@@ -1,7 +1,7 @@
 app.Models.article = Backbone.Model.extend({
   defaults: {
     count: 1,
-    supplements: {},
+    supplements: undefined,
   },
     idAttribute: "id",
 

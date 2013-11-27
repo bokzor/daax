@@ -21,6 +21,7 @@ abstract class BaseSupplementForm extends BaseFormDoctrine
       'plus_prix'              => new sfWidgetFormInputText(),
       'is_publish'             => new sfWidgetFormInputText(),
       'category_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => true)),
+      'visible_user'           => new sfWidgetFormInputCheckbox(),
       'slug'                   => new sfWidgetFormInputText(),
       'article_commandes_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'ArticleCommande')),
     ));
@@ -32,6 +33,7 @@ abstract class BaseSupplementForm extends BaseFormDoctrine
       'plus_prix'              => new sfValidatorNumber(array('required' => false)),
       'is_publish'             => new sfValidatorInteger(array('required' => false)),
       'category_id'            => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'required' => false)),
+      'visible_user'           => new sfValidatorBoolean(array('required' => false)),
       'slug'                   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'article_commandes_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'ArticleCommande', 'required' => false)),
     ));

@@ -18,6 +18,7 @@ abstract class BaseSupplementFormFilter extends BaseFormFilterDoctrine
       'plus_prix'              => new sfWidgetFormFilterInput(),
       'is_publish'             => new sfWidgetFormFilterInput(),
       'category_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => true)),
+      'visible_user'           => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'slug'                   => new sfWidgetFormFilterInput(),
       'article_commandes_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'ArticleCommande')),
     ));
@@ -28,6 +29,7 @@ abstract class BaseSupplementFormFilter extends BaseFormFilterDoctrine
       'plus_prix'              => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'is_publish'             => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'category_id'            => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Category'), 'column' => 'id')),
+      'visible_user'           => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'slug'                   => new sfValidatorPass(array('required' => false)),
       'article_commandes_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'ArticleCommande', 'required' => false)),
     ));
@@ -73,6 +75,7 @@ abstract class BaseSupplementFormFilter extends BaseFormFilterDoctrine
       'plus_prix'              => 'Number',
       'is_publish'             => 'Number',
       'category_id'            => 'ForeignKey',
+      'visible_user'           => 'Boolean',
       'slug'                   => 'Text',
       'article_commandes_list' => 'ManyKey',
     );

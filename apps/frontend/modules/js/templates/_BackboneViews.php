@@ -2,18 +2,28 @@
 <script type="text/template" id="actualOrder">
 	<% _.each(commande, function (article, i) { %>
 	<div id="article-<%= article.htmlId %>"  class="message" style="display: block; ">
-	<div><%= article.name.substring(0,20) %>
+	<% if(article.comment != undefined && article.comment != ''){
+		var color = 'red';
+		}
+		else{
+		var color = '';
+		}
+	%>
+	<div><a href="#" class="icon-chat <%= color %>" onclick="Commentaire('<%= article.htmlId %>')"><%= article.name.substring(0,20) %></a>
 		<span class="list-count">
 		<span class="prix-boisson"><%= article.prix %></span></span>
+		<% if (article.count>1) { %>
+			<span class="count left"><%= article.count %></span>
+		<%} %>	
 	</div>
 
 	<% _.each(article.supplements, function (supplement, key, i) { %>
-	<% supplement.prix = parseFloat(supplement.fois_prix) * parseFloat(article.prix) - parseFloat(article.prix) + parseFloat(supplement.plus_prix);
+	<% var prix = parseFloat(supplement.fois_prix) * parseFloat(article.prix) - parseFloat(article.prix) + parseFloat(supplement.plus_prix);
 
 	 %>
 	<div>--- <%= supplement.name.substring(0,15) %>
 		<span class="list-count">
-		<span class="prix-boisson"><%= supplement.prix.toFixed(2) %></span></span>
+		<span class="prix-boisson"><%= prix.toFixed(2) %></span></span>
 	</div>
 	<% }); %>
 	<span onclick="deleteArticleCommande('<%= article.htmlId %>')" class="close-article">X</span>		
@@ -103,7 +113,7 @@
 			  		<span class="tag <%= color %> small-margin-right">
 			  			<%= article.count %>
 			  		</span> x <span class=""><%= article.name %></span>
-					<% console.log(article); _.each(article.supplements, function (supplement, key, i) { %>
+					<%  _.each(article.supplements, function (supplement, key, i) { %>
 			  			<span> -> <%= supplement.name %></span>
 			  		<% }); %>
 			  </span>  |

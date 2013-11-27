@@ -10,6 +10,7 @@
  * @property float $plus_prix
  * @property integer $is_publish
  * @property integer $category_id
+ * @property boolean $visible_user
  * @property Doctrine_Collection $ArticleCommandes
  * @property Category $Category
  * @property Doctrine_Collection $ArticleSupplement
@@ -19,6 +20,7 @@
  * @method float               getPlusPrix()          Returns the current record's "plus_prix" value
  * @method integer             getIsPublish()         Returns the current record's "is_publish" value
  * @method integer             getCategoryId()        Returns the current record's "category_id" value
+ * @method boolean             getVisibleUser()       Returns the current record's "visible_user" value
  * @method Doctrine_Collection getArticleCommandes()  Returns the current record's "ArticleCommandes" collection
  * @method Category            getCategory()          Returns the current record's "Category" value
  * @method Doctrine_Collection getArticleSupplement() Returns the current record's "ArticleSupplement" collection
@@ -27,6 +29,7 @@
  * @method Supplement          setPlusPrix()          Sets the current record's "plus_prix" value
  * @method Supplement          setIsPublish()         Sets the current record's "is_publish" value
  * @method Supplement          setCategoryId()        Sets the current record's "category_id" value
+ * @method Supplement          setVisibleUser()       Sets the current record's "visible_user" value
  * @method Supplement          setArticleCommandes()  Sets the current record's "ArticleCommandes" collection
  * @method Supplement          setCategory()          Sets the current record's "Category" value
  * @method Supplement          setArticleSupplement() Sets the current record's "ArticleSupplement" collection
@@ -60,6 +63,10 @@ abstract class BaseSupplement extends sfDoctrineRecord
              ));
         $this->hasColumn('category_id', 'integer', null, array(
              'type' => 'integer',
+             ));
+        $this->hasColumn('visible_user', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => false,
              ));
     }
 

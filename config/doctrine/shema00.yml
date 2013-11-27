@@ -98,6 +98,7 @@ ArticleCommande:
     commande_id:         { type: integer }
     count:               { type: integer, default: 1 }
     prix:                { type: float, default: 0.00 }
+    comment:             { type: string(255) }
   relations:
     Article:             { class: Article, onDelete: CASCADE, foreign: id, local: article_id }
     Commande:            { class: Commande, onDelete: CASCADE, foreign: id, local: commande_id }
@@ -245,6 +246,7 @@ Supplement:
     plus_prix: { type: float, default: 0 }
     is_publish: { type: integer, default: 1 }
     category_id: { type: integer }
+    visible_user: { type: boolean, default: false }
   relations:
     ArticleCommandes:  { class: ArticleCommande, onDelete: CASCADE, foreign: article_commande_id, local: supplement_id, refClass: ArticleCommandeSupplement}
     Category:          { onDelete: CASCADE, class: Category, local: category_id, foreign: id } 

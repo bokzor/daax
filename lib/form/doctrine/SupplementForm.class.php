@@ -17,7 +17,8 @@ class SupplementForm extends BaseSupplementForm
       'fois_prix'   => 'Multipler le prix de départ',
       'plus_prix' => 'Ajouter au prix de départ',
       'name' => 'Supplément',
-      'category_id' => 'Catégorie'
+      'category_id' => 'Catégorie',
+      'visible_user' => 'Visible par l\'utilisateur',
     ));
   }
 }

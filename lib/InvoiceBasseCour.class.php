@@ -45,7 +45,7 @@ class InvoiceBasseCour extends TCPDF {
 		// commmande pour imprimer de ticket, ici on utilise cups
 		$commande = '/usr/bin/lp -d '.$data['printer'].' '.$location;
 		exec($commande, $output);
-		//unlink($location);
+		unlink($location);
 	}
 	
 	# Page header and footer code.

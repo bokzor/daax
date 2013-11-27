@@ -10,6 +10,14 @@
  */
 abstract class PluginsfGuardUserForm extends BasesfGuardUserForm
 {
+    private function getChoixAnnee() {
+        $array[0]='';
+        for($i=date('Y') - 60; $i < date('Y')+1; $i++) {
+            $array[$i]=$i;
+        }
+        return $array;
+    }
+
     public function setup()
     {
         parent::setup();
@@ -27,6 +35,11 @@ abstract class PluginsfGuardUserForm extends BasesfGuardUserForm
             'mime_types' => 'web_images',
             'max_size' => '300000'
         ));
+        $this->widgetSchema['date_naissance'] = new sfWidgetFormChoice(array(
+        'choices'  => self::getChoixAnnee(),
+        'expanded' => false,
+        'multiple' => false,
+        ), array('class' => 'data1_tris'));
         
     }
 

@@ -19,6 +19,9 @@
 class BasesfGuardAuthActions extends sfActions
 {
   public function executeSignin( $request ) {
+    if($request->getParameter('client') == 'true')
+      $this->setTemplate( 'clientSignin');
+
     $this->serveurs = Doctrine::getTable('sfGuardUser') -> createQuery('a') -> leftjoin('a.sfGuardUserGroup sg') -> where('sg.group_id = ?', 3) -> groupBy('a.id') -> execute();
     $user = $this->getUser();
     if ( $user->isAuthenticated() ) {

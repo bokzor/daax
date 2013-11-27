@@ -1,13 +1,5 @@
 /**
  *
- * '||''|.                            '||
- *  ||   ||    ....  .... ...   ....   ||    ...   ... ...  ... ..
- *  ||    || .|...||  '|.  |  .|...||  ||  .|  '|.  ||'  ||  ||' ''
- *  ||    || ||        '|.|   ||       ||  ||   ||  ||    |  ||
- * .||...|'   '|...'    '|     '|...' .||.  '|..|'  ||...'  .||.
- *                                                  ||
- * --------------- By Display:inline ------------- '''' -----------
- *
  * Base stylesheet
  *
  * Content:
@@ -2311,7 +2303,7 @@ li.message-menu {
 	/*width: 240px;*/
 	margin-right: 10px;
 	list-style-type: none;
-	padding: 15px 4px 15px 0px;
+	padding: 15px 20px 15px 0px;
 	*padding-bottom: 25px;
 	border: 1px solid white;
 	background: #d9d9d9 url(/image/old-browsers/style/bg_shortcuts.png) repeat-x;
@@ -4386,9 +4378,6 @@ figcaption{
   margin: 000px 0 0 -200px;
 }
 
-a {
-  color: #F0A602;
-}
 /* USER SELECTION LOGIN */
 
 #quick-lg {
@@ -4493,10 +4482,10 @@ a {
 #users {
   display: block;
   margin-top: 14px;
+  text-align: center;
 }
 #users li {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 90px;
   height: 90px;
   text-align: center;
@@ -4704,9 +4693,7 @@ img.av-sg {
 
 /* MOBILE */
 @media only screen and (max-width: 481px) {
-  body {
-    -webkit-text-size-adjust: none;
-  }
+
   #wrapper {
     width: 90%;
     min-width: 280px;
@@ -4714,18 +4701,19 @@ img.av-sg {
     top: 0;
     margin: 5% 0 0 5%;
   }
-  #head {
-    -webkit-box-sizing: border-box;
-  }
-  #middle {
-    height: 77px;
-  }
-  #bottom {
-    height: 38px;
-  }
-  #notification-area {
-    display: none;
-  }
+
+}
+
+.gallery {
+	list-style-type: none;
+}
+
+.framed{
+	border: 2px solid #000000;
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 5px rgba(0, 0, 0, 0.25);
+	background: white;
 }
 
 

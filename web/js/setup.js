@@ -1889,8 +1889,8 @@
 			// If in wide screen mode, show/hide side menu, else open/close drop-down menu
 			bod.toggleClass($.template.mediaQuery.is('desktop') || $.template.mediaQuery.is('tablet-landscape') ? 'menu-hidden' : 'menu-open');
 
-			// If mobile layout, handle fixed title bar
-			if ($.template.mediaQuery.is('mobile') && bod.hasClass('menu-open') && bod.hasClass('fixed-title-bar'))
+			// If mobile layout, handle fixed title bar		
+			if ($.template.mediaQuery.is('mobile') && bod.hasClass('menu-open'))
 			{
 				// Store current scroll
 				previousScroll = bod.scrollTop();

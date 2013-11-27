@@ -23,7 +23,7 @@ if($sf_user->isAuthenticated() && $sf_user->hasCredential('serveur')): ?>
 
 		<thead>
 			<tr>
-				<th scope="col"></th>
+				<th scope="col" width="5%"></th>
 				<th scope="col" width="20%" class="hide-on-mobile">Nom du serveur</th>
 				<th scope="col" width="20%" >Nom du client</th>
 				<th scope="col" width="15%" class="align-center hide-on-mobile">Date</th>
@@ -83,7 +83,7 @@ if($sf_user->isAuthenticated() && $sf_user->hasCredential('serveur')): ?>
 		<thead>
 			<tr>
 				<th scope="col"></th>
-				<th scope="col" class="hide-on-mobile">Nom du serveur</th>
+				<th scope="col" width="20%" class="hide-on-mobile">Nom du serveur</th>
 				<th scope="col" width="15%" class="align-center hide-on-mobile">Date</th>
 				<th scope="col" width="15%" class="align-center">Cash</th>
 				<th scope="col" width="10%" class="align-center">Ecb</th>

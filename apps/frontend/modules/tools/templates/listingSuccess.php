@@ -11,7 +11,7 @@
 		<thead>
 			<tr>
 				<th scope="col" >Nom</th>
-				<th scope="col" width="80" class="align-center hide-on-mobile">Editer</th>
+				<th scope="col" width="80" class="align-center">Editer</th>
 				<th scope="col" width="80" class="align-center hide-on-mobile">Supprimer</th>
 			</tr>
 		</thead>
@@ -21,8 +21,8 @@
 			<?php foreach($categories as $category): ?>
 			<tr id="category-<?php echo $category->getId() ?>">
 				<td><?php echo str_repeat('&nbsp;', ($category -> getLevel() * 4)); echo $category->getName() ?></td>				
-				<td class="low-padding align-center"><a href="#" onclick="editRow('category', <?php echo $category->getId() ?>); return false;" class="button compact icon-gear">Edit</a></td>
-				<td class="low-padding align-center"><a href="#" onclick="deleteRow('category', <?php echo $category->getId() ?>, 'delete'); return false;" class="button compact icon-gear">Delete</a></td>
+				<td class="low-padding align-center"><button onclick="editRow('category', <?php echo $category->getId() ?>); return false;" class="button compact icon-gear">Edit</a></td>
+				<td class="hide-on-mobile low-padding align-center"><button onclick="deleteRow('category', <?php echo $category->getId() ?>, 'delete'); return false;" class="button compact icon-gear">Delete</button></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
@@ -40,7 +40,7 @@
 				<th scope="col" >Nom</th>
 				<th scope="col" >Téléphone</th>
 				<th scope="col" width="80" class="align-center hide-on-mobile">Editer</th>
-				<th scope="col" width="80" class="align-center hide-on-mobile">Supprimer</th>
+				<th scope="col" width="80" class="align-center">Supprimer</th>
 			</tr>
 		</thead>
 		<tfoot>
@@ -51,8 +51,8 @@
 				<td><?php echo $fournisseur->getName() ?></td>
 				<td><?php echo $fournisseur->getTel() ?></td>				
 
-				<td class="low-padding align-center"><a href="#" onclick="editRow('fournisseur', <?php echo $fournisseur->getId() ?>); return false;" class="button compact icon-gear">Edit</a></td>
-				<td class="low-padding align-center"><a href="#" onclick="deleteRow('fournisseur', <?php echo $fournisseur->getId() ?>, 'delete'); return false;" class="button compact icon-gear">Delete</a></td>
+				<td class="low-padding align-center"><button onclick="editRow('fournisseur', <?php echo $fournisseur->getId() ?>); return false;" class="button compact icon-gear">Edit</button></td>
+				<td class="hide-on-mobile low-padding align-center"><button onclick="deleteRow('fournisseur', <?php echo $fournisseur->getId() ?>, 'delete'); return false;" class="button compact icon-gear">Delete</button></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
@@ -69,7 +69,7 @@
 		<thead>
 			<tr>
 				<th scope="col" >Nom</th>
-				<th scope="col" width="80" class="align-center hide-on-mobile">Editer</th>
+				<th scope="col" width="80" class="align-center ">Editer</th>
 				<th scope="col" width="80" class="align-center hide-on-mobile">Supprimer</th>
 			</tr>
 		</thead>
@@ -79,8 +79,8 @@
 			<?php foreach($supplements as $supplement): ?>
 			<tr id="supplement-<?php echo $supplement->getId() ?>">
 				<td><?php echo $supplement->getName() ?></td>				
-				<td class="low-padding align-center"><a href="#" onclick="editRow('supplement', <?php echo $supplement->getId() ?>); return false;" class="button compact icon-gear">Edit</a></td>
-				<td class="low-padding align-center"><a href="#" onclick="deleteRow('supplement', <?php echo $supplement->getId(); ?>, 'delete'); return false; " class="button compact icon-gear">Delete</a></td>
+				<td class="low-padding align-center"><button onclick="editRow('supplement', <?php echo $supplement->getId() ?>); return false;" class="button compact icon-gear">Edit</button></td>
+				<td class="hide-on-mobile low-padding align-center"><button onclick="deleteRow('supplement', <?php echo $supplement->getId(); ?>, 'delete'); return false; " class="button compact icon-gear">Delete</button></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
@@ -99,7 +99,7 @@
 		<thead>
 			<tr>
 				<th scope="col" >Nom</th>
-				<th scope="col" width="80" class="align-center hide-on-mobile">Editer</th>
+				<th scope="col" width="80" class="align-center">Editer</th>
 				<th scope="col" width="80" class="align-center hide-on-mobile">Supprimer</th>
 			</tr>
 		</thead>
@@ -109,8 +109,8 @@
 			<?php foreach($imprimantes as $imprimante): ?>
 			<tr id="imprimante-<?php echo $imprimante->getId() ?>">
 				<td><?php echo $imprimante->getName() ?></td>				
-				<td class="low-padding align-center"><a href="#" onclick="editRow('imprimante', <?php echo $imprimante->getId() ?>); return false;" class="button compact icon-gear">Edit</a></td>
-				<td class="low-padding align-center"><a href="#" onclick="deleteRow('imprimante', <?php echo $imprimante->getId() ?>, 'delete'); return false;" class="button compact icon-gear">Delete</a></td>
+				<td class="low-padding align-center"><button onclick="editRow('imprimante', <?php echo $imprimante->getId() ?>); return false;" class="button compact icon-gear">Edit</button></td>
+				<td class="hide-on-mobile low-padding align-center"><button onclick="deleteRow('imprimante', <?php echo $imprimante->getId() ?>, 'delete'); return false;" class="button compact icon-gear">Delete</button></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
@@ -125,6 +125,5 @@ $(document).ready(function() {
 	dataTableInit('sorting-advanced2');
 	dataTableInit('sorting-advanced3');
 	dataTableInit('sorting-advanced4');
-
 });
 </script>

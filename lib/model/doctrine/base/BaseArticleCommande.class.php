@@ -10,6 +10,7 @@
  * @property integer $commande_id
  * @property integer $count
  * @property float $prix
+ * @property string $comment
  * @property Article $Article
  * @property Commande $Commande
  * @property Doctrine_Collection $Supplements
@@ -20,6 +21,7 @@
  * @method integer             getCommandeId()        Returns the current record's "commande_id" value
  * @method integer             getCount()             Returns the current record's "count" value
  * @method float               getPrix()              Returns the current record's "prix" value
+ * @method string              getComment()           Returns the current record's "comment" value
  * @method Article             getArticle()           Returns the current record's "Article" value
  * @method Commande            getCommande()          Returns the current record's "Commande" value
  * @method Doctrine_Collection getSupplements()       Returns the current record's "Supplements" collection
@@ -29,6 +31,7 @@
  * @method ArticleCommande     setCommandeId()        Sets the current record's "commande_id" value
  * @method ArticleCommande     setCount()             Sets the current record's "count" value
  * @method ArticleCommande     setPrix()              Sets the current record's "prix" value
+ * @method ArticleCommande     setComment()           Sets the current record's "comment" value
  * @method ArticleCommande     setArticle()           Sets the current record's "Article" value
  * @method ArticleCommande     setCommande()          Sets the current record's "Commande" value
  * @method ArticleCommande     setSupplements()       Sets the current record's "Supplements" collection
@@ -62,6 +65,10 @@ abstract class BaseArticleCommande extends sfDoctrineRecord
         $this->hasColumn('prix', 'float', null, array(
              'type' => 'float',
              'default' => 0,
+             ));
+        $this->hasColumn('comment', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
              ));
     }
 

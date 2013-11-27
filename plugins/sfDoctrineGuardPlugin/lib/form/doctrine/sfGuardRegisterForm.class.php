@@ -10,9 +10,14 @@
 
 class sfGuardRegisterForm extends BasesfGuardRegisterForm
 {
-    /**
-     * @see sfForm
-     */
+    private function getChoixAnnee() {
+        $array[0]='';
+        for($i=date('Y') - 60; $i < date('Y')+1; $i++) {
+            $array[$i]=$i;
+        }
+        return $array;
+    }
+
     public function configure()
     {
         
@@ -27,10 +32,13 @@ class sfGuardRegisterForm extends BasesfGuardRegisterForm
             'edit_mode' => !$this->isNew(),
             'with_delete' => false
         ));
-        
+        $this->widgetSchema['date_naissance'] = new sfWidgetFormDate(array(
+        'years'  => self::getChoixAnnee(),
+        ), array('class' => ''));
+
         //$this -> validatorSchema['username'] = new sfValidatorAnd( array($this -> validatorSchema['username'], new sfValidatorString( array('required' => true, 'min_length' => 4, 'max_length' => 14)), new sfValidatorRegex( array('pattern' => '/^[a-zA-Z0-9-]+$/')), new sfValidatorDoctrineUnique( array('model' => 'sfGuardUser', 'column' => array('username')), array('invalid' => 'Ce nom d\'utilisateur est déjà prit.'))));
         $this->widgetSchema->setNameFormat('register[%s]');
-        $this->validatorSchema->setPostValidator(new sfValidatorDoctrineUnique(array(
+       /* $this->validatorSchema->setPostValidator(new sfValidatorDoctrineUnique(array(
             'model' => 'sfGuardUser',
             'column' => array(
                 'email_address'
@@ -38,7 +46,7 @@ class sfGuardRegisterForm extends BasesfGuardRegisterForm
             'throw_global_error' => false
         ), array(
             'invalid' => 'Cette adresse email est déjà prise.'
-        )));
+        ))); */
         
         // les labels des champs
         $this->widgetSchema->setLabels(array(

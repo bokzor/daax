@@ -36,18 +36,13 @@
 		<!-- Additional styles -->
 		<link rel="stylesheet" href="/css/styles/dashboard.css">
 		<link rel="stylesheet" href="/css/jquery.keypad.css">
-		<link rel="stylesheet" href="/js/libs/glDatePicker/developr.css">
 		<link rel="stylesheet" href="/css/styles/jqpagination.css">
 		<link rel="stylesheet" href="/css/styles/form.css">
-		<link rel="stylesheet" href="/css/styles/progress-slider.css">
 		<link rel="stylesheet" href="/css/styles/switches.css">
-		<link rel="stylesheet" href="/css/styles/files.css">
-		<link rel="stylesheet" href="/css/styles/agenda.css">
 		<link rel="stylesheet" href="/css/styles/table.css">
 		<link rel="stylesheet" href="/css/styles/modal.css">
 		<link rel="stylesheet" href="/css/timepicker.css">
 		<link rel="stylesheet" href="/css/mobiscroll.css">
-		<link rel="stylesheet" href="/css/floor.css">
 		<link rel="stylesheet" href="/js/libs/DataTables/jquery.dataTables.css">
 		<link rel="stylesheet" href="/css/new_login/core.css">
 
@@ -190,23 +185,23 @@
 				<ul  class="access children-tooltip">
 					<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('serveur')): ?>
 					<li>
-						<a href="#" class="close-menu" onclick="encaisser(0);" title="Encaisser la commande">
+						<a href="" class="close-menu" onclick="encaisser(0); return false;" title="Encaisser la commande">
 							<span class="icon-green icon-tick"></span>
 						</a>
 					</li>
 					<li>
-						<a href="#" class="close-menu" onclick="chargerCommande();" title="Charger une commande">
+						<a href="" class="close-menu" onclick="chargerCommande(); return false;" title="Charger une commande">
 							<span class="icon-inbox"></span>
 						</a>
 					</li>
 					<?php endif; ?>
 					<li>
-						<a href="#" class="close-menu" onclick="imprimer()" id="imprimer" title="Imprimer la commande">
+						<a href="" class="close-menu" onclick="imprimer(); return false;" id="imprimer" title="Imprimer la commande">
 							<span class="icon-mobile"></span>
 						</a>
 					</li>
 					<li>
-						<a href="#" class="close-menu" onclick="clearCommande()" id="messages-clear" title="Annuler la commande">
+						<a href="" class="close-menu" onclick="clearCommande(); return false;" id="messages-clear" title="Annuler la commande">
 							<span class="icon-cross icon-red"></span>
 						</a>
 					</li>

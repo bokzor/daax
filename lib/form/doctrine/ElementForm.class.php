@@ -30,6 +30,8 @@ class ElementForm extends BaseElementForm {
         $this->widgetSchema['img']->setLabel('Image');
         $this->widgetSchema['prix_achat']->setLabel('Prix d\'achat');
         $this->widgetSchema['nombre_unite']->setLabel('Quantité du conditionnement en litre ou unité');
+        $this->widgetSchema['category_id']->setLabel('Categorie');
+
     }
     public 
     function doSave($con = null) {

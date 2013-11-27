@@ -1,5 +1,5 @@
 <?php use_helper('Thumb'); ?>
-<a href="#" onclick="supplementArticle()" id="supplement" class="huge full-width button icon-plus">Suppléments</a>
+<button onclick="supplementArticle()" id="supplement" class="huge full-width button icon-plus">Suppléments</button>
 <input type="text" placeholder='Recherche' class=" virtual-pad input full-width large">
 
 <div class="with-padding container-boisson">
@@ -26,10 +26,9 @@
 							<ul  class="gallery">
 								<?php foreach($tops as $article): ?>
 								<li style=" " class="mid-margin-right mid-margin-left mid-margin-bottom">
-									<figure data-title="<?php echo $article->getName() ?>"  data-price="<?php echo $article->getPrix() ?>" data-id="<?php echo $article->getId() ?>" >
-										<a class="articles-message" title="<?php echo $article->getName() ?>" href="#">
+									<figure data-category='<?php echo $article->getCategory()->getId() ?>' data-title="<?php echo $article->getName() ?>"  data-price="<?php echo $article->getPrix() ?>" data-id="<?php echo $article->getId() ?>" >
 											<?php echo showThumb($article->getImg(), 'articles', $options = array('alt' => 'Affiche de '.$article->getName().'', 'class' => 'framed image-commande', 'width' => '170', 'height' => '170','title' => ''.ucfirst($article->getName()).''), $resize = 'fit', $default = 'default.jpg') ?> 
-										</a>
+										
 										<figcaption><?php echo ucfirst($article -> getName()) ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption>
 
 									</figure>
@@ -45,11 +44,11 @@
 							<ul class="gallery">
 								<?php foreach($category->Article as $article): ?>
 								<li style=" " class="mid-margin-right mid-margin-left mid-margin-bottom">
-									<figure data-price="<?php echo $article->getPrix() ?>" data-id="<?php echo $article->getId() ?>" data-title="<?php echo $article->getName() ?>"  >
+									<figure data-category='<?php echo $category->getId() ?>' data-price="<?php echo $article->getPrix() ?>" data-id="<?php echo $article->getId() ?>" data-title="<?php echo $article->getName() ?>"  >
 										<a class="articles-message" title="<?php echo $article->getName() ?>" href="#">
 											<?php echo showThumb($article->getImg(), 'articles', $options = array('alt' => 'Affiche de '.$article->getName().'', 'class' => 'framed image-commande', 'width' => '170', 'height' => '170','title' => ''.$article->getName().''), $resize = 'fit', $default = 'default.jpg') ?> 
 										</a>
-										<figcaption><?php echo $article -> getName() ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption> 	
+										<figcaption><?php echo ucfirst($article -> getName()) ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption> 	
 									</figure>
 								</li>
 								<?php endforeach; ?>
@@ -78,14 +77,14 @@
 
 // on revient au dessus de la page
 $('.tabs-content > div').on('showtab', function () {
-    $('html, body').animate({
+    $('body').animate({
         scrollTop: 0
     }, 'fast');
 
 });
 
 $('.tabs-content > div').on('hidetab', function () {
-    $('html, body').animate({
+    $('body').animate({
         scrollTop: 0
     }, 'fast');
 

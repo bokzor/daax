@@ -50,7 +50,7 @@ class toolsActions extends sfActions
     $this -> form = new $classForm();
     $this->processForm( $request, $this->form );
     $this->setTemplate( 'update', $this->model );
-    $this->redirect( '@gestion_tools' );
+    $this->redirect( '@gestion_'.$this -> model );
   }
   public
   function executeEdit( sfWebRequest $request ) {
@@ -80,7 +80,7 @@ class toolsActions extends sfActions
     $this->form = new $classForm( ${$this->model} );
     $this->processForm( $request, $this->form );
     $this->setTemplate( 'update', $this->model );
-    $this->redirect( '@gestion_tools' );
+    $this->redirect( '@gestion_'.$this -> model );
   }
   public
   function executeDelete( sfWebRequest $request ) {
@@ -88,7 +88,7 @@ class toolsActions extends sfActions
           $request->getParameter( 'id' )
         ) ) , sprintf( 'Object element does not exist (%s).', $request->getParameter( 'id' ) ) );
     ${$this->model}->delete();
-    $this->redirect( '@gestion_tools' );
+    $this->redirect( '@gestion_'.$this -> model );
   }
   protected
   function processForm( sfWebRequest $request, sfForm $form ) {

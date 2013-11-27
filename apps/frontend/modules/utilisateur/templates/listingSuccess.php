@@ -18,8 +18,8 @@
 
 				<th scope="col" width=30>Image</th>
 				<th scope="col" class="hide-on-mobile-portrait">Username</th>
-				<th scope="col" width="15%" class="align-center">Nom</th>
-				<th scope="col" width="15%" class="align-center hide-on-mobile-portrait">Prénom</th>
+				<th scope="col" width="15%" class="align-center">Prénom</th>
+				<th scope="col" width="15%" class="align-center hide-on-mobile-portrait">Nom</th>
 				<th scope="col" width="15%" class="align-center hide-on-mobile-portrait">Tel</th>
 				<th scope="col" width="15%" class="align-center hide-on-mobile-portrait">Permissions</th>
 				<th scope="col" width="70" class="align-center">Editer</th>
@@ -37,13 +37,13 @@
 			<tr id="utilisateur-<?php echo $utilisateur->getId() ?>">
 				<?php //$group = $utilisateur->getGroups()->toArray() ?>
 				<td><?php echo showThumb($utilisateur->getAvatar(), 'avatar', $options = array('alt' => 'Avatar de '.$utilisateur->getUsername().'', 'class' => 'framed', 'width' => '40', 'height' => '40','title' => ''.$utilisateur->getUsername().''), $resize = 'fit', $default = 'default.png') ?></td>
-				<td><?php echo $utilisateur->getUsername() ?></td>
+				<td class="hide-on-mobile-portrait"><?php echo $utilisateur->getUsername() ?></td>
 				<td><?php echo $utilisateur->getFirstName() ?></td>
-				<td><?php echo $utilisateur->getLastName() ?></td>
-				<td><?php echo $utilisateur->getTel() ?></td>
-				<td><?php foreach($utilisateur->getGroups() as $group) echo "$group<br />";  ?></td>
-				<td class="low-padding align-center"><a href="#" onclick="editRow('utilisateur', <?php echo $utilisateur->getId() ?>)" class="button compact icon-gear">Edit</a></td>
-				<td class="low-padding align-center"><a href="#" onclick="deleteRow('utilisateur', <?php echo $utilisateur->getId() ?>, 'delete')" class="button compact icon-gear">Delete</a></td>			</tr>
+				<td class="hide-on-mobile-portrait"><?php echo $utilisateur->getLastName() ?></td>
+				<td class="hide-on-mobile-portrait"><?php echo $utilisateur->getTel() ?></td>
+				<td class="hide-on-mobile-portrait"><?php foreach($utilisateur->getGroups() as $group) echo "$group<br />";  ?></td>
+				<td class="low-padding align-center"><button onclick="editRow('utilisateur', <?php echo $utilisateur->getId() ?>)" class="button compact icon-gear">Edit</button></td>
+				<td class="low-padding align-center"><button onclick="deleteRow('utilisateur', <?php echo $utilisateur->getId() ?>, 'delete')" class="button compact icon-gear">Delete</button></td>			</tr>
 			<?php endforeach; ?>
 		</tbody>
 

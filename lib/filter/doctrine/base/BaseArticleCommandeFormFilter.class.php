@@ -17,6 +17,7 @@ abstract class BaseArticleCommandeFormFilter extends BaseFormFilterDoctrine
       'commande_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Commande'), 'add_empty' => true)),
       'count'            => new sfWidgetFormFilterInput(),
       'prix'             => new sfWidgetFormFilterInput(),
+      'comment'          => new sfWidgetFormFilterInput(),
       'supplements_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Supplement')),
     ));
 
@@ -25,6 +26,7 @@ abstract class BaseArticleCommandeFormFilter extends BaseFormFilterDoctrine
       'commande_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Commande'), 'column' => 'id')),
       'count'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'prix'             => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'comment'          => new sfValidatorPass(array('required' => false)),
       'supplements_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Supplement', 'required' => false)),
     ));
 
@@ -68,6 +70,7 @@ abstract class BaseArticleCommandeFormFilter extends BaseFormFilterDoctrine
       'commande_id'      => 'ForeignKey',
       'count'            => 'Number',
       'prix'             => 'Number',
+      'comment'          => 'Text',
       'supplements_list' => 'ManyKey',
     );
   }

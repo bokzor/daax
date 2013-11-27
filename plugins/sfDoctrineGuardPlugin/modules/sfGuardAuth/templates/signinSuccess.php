@@ -37,15 +37,13 @@
   <link rel="stylesheet" href="/css/jquery.keypad.css">
   <link rel="stylesheet" href="/css/styles/jqpagination.css">
   <link rel="stylesheet" href="/css/styles/form.css">
-  <link rel="stylesheet" href="/css/styles/progress-slider.css">
   <link rel="stylesheet" href="/css/styles/switches.css">
-  <link rel="stylesheet" href="/css/styles/files.css">
-  <link rel="stylesheet" href="/css/styles/agenda.css">
   <link rel="stylesheet" href="/css/styles/table.css">
   <link rel="stylesheet" href="/css/styles/modal.css">
   <link rel="stylesheet" href="/css/timepicker.css">
   <link rel="stylesheet" href="/css/mobiscroll.css">
   <link rel="stylesheet" href="/js/libs/DataTables/jquery.dataTables.css">
+  <link rel="stylesheet" href="/css/new_login/core.css">
       <!-- feuille de style pour les clients -->
 
   <!-- For Modern Browsers -->
@@ -82,137 +80,62 @@
 
   <script src="/js/libs/underscore-min.js"></script>
   <script src="/js/libs/backbone-min.js"></script>
+
 </head>
 <body>
 
-	<div id="wrapper">
+  <div id="container" style="display: none">
+  	<div id="wrapper">
 
-    <div id="header">
-  		<!-- <h1>F.M.I.M & Adrien Bokor</h1> -->
-    </div>
+      <div id="header">
+    		<!-- <h1>F.M.I.M & Adrien Bokor</h1> -->
+      </div>
 
-    <ul class="no-margin-left" id="users">
-	      <li data-name="Café Basse Cour">
-	        <div class="av-overlay"></div><img src="/image/logo/logo.png" class="av">
-	      </li>
-	      <?php foreach($serveurs as $serveur): ?>
-		      <li data-name="<?php echo $serveur->getUsername() ?>">
-		        <div class="av-overlay"></div>
-		        <?php echo showThumb($serveur->getAvatar(), 'avatar', $options = array('alt' => 'Avater de '.$serveur->getFirstName().'', 'class' => 'av', 'width' => '115', 'height' => '115'), $resize = 'fit', $default = 'default.jpg') ?> 
-		        <span class="av-tooltip"><?php echo $serveur->getFirstName() ?></span>
-		      </li>
-	  	<?php endforeach; ?>
-      <br class="clear">
-    </ul>
-
- 
-    
-  </div>
-
-  <div id="lg-overlay">
-    <div id="quick-lg">
-      <form id="lg-form" method="post" action="dashboard.html">
-        <div id="field">
-          <p id="placeholder">Entrez votre mot de passe...</p>
-          <input type="password" class="virtual-pad" id="quick-input" autocomplete="off">
-          <span class="icon"><img src="/image/new_login/img/spinner-sm.gif"></span>
-        </div>
-        <button type="submit" id="lg-submit" class="button inset submit">LOGIN</button>
+      <ul class="no-margin-left" id="users">
+  	      <li data-name="Café Basse Cour">
+  	        <div class="av-overlay"></div><img src="/image/logo/logo.png" class="av">
+  	      </li>
+  	      <?php foreach($serveurs as $serveur): ?>
+  		      <li data-name="<?php echo $serveur->getUsername() ?>">
+  		        <div class="av-overlay"></div>
+  		        <?php echo showThumb($serveur->getAvatar(), 'avatar', $options = array('alt' => 'Avater de '.$serveur->getFirstName().'', 'class' => 'av', 'width' => '115', 'height' => '115'), $resize = 'fit', $default = 'default.jpg') ?> 
+  		        <span class="av-tooltip"><?php echo $serveur->getFirstName() ?></span>
+  		      </li>
+  	  	<?php endforeach; ?>
         <br class="clear">
-      </form>
+      </ul>
+
+   
+      
     </div>
-  </div>
 
-  <span class="no-margin-right no-margin-left" id="load">
-    <img src="/image/new_login/img/load.png"><img src="/image/new_login/img/spinner.png" id="spinner">
-  </span>
-
+    <div style="display:none" id="lg-overlay">
+      <div id="quick-lg">
+        <form id="lg-form" method="post" action="dashboard.html">
+          <div id="field">
+            <p id="placeholder">Entrez votre mot de passe...</p>
+            <input type="password" class="virtual-pad" id="quick-input" autocomplete="off">
+            <span class="icon"><img src="/image/new_login/img/spinner-sm.gif"></span>
+          </div>
+          <button type="submit" id="lg-submit" class="button inset submit">LOGIN</button>
+          <br class="clear">
+        </form>
+      </div>
+    </div>
+</div>
+    <span class="no-margin-right no-margin-left" id="load">
+      <img src="/image/new_login/img/load.png"><img src="/image/new_login/img/spinner.png" id="spinner">
+    </span>
   <!---jQuery Code-->
-<script type='text/javascript'>
-
-
-$(document).ready(function () {
-    // clavier virttuel
-    if ($.template.touchOs == false) {
-        $('.virtual-pad').keypad({
-            keypadOnly: false,
-            layout: ['azertyuiop' + $.keypad.CLOSE,
-                'qsdfghjklm' + $.keypad.CLEAR,
-                'wxcvbn' + $.keypad.SPACE + $.keypad.SPACE + $.keypad.BACK
-            ]
-        });
-    }
-});
-
-
-// on fait apparaitre la boite de login lors du clic sur une photo
-$('#users li').live('click', function() {
-    $('#users li').removeClass('active');
-    $(this).addClass('active');
-    $('#lg-overlay').fadeIn(400, function () {
-        $('#quick-input').focus().select();
-    });
-});
-// on fait disparaitre le modal lors d'un clic
-$('#lg-overlay').live('click', function(e) {
-    if ($(e.target).is('#quick-lg, #quick-lg *')) {
-        return;
-    }
-    $(this).fadeOut(300);
-});
-
-$('#lg-form').live('submit', function(e) {
-    $('#field span').html('<img src="/image/new_login/img/spinner-sm.gif">');
-    var pswlgt = $('#quick-input').val().length;
-    if (pswlgt < 1) {
-        e.preventDefault();
-        $('#placeholder').text('Entrez votre mot de passe');
-        $('#field span').fadeOut(200, function () {
-            $(this).text('X').css('color', '#e56969').fadeIn(100);
-            $('#quick-input').val('').focus();
-        });
-        $('#field').removeClass('success').addClass('error');
-        $('#forgot-psw').show();
-    } else {
-        e.preventDefault();
-        var login = $('li.active').data('name');
-        var pass = $('#quick-input').val();
-        $.ajax('<?php echo url_for('@check_login') ?>', {
-                type: 'POST',
-                data: {
-                    'signin[username]': login,
-                    'signin[password]': pass
-                },
-                success: function (data) {
-                    if (data == 'logged') {
-                        $('#field span').fadeOut(200, function () {
-                            $('#field span').text('=').css('color', '#9fbf2f').fadeIn(100)
-                        });
-                        document.location.href = '<?php echo url_for('@homepage') ?>';
-                    } else {
-                        $('#field').removeClass('success').addClass('error');
-                        $('#field span').text('X').css('color', '#e56969').fadeIn(100);
-                    }
-                },
-                error: function () {
-                    $('#field').removeClass('success').addClass('error');
-                }
-            });
-    }
-});
-
-$('#quick-input').live('change keyup input paste', function () {
-    $('#field span').css('color', '#ccc');
-    $('#field').removeClass('error', 'success');
-    $('#placeholder').text('');
-    $('#forgot-psw').hide();
-});
-$('#quick-input').blur(function () {
-    $(this).filter(function () {
-        return this.value == "";
-    })
-        .siblings('#placeholder').text('Entrez votre mot de passe...');
-});
+<script>
+    // javascript pour le loader
+  $('#lg-overlay, #load, #field span img, #forgot-psw, .icon, .notification').hide();
+  $('#load').fadeIn(400);
+  $(window).load(function () {
+      $('#load').fadeOut(400, function () {
+          $('#container').fadeIn(600, function () {});
+      });
+  });
 </script>
 </body>
   <script src="/js/setup.js"></script>
@@ -239,16 +162,94 @@ $('#quick-input').blur(function () {
   <!-- Must be loaded last -->
   <script src="/js/libs/jquery.tablesorter.min.js"></script>
   <script src="/js/libs/DataTables/jquery.dataTables.min.js"></script>
+  <script type='text/javascript'>
 
-  <script>
-  // javascript pour le loader
-  $('#wrapper, #lg-overlay, #load, #field span img, #forgot-psw, .notification').hide();
-  $('#load').fadeIn(400);
-  $(window).load(function () {
-      $('#load').fadeOut(400, function () {
-          $('#wrapper').fadeIn(600, function () {});
-      });
+
+  $(document).ready(function () {
+      // clavier virttuel
+      if ($.template.touchOs == false) {
+          $('.virtual-pad').keypad({
+              keypadOnly: false,
+              layout: ['azertyuiop' + $.keypad.CLOSE,
+                  'qsdfghjklm' + $.keypad.CLEAR,
+                  'wxcvbn' + $.keypad.SPACE + $.keypad.SPACE + $.keypad.BACK
+              ]
+          });
+      }
   });
-  </script>
+
+
+    // on fait apparaitre la boite de login lors du clic sur une photo
+    $('#users li').live('click', function() {
+        $('#users li').removeClass('active');
+        $(this).addClass('active');
+        $('#lg-overlay').fadeIn(400, function () {
+            $('#quick-input').focus();
+        });
+    });
+    // on fait disparaitre le modal lors d'un clic
+    $('#lg-overlay').live('click', function(e) {
+        if ($(e.target).is('#quick-lg, #quick-lg *')) {
+            return;
+        }
+        $(this).fadeOut(300);
+    });
+
+    $('#lg-form').live('submit', function(e) {
+        $('#field span').html('<img src="/image/new_login/img/spinner-sm.gif">');
+        var pswlgt = $('#quick-input').val().length;
+        if (pswlgt < 1) {
+            e.preventDefault();
+            $('#placeholder').text('Entrez votre mot de passe');
+            $('#field span').fadeOut(200, function () {
+                $(this).text('X').css('color', '#e56969').fadeIn(100);
+                $('#quick-input').val('').focus();
+            });
+            $('#field').removeClass('success').addClass('error');
+            $('#forgot-psw').show();
+        } else {
+            e.preventDefault();
+            var login = $('li.active').data('name');
+            var pass = $('#quick-input').val();
+            $.ajax('<?php echo url_for('@check_login') ?>', {
+                    type: 'POST',
+                    data: {
+                        'signin[username]': login,
+                        'signin[password]': pass
+                    },
+                    success: function (data) {
+                        if (data == 'logged') {
+                            $('#field span').fadeOut(200, function () {
+                                $('#field span').text('=').css('color', '#9fbf2f').fadeIn(100)
+                            });
+                            document.location.href = '<?php echo url_for('@homepage') ?>';
+                        } else {
+                            $('#field').removeClass('success').addClass('error');
+                            $('#field span').text('X').css('color', '#e56969').fadeIn(100);
+                        }
+                    },
+                    error: function () {
+                        $('#field').removeClass('success').addClass('error');
+                    }
+                });
+        }
+    });
+
+    $('#quick-input').live('change keyup input paste', function () {
+        $('#field span').css('color', '#ccc');
+        $('#field').removeClass('error', 'success');
+        $('#placeholder').text('');
+        $('#forgot-psw').hide();
+    });
+    $('#quick-input').blur(function () {
+        $(this).filter(function () {
+            return this.value == "";
+        })
+            .siblings('#placeholder').text('Entrez votre mot de passe...');
+    });
+
+
+
+    </script>
   
 </html>

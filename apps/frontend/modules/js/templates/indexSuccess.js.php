@@ -295,6 +295,30 @@ function jsonCommande(id, table_id) {
 }
 
 
+// fonction qui ajoute un commentaire a un article
+
+function Commentaire(id) {
+    var buttons = {
+	'Valider': function(modal) {
+	    var comment = $('#autoexpanding').val();
+	    findArticle = app.collections.commande.get(id);
+	    findArticle.set({
+		comment: comment
+	    });
+	    modal.closeModal();
+	},
+	'Annuler': function(modal) {
+	    modal.closeModal();
+	}
+    };
+    $.modal({
+	title: 'Ajoutez un commentaire',
+	url: '/commande/commentaire',
+	buttonsAlign: 'center',
+	buttons: buttons,
+    });
+}
+
 //fonction qui ajoute les articles a la commande
 
 function payment() {
@@ -304,6 +328,7 @@ function payment() {
     	// ca veut dire qu'on a cliqué sur supplement
 		var title = $(this).data('title');
 		var price = $(this).data('price');
+		var id_cat = $(this).data('category');
 		var idBoisson = $(this).data('id');
     	if($('#supplement').hasClass('red-gradient')){
 		  	var buttons = {
@@ -326,6 +351,8 @@ function payment() {
 						var value = $(this).val();
 						supplements[id_supp] = { 'id' : id_supp, 'fois_prix': fois_prix, 'plus_prix': plus_prix, 'name': name };
 				    });
+				    if(inputs.length == 0)
+				    	supplements = undefined;
 			    	for (i = 0; i < count; i++) {
 						addBoisson(price, title, idBoisson, supplements);
 				    }
@@ -338,14 +365,14 @@ function payment() {
 		    $.modal({
 				title: 'Edition',
 				resizable: false,
-				url: '/article/supplement',
+				url: '/article/supplement/' + id_cat,
 				buttonsAlign: 'center',
 				buttons: buttons,
 		    });
 	        return false;
     	}
     	else{
-    		addBoisson(price, title, idBoisson, '');
+    		addBoisson(price, title, idBoisson, undefined);
     	}
 
     });
@@ -356,7 +383,7 @@ function payment() {
 function calculette(param){
 	var title = param.parent().parent().data('title');
 	var price = param.parent().parent().data('price');
-	var idBoisson = param.data('id');
+	var idBoisson = param.parent().parent().data('id');
 	$.modal.prompt('Entrez le nombre d\'article', function(value) {
 	    value = parseInt(value);
 	    if (isNaN(value)) {
@@ -369,7 +396,7 @@ function calculette(param){
 	    }
 	    for (i = 0; i < value; i++) {
 			event.preventDefault();
-			addBoisson(price, title, idBoisson, '');
+			addBoisson(price, title, idBoisson, undefined);
 	    }
 	});
 };
@@ -377,20 +404,32 @@ function calculette(param){
 // fonction qui ajoute un element a la commande
 
 function addBoisson(price, title, id, supplements) {
+	notify('Ajout d\'un article', title, {
+	    closeDelay: 500 
+	});
+	if(supplements != undefined) {
+		if(supplements.length == 0){
+			supplements = undefined;
+		}
+	}
 
-    if ($.template.mediaQuery.isSmallerThan('tablet-landscape')) {
-		notify('Ajout d\'un article', title, {
-		    closeDelay: 500 });
-	};
-    var article = {
+	var article = {
 	name: title,
 	prix: price,
 	id_article: id,
 	supplements: supplements 
     }
 
-	app.collections.commande.add(article);
-    
+    findArticle = app.collections.commande.findWhere({'id_article' : id});
+
+    if(findArticle != undefined && JSON.stringify(findArticle.get('supplements')) == JSON.stringify(supplements)){
+		count = findArticle.get('count') + 1;
+		findArticle.set({'count' : count});	
+    }
+    else{
+    	app.collections.commande.add(article);
+    }
+
     $('#commandeDetails').attr('open', 'open');
     updatePrixTotal();
 }
@@ -399,10 +438,19 @@ function addBoisson(price, title, id, supplements) {
 
 function updatePrixTotal() {
     var total = 0;
-    $('#message-block').find('.prix-boisson').each(function(i) {
-		var prix = parseFloat($(this).text());
-		total += prix;
-    });
+	app.collections.commande.each(function(article) {
+		var articlePrix =  parseFloat(article.get('prix'));
+		var supplements = article.get('supplements');
+		var count = article.get('count');
+		var prix_supplement = 0;
+		if(supplements != undefined){
+			$.each(supplements, function(i, supplement) {
+				var prix_supplement = parseFloat(supplement['fois_prix']) * parseFloat(articlePrix) - parseFloat(articlePrix) + parseFloat(supplement['plus_prix']);
+				articlePrix += prix_supplement;
+			});
+		}
+		total += articlePrix.toFixed(2) * count;
+	});    
     $('.total-euro').html(total.toFixed(2));
     var a_rendre = 0;
 
@@ -426,8 +474,6 @@ function updatePrixTotal() {
 	cashback = prix;
     }
     $('.cashback-euro').html(cashback.toFixed(2));
-
-
 
 }
 
@@ -504,21 +550,41 @@ function editRow(model, id) {
 	}
     };
     if (!id) {
-	url = '/new/' + model + '';
+		url = '/new/' + model + '';
     } else {
-	url = '/edit/' + model + '/' + id;
+		url = '/edit/' + model + '/' + id;
     }
+
 
     //$('#main').load(url);
     // creation modal
-    $.modal({
-		title: 'Edition',
-		resizable: false,
-		url: url,
-		buttonsAlign: 'center',
-		buttons: buttons,
-    });
+    if ($.template.mediaQuery.name === 'mobile-portrait'){
+    	$('#main').load(url, function() {
+	    	history.pushState(null, null, url);
+			var button_cancel = $('<button type="button" class="goback button huge button huge">Annuler</button>');
+			var button_ok = $('<button type="button" class="submit button huge blue-gradient mid-margin-left">Valider</button>');
+			$('#button_container').append(button_cancel).append(button_ok);
+		});
+		$('.goback').live('click', function(event){
+			event.preventDefault();
+			window.history.back();
+		});
+		$('.submit').live('click', function(event){
+			event.preventDefault();
+			$('form').submit();
+		});
 
+	}else{
+	    $.modal({
+			title: 'Edition',
+			resizable: false,
+			scrolling: false,
+			url: url,
+			buttonsAlign: 'center',
+			buttons: buttons,
+	    });
+	}
+	return false;
 };
 
 function deleteRow(model, id) {
@@ -613,21 +679,18 @@ function chargerPage(page) {
 	var url = '/live';
     }
     $('.shortcuts-open').removeClass('shortcuts-open');
-    $('#main').fadeOut(400);
-    //$('#main').empty();
+    $('#main').fadeOut(00);
     $('#load').fadeIn(400);
-    //$('#main').empty();
+    //$('#main *').off();
     $('#main').load(page, function() {
     	$('#load').fadeOut(100, function () {
 			$('#main').fadeIn(600, function () {});
 			payment();
 			history.pushState(null, null, page);
 		});
-
-		
     });
     $('body').removeClass('menu-hidden');
-    return false;
+    return $('#main');
 }
 
 
@@ -714,15 +777,17 @@ $('#main').click(function(event) {
 
 function live() {
 	var commande;
-	if ($.template.mediaQuery.isSmallerThan('tablet-landscape')) {
-	    var url = '/live/commande/mobile';
-	    var titleNotif = 'Commande prête';
-	} else {
-	    var url = '/live/commande/general';
-	    var titleNotif = 'Nouvelle commande';
-	}
+	var url = '/live/commande/general';
+	
 	$.getJSON(url, function(data) {
-		app.collections.commandeLive.reset();
+		//app.collections.commandeLive.reset();
+		// on va supprimer toutes les commandes qui ne sont pas présentes dans le flux live
+		app.collections.commandeLive.each(function(model){
+			var result = $.grep(data, function(e){ return e.id === model.get('id'); });
+			if(result.length != 1){
+				app.collections.commandeLive.remove(model.get('id'));
+			}
+		});
 	    for (var i = 0; i < data.length; i++) {
 			var commande = {
 			    id: data[i]['id'],
@@ -735,13 +800,21 @@ function live() {
 			}
 			if (app.collections.commandeLive.get(data[i]['id']) == undefined) {
 			    app.collections.commandeLive.add(commande);
-			    //$('#commandeLiveDetails').attr('open', 'open');
-			    //notify('Notification', titleNotif, {
-				//	closeDelay: 5000
-			    //});
+			    $('#commandeLiveDetails').attr('open', 'open');
+			   	var titleNotif = 'Nouvelle commande';
+			    notify('Notification', titleNotif, {
+					closeDelay: 5000
+			    });
 			}else{
 				commandeLive = app.collections.commandeLive.get(data[i]['id']);
-				commandeLive.set({statut_id : data[i]['statut_id'] })
+				if(commandeLive.get('statut_id') != data[i]['statut_id']){
+		    		var titleNotif = 'Commande prête';
+				    notify('Notification', titleNotif, {
+						closeDelay: 5000
+				    });					
+				}
+				commandeLive.set({statut_id : data[i]['statut_id'] });
+
 			}
 	    }
 	});
@@ -785,6 +858,20 @@ function launchFullScreen(element) {
 function isReady(){
 	live();
     setInterval(live, 5000);
+    // on empeche la selection et le click droit
+    //document.oncontextmenu = new Function("return false");
+	document.onselectstart = new Function ("return false");
+    var first_init = false;
+    // on s'occupe de l'historique
+	window.addEventListener('popstate', function(e) {
+		if(first_init == false){
+			first_init = true;
+		}
+		else if(location.pathname != '/' && location.pathname != '#'){
+			chargerPage(location.pathname);
+		}
+	      
+	});
 
 }
 

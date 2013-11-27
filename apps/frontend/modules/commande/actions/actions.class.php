@@ -25,7 +25,11 @@ class commandeActions extends sfActions
     {
         
     }
-
+    // fonction pour ajouter un commentaire a un article
+    public function executeCommentaire(sfWebRequest $request)
+    {
+        
+    }
     public function executeNew(sfWebRequest $request)
     {
         
@@ -121,7 +125,8 @@ class commandeActions extends sfActions
             $articleCommande->setCommandeId($commande->getId());
             $articleCommande->setArticleId($article->getId());
             $articleCommande->setCount($count);
-            
+            if (isset($articleArray['comment']))
+                $articleCommande->setComment($articleArray['comment']);
             $articleCommande->setPrix($article->getPrix());
             $articleCommande->save();
 
@@ -163,7 +168,7 @@ class commandeActions extends sfActions
 
         
       
-        // si on a reçu l'argent, la commande est payée       
+        // si on a reçu l'argent, la commande est payée   a revoir !!!    
         if ($request->getParameter('cash') + $request->getParameter('bancontact') - $request->getParameter('cashback') >= $total_commande) {
             $commande->setStatutId(2);
             $transaction = new Transaction();
@@ -422,15 +427,16 @@ class commandeActions extends sfActions
         $arrayCommande = array();
         $i             = 0;
         
+        $server_id = $this->getUser()->getGuardUser()->getId();
         if ($request->getParameter('type') == 'general') {
-            $commandes = Doctrine_Core::getTable('Commande')->createQuery('commande')->leftjoin('commande.Client client')->leftjoin('commande.Server server')->whereIn('commande.statut_id', array(
-                1,
-                3,
-                4
-            ))->execute();
+            if (!$this->getUser()->hasCredential('serveur')) {
+            $commandes = Doctrine_Core::getTable('Commande')->createQuery('commande')->leftjoin('commande.Client client')->leftjoin('commande.Server server')->whereIn('commande.statut_id', array(3,4))->andwhere('commande.client_id = ?', $server_id)->execute();
+            }
+            else{
+            $commandes = Doctrine_Core::getTable('Commande')->createQuery('commande')->leftjoin('commande.Client client')->leftjoin('commande.Server server')->whereIn('commande.statut_id', array(1,3,4))->execute();               
+            }
             
         } elseif ($request->getParameter('type') == 'mobile') {
-            $server_id = $this->getUser()->getGuardUser()->getId();
             if (!$this->getUser()->hasCredential('serveur')) {
                 $commandes = Doctrine_Core::getTable('Commande')->createQuery('commande')->leftjoin('commande.Client client')->leftjoin('commande.Server server')->where('commande.statut_id = ?', 4)->andwhere('commande.client_id = ?', $server_id)->execute();
             } else {

@@ -15,8 +15,14 @@ class supplementActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
-  {
-    $this->forward('default', 'module');
-  }
+	public
+	function executeSupplement( sfWebRequest $request ){
+		$id = $request->getParameter('id');
+		if(!$this->getUser()->hasCredential('serveur'))
+			$this->supplements = Doctrine::getTable('Supplement') -> createQuery('a')->where('category_id = ?', $id) -> orWhere('category_id is NULL') -> andWhere('visible_user = ?', 1) -> execute();
+		else{
+			$this->supplements = Doctrine::getTable('Supplement') -> createQuery('a')->where('category_id = ?', $id) -> orWhere('category_id is NULL') -> execute();
+		}
+
+	}
 }

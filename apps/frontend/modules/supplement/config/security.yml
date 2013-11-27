@@ -1,0 +1,4 @@
+supplement:
+  is_secure:   true
+  credentials: client
+

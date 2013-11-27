@@ -94,11 +94,7 @@ class articleActions extends sfActions {
 		$this->c = intval( $request->getParameter( 'c' ) );
 		$this->elements = Doctrine::getTable( 'Element' )->createQuery( 'a' )->execute();
 	}
-	public
-	function executeSupplement( sfWebRequest $request ){
-		$this->supplements = Doctrine::getTable('Supplement') -> createQuery('a')->execute();
 
-	}
 
 
 }

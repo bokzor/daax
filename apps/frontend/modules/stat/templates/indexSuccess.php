@@ -208,25 +208,26 @@
 				width: divWidth,
 				height: $.template.mediaQuery.is('mobile') ? 180 : 365,
 				//height: 365,
-				legend: 'right',
 				yAxis: {title: '(thousands)'},
 				backgroundColor: ($.template.ie7 || $.template.ie8) ? '#494C50' : 'transparent',	// IE8 and lower do not support transparency
 				//backgroundColor: 'transparent',
 				legendTextStyle: { color: 'white' },
 				titleTextStyle: { color: 'white' },
 				hAxis: {
-					textStyle: { color: 'white' }
+					textStyle: { color: 'white' },
+					textPosition: 'none',
+
 				},
 				vAxis: {
 					textStyle: { color: 'white' },
-					baselineColor: '#666666'
+					baselineColor: '#666666',
 				},
 				chartArea: {
 					top: 35,
-					left: 20,
-					width: divWidth-40
+					left: 50,
+					width: divWidth-150
 				},
-				legend: 'bottom'
+				legend: 'right'
 			});
 
 			// Ready

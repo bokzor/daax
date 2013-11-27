@@ -65,7 +65,7 @@
 
 		// Set hash in url
 		//window.location.hash = link.attr('href');
-		history.pushState(null, null, link.attr('href'));
+		//history.pushState(null, null, link.attr('href'));
 
 
 	});
@@ -115,9 +115,9 @@
 				blocks = $(), newActive = false, datas = [],
 				maxHeight = 0, tabsHeight;
 
-				$(window).bind( 'popstate', function(e) {
+				//$(window).bind( 'popstate', function(e) {
 					//wrapper.removeClass('tab-opened');
-				});
+				//});
 
 			// IE7 has an issue with href attribute
 			if ($.template.ie7)
