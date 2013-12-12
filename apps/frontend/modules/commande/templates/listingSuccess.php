@@ -69,7 +69,7 @@ if($sf_user->isAuthenticated() && $sf_user->hasCredential('serveur')): ?>
 				<td><?php echo $commande->getTableId() ?></td>
 				<td><?php echo $commande->getTotalCommande() ?> €</td>
 				<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('manager')): ?>
-				<td class="low-padding align-center"><a href="#" onclick="changeStatutCommande(<?php echo $commande->getId() ?>, 5); return('false');" class="button compact icon-gear">Offrir</a></td>
+				<td class="low-padding align-center"><button onclick="setStatutCommande(<?php echo $commande->getId() ?>, 5); return('false');" class="button compact icon-gear">Offrir</button></td>
 				<?php endif; ?>
 			</tr>
 

@@ -17,7 +17,7 @@
 				<?php foreach($categoryImprimantes as $categoryImprimante): ?>
 					<li>
 					<label for="id">Imprimera avec :</label>    
-					<select name="id[]" class="input" >
+					<select name="rel[categoryImprimante][id][]" class="input" >
 					<option value=""></option>	    
 					<?php foreach($imprimantes as $imprimante):
 						if($imprimante->getId() == $categoryImprimante->getImprimanteId()){
@@ -30,11 +30,13 @@
 					<option <?php echo $selected ?> value="<?php echo $imprimante->getId() ?>"><?php echo $imprimante->getName() ?></option>
 					<?php endforeach; ?>
 					
-					    </select>
+					</select>
 					</li>
 				<?php endforeach; ?>
 			<?php endif; ?>
+
 		</ul>
+		<input type="hidden" name="model" value="<?php echo $model ?>"</input>
 		<div id="button_container" class="modal-buttons align-center"></div>
 	</form>
 </fieldset>

@@ -12,7 +12,6 @@
 
 		<thead>
 			<tr>
-				<th scope="col" width=30>Image</th>
 				<th scope="col" >Nom</th>
 				<th scope="col" width="15%" class="">Stock</th>
 				<th scope="col" width="15%" class="  hide-on-mobile">Conditionnement</th>
@@ -32,7 +31,6 @@
 		<tbody>
 			<?php foreach($elements as $element): ?>
 			<tr id="element-<?php echo $element->getId() ?>"<?php if($element->getStockActuel() < $element->getStockMinimum()) echo "style ='color:#F7F7F7; background-color:#E9383F'" ?>>
-				<td><?php echo showThumb($element->getImg(), 'elements', $options = array('alt' => 'Affiche de '.$element->getName().'', 'class' => 'framed', 'width' => '40', 'height' => '40','title' => ''.$element->getName().''), $resize = 'fit', $default = 'default.jpg') ?></td>
 				<td><?php echo $element->getName() ?></td>
 				<td><?php echo $element->getStockActuel(); ?></span></td>
 				<td class="  hide-on-mobile"><?php echo $element->getConditionnement(); ?></td>
@@ -50,6 +48,7 @@
 </div>
 <script>
 $(document).ready(function() {
-	dataTableInit('sorting-advanced');
+	var options = {'pagination' : -1 };
+	dataTableInit('sorting-advanced', options);
 });
 </script>

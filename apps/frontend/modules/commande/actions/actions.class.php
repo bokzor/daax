@@ -18,8 +18,14 @@ class commandeActions extends sfActions
     public function executeIndex(sfWebRequest $request)
     {
         
-        $this->categories = Doctrine::getTable('Category')->createQuery('a')->leftjoin('a.Article c')->orderBy('c.name asc')->where('a.is_publish = ?', 1) -> execute();
-        $this->tops       = Doctrine::getTable('Article')->createQuery('a')->orderBy('a.count desc')->limit('16')->execute();
+        $q1 = Doctrine::getTable('Category')->createQuery('a')->leftjoin('a.Article c')->orderBy('c.name asc')->where('a.is_publish = ?', 1);
+       // $q1->useResultCache(true, 3600, 'articles');
+        $this->categories  = $q1->execute();
+         
+        $q2 = Doctrine::getTable('Article')->createQuery('a')->orderBy('a.count desc')->limit('16');
+       // $q2->useResultCache(true, 3600, 'top_articles');
+        $this->tops = $q2->execute(); 
+
     }
     public function executePayment(sfWebRequest $request)
     {
@@ -279,6 +285,7 @@ class commandeActions extends sfActions
     {
         $new_array['total_commande'] = 0;
         foreach($commandes as $commande){
+            $new_array['statut_commande'] = $commande->getStatutId();;
             $new_array['total_commande'] += $commande->getTotalCommande();
             if (!isset($table_id))
                             $table_id = $commande->getTableId();
@@ -393,9 +400,6 @@ class commandeActions extends sfActions
         $this->forward404Unless($article = Doctrine_Core::getTable('Commande')->findOneById($id), sprintf('Object article does not exist (%s).', $request->getParameter('id')));
         $article->setStatutId($request->getParameter('statut'));
         $article->save();
-        $this->ImprimerCommande(array(
-            $id
-        ), $param['offert'] = true);
         return sfView::NONE;
     }
     
@@ -468,7 +472,7 @@ class commandeActions extends sfActions
     # fonction qui cloture la caisse 
     public function executeCloture(sfWebRequest $request)
     {
-        $user_id                = $this->getUser()->getAttribute('id');
+        $user_id                = $this->getUser()->getGuardUser()->getId();
         $nb_transaction_cash    = 0;
         $nb_transaction_cb      = 0;
         $nb_transaction_ecb     = 0;
@@ -477,55 +481,66 @@ class commandeActions extends sfActions
         $total_transaction_ecb  = 0;
         $transactions           = Doctrine_Core::getTable('Transaction')->createQuery('transaction')->where('statut = ?', 0)->execute();
         $max_record             = Doctrine_Core::getTable('Cloture')->createQuery('cloture')->select('max(total_record), id_user_record')->fetchOne();
-        // on boucle toutes les transactions et on augmente les compteurs
-        foreach ($transactions as $transaction) {
-            $transaction->setStatut(1);
-            $transaction->save();
-            if ($transaction->getCash() > 0) {
-                $nb_transaction_cash++;
-                $total_transaction_cash += $transaction->getCash();
+
+        // on verifie qu'il y a de nouvelles transactions
+        if(count($transactions)){
+            // on boucle toutes les transactions et on augmente les compteurs
+            foreach ($transactions as $transaction) {
+                if ($transaction->getCash() > 0) {
+                    $nb_transaction_cash++;
+                    $total_transaction_cash += $transaction->getCash();
+                }
+                if ($transaction->getCb() > 0) {
+                    $nb_transaction_cb++;
+                    $total_transaction_cb += $transaction->getCb();
+                }
+                if ($transaction->getEcb() > 0) {
+                    $nb_transaction_ecb++;
+                    $total_transaction_ecb += $transaction->getEcb();
+                }
+                if (!isset($records[$transaction->getServerId()])) {
+                    $records[$transaction->getServerId()] = 0;
+                }
+                $records[$transaction->getServerId()] += $transaction->getCash() + $transaction->getCb() + $transaction->getEcb();
             }
-            if ($transaction->getCb() > 0) {
-                $nb_transaction_cb++;
-                $total_transaction_cb += $transaction->getCb();
+            $user_id_record = null;
+            // si il n'y a pas de record, on le set a 0
+            if(!is_object($max_record)){
+                $total_record = 0;
             }
-            if ($transaction->getEcb() > 0) {
-                $nb_transaction_ecb++;
-                $total_transaction_ecb += $transaction->getEcb();
+            else{
+                $total_record = $max_record->getTotalRecord();
+                $user_id_record = $max_record->getIdUserRecord();
             }
-            if (!isset($records[$transaction->getServerId()])) {
-                $records[$transaction->getServerId()] = 0;
-            }
-            $records[$transaction->getServerId()] += $transaction->getCash() + $transaction->getCb() + $transaction->getEcb();
-        }
-        
-        $user_id_record = null;
-        $total_record   = 0;
-        if (isset($records)) {
-            foreach ($records as $id => $record) {
-                if ($record > $max_record->getTotalRecord()) {
-                    $user_id_record = $id;
-                    $total_record   = $record;
+            if (isset($records)) {
+                foreach ($records as $id => $record) {
+                    if ($record > $total_record) {
+                        $user_id_record = $id;
+                        $total_record = $record;
+                    }
                 }
             }
+
+            // on set dit que les transactions ont été cloturées
+            Doctrine_Query::create()->update('Transaction a')->set('a.statut', '?', 1)->where('a.statut = ?', 0)->execute();
+
+            $serveurName = Doctrine_Core::getTable('sfGuardUser')->createQuery('user')->select('first_name')->where('id = ?', $user_id_record)->fetchOne();
+            
+            $cloture = new Cloture();
+            $cloture->setNbTransactionCash($nb_transaction_cash);
+            $cloture->setTotalTransactionCash($total_transaction_cash);
+            $cloture->setNbTransactionCb($nb_transaction_cb);
+            $cloture->setTotalTransactionCb($total_transaction_cb);
+            $cloture->setNbTransactionEcb($nb_transaction_ecb);
+            $cloture->setTotalTransactionEcb($total_transaction_ecb);
+            $cloture->setIdUserRecord($user_id_record);
+            $cloture->setTotalRecord($total_record);
+            $cloture->setServerId($user_id);
+            $cloture->save();
+            
+            new CloturePdf('P', 'pt', 'LETTER', $serveurName, $total_transaction_cash, $total_transaction_ecb, $total_transaction_cb, $nb_transaction_cash, $nb_transaction_ecb, $nb_transaction_cb, $total_record);
         }
-        
-        $serveurName = Doctrine_Core::getTable('sfGuardUser')->createQuery('user')->select('first_name')->where('id = ?', $user_id_record)->fetchOne();
-        
-        $cloture = new Cloture();
-        $cloture->setNbTransactionCash($nb_transaction_cash);
-        $cloture->setTotalTransactionCash($total_transaction_cash);
-        $cloture->setNbTransactionCb($nb_transaction_cb);
-        $cloture->setTotalTransactionCb($total_transaction_cb);
-        $cloture->setNbTransactionEcb($nb_transaction_ecb);
-        $cloture->setTotalTransactionEcb($total_transaction_ecb);
-        $cloture->setIdUserRecord($user_id_record);
-        $cloture->setTotalRecord($total_record);
-        $cloture->setServerId($user_id);
-        $cloture->save();
-        
-        new CloturePdf('P', 'pt', 'LETTER', $serveurName, $total_transaction_cash, $total_transaction_ecb, $total_transaction_cb, $nb_transaction_cash, $nb_transaction_ecb, $nb_transaction_cb, $total_record);
-        
+        return sfView::NONE;
     }
     // fonction qui renvois les commandes en cours   
     public function executeFullLiveJson(sfWebRequest $request)

@@ -24,7 +24,7 @@ abstract class BaseClotureForm extends BaseFormDoctrine
       'total_transaction_ecb'  => new sfWidgetFormInputText(),
       'id_user_record'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ServerRecord'), 'add_empty' => true)),
       'total_record'           => new sfWidgetFormInputText(),
-      'server_id'              => new sfWidgetFormInputText(),
+      'server_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ServerCloture'), 'add_empty' => true)),
       'created_at'             => new sfWidgetFormDateTime(),
       'updated_at'             => new sfWidgetFormDateTime(),
     ));
@@ -39,7 +39,7 @@ abstract class BaseClotureForm extends BaseFormDoctrine
       'total_transaction_ecb'  => new sfValidatorInteger(array('required' => false)),
       'id_user_record'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ServerRecord'), 'required' => false)),
       'total_record'           => new sfValidatorInteger(array('required' => false)),
-      'server_id'              => new sfValidatorInteger(array('required' => false)),
+      'server_id'              => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ServerCloture'), 'required' => false)),
       'created_at'             => new sfValidatorDateTime(),
       'updated_at'             => new sfValidatorDateTime(),
     ));

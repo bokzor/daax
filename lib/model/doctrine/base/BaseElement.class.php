@@ -95,6 +95,7 @@ abstract class BaseElement extends sfDoctrineRecord
              ));
         $this->hasColumn('fournisseur_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => false,
              ));
         $this->hasColumn('nombre_unite', 'float', null, array(
              'type' => 'float',

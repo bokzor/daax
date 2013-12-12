@@ -77,6 +77,7 @@ abstract class BaseCloture extends sfDoctrineRecord
         $this->hasColumn('id_user_record', 'integer', null, array(
              'type' => 'integer',
              'default' => 0,
+             'notnull' => false,
              ));
         $this->hasColumn('total_record', 'integer', null, array(
              'type' => 'integer',
@@ -84,6 +85,7 @@ abstract class BaseCloture extends sfDoctrineRecord
              ));
         $this->hasColumn('server_id', 'integer', null, array(
              'type' => 'integer',
+             'primary' => false,
              ));
     }
 
@@ -92,11 +94,10 @@ abstract class BaseCloture extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('sfGuardUser as ServerRecord', array(
              'local' => 'id_user_record',
-             'foreign' => 'id',
-             'onDelete' => 'CASCADE'));
+             'foreign' => 'id'));
 
         $this->hasOne('sfGuardUser as ServerCloture', array(
-             'local' => 'id_user_record',
+             'local' => 'server_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 

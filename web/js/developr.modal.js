@@ -638,6 +638,7 @@
 		}
 
 		// Insert window
+		$('.modal').remove();
 		modal = $('<div class="modal'+(settings.classes ? ' '+settings.classes : '')+'"></div>').appendTo(root);
 		barBlock = (titleBar.length > 0) ? $(titleBar).appendTo(modal) : false;
 		contentBg = settings.contentBg ? $('<div class="modal-bg"></div>').appendTo(modal) : false;

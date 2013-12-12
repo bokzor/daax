@@ -11,7 +11,7 @@ Element:
     stock_minimum:     { type: float }
     stock_actuel:      { type: float }
     conditionnement_id: { type: integer }
-    fournisseur_id:    { type: integer }
+    fournisseur_id:    { type: integer, notnull: false, default: NULL }
     nombre_unite:      { type: float }
     prix_achat:        { type: float }
     reference:         { type: string(255) }
@@ -220,12 +220,12 @@ Cloture:
     total_transaction_cash: { type: integer, default: 0 }
     total_transaction_cb: { type: integer, default: 0 }
     total_transaction_ecb: { type: integer, default: 0 }
-    id_user_record: { type: integer, default: 0 }
+    id_user_record: { type: integer, default: 0, notnull: false }
     total_record: { type: integer, default: 0 }
-    server_id: { type: integer }
+    server_id: { type: integer, primary: false }
   relations:
-    ServerRecord: { class: sfGuardUser, onDelete: CASCADE, foreignAlias: ServerRecord, local: id_user_record, foreign: id }
-    ServerCloture: { class: sfGuardUser, onDelete: CASCADE, foreignAlias: ServerCloture, local: id_user_record, foreign: id }
+    ServerRecord: { class: sfGuardUser, foreignAlias: ServerRecord, local: id_user_record, foreign: id }
+    ServerCloture: { class: sfGuardUser, onDelete: CASCADE, foreignAlias: ServerCloture, local: server_id, foreign: id }
 
 Imprimante:
   actAs:

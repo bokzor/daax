@@ -322,6 +322,7 @@ function Commentaire(id) {
 //fonction qui ajoute les articles a la commande
 
 function payment() {
+	$('ul.gallery li figure').unbind('click');
     $('ul.gallery li figure').click(function(event) {
     	if(event.target.tagName =='SPAN')
     		return;
@@ -404,6 +405,7 @@ function calculette(param){
 // fonction qui ajoute un element a la commande
 
 function addBoisson(price, title, id, supplements) {
+	var findArticle = undefined;
 	notify('Ajout d\'un article', title, {
 	    closeDelay: 500 
 	});
@@ -421,10 +423,9 @@ function addBoisson(price, title, id, supplements) {
     }
 
     findArticle = app.collections.commande.findWhere({'id_article' : id});
-
     if(findArticle != undefined && JSON.stringify(findArticle.get('supplements')) == JSON.stringify(supplements)){
 		count = findArticle.get('count') + 1;
-		findArticle.set({'count' : count});	
+		findArticle.set({'count' : count});
     }
     else{
     	app.collections.commande.add(article);
@@ -493,13 +494,19 @@ function clearCommande() {
 
 // Table sort - DataTables
 
-function dataTableInit(id) {
+function dataTableInit(id, options) {
+    if(!options){
+        options = {};
+    }
+    if(options['pagination'] === undefined){
+        options['pagination'] = 7;
+    }
     var table = $('#' + id);
     table.dataTable({
 	'bSort': false,
 	'sPaginationType': 'full_numbers',
 	'sDom': '<"dataTables_header"lfr>t<"dataTables_footer"ip>',
-    "iDisplayLength": 7,
+    "iDisplayLength": options['pagination'],
 	'bJQueryUI': true,
 	'oLanguage': {
 	    "sProcessing": "Traitement en cours...",
@@ -542,7 +549,13 @@ function editRow(model, id) {
     var url;
     var buttons = {
 	'Valider': function(modal) {
-	    $(this).parent().prev().find('form').submit();
+	    var form = $(this).parent().prev().find('form');
+	    if(form.find('input:file').val() === '' || form.find('input:file').length === 0){
+	    	validerForm(model, id);
+	    }
+	    else{
+	    	form.submit();
+	    }   	
 	    modal.closeModal();
 	},
 	'Annuler': function(modal) {
@@ -634,18 +647,12 @@ function validerForm(model, id) {
 	var url = '/rest/' + model + '/' + id + '.xml';
     }
     // value to send
-    var inputs = $('input, select');
-    var query = new Object();
-    inputs.each(function() {
-	var name = $(this).attr('name');
-	var value = $(this).val();
-	query[name] = value;
-    });
+    var inputs = $('input, select').not('[value=""]').serialize();
     // send value
     $.ajax({
-	type: method,
-	url: url,
-	data: query,
+		type: method,
+		url: url,
+		data: inputs,
     });
     return false;
 };
@@ -735,11 +742,15 @@ function getArticlesCommande(id) {
 		supp = supp + '</ul>';
 	    article += '<h4 class="no-margin-bottom no-margin-top" ><span class="tag">' + val['count'] + '</span> x <strong> ' + val['name'] + ' </strong></h4>' + supp;
 	});
+    if(data['statut_commande'] == 4){
+        var pret = 'Pas prête';
+        var new_statut = 1;
+    }else{
+        var pret = 'Prête';
+        var new_statut = 4;       
+    }
+    console.log(data['statut_commande']);
 	var buttons = {
-	    'Prête': function(modal) {
-		setStatutCommande(id, 4);
-		modal.closeModal();
-	    },
 	    'Encaisser': function(modal) {
 		jsonCommande(id, '');
 		$('.menu-open').removeClass('menu-open');
@@ -749,7 +760,11 @@ function getArticlesCommande(id) {
 	    'Annuler': function(modal) {
 		modal.closeModal();
 	    }
-	};   
+	}; 
+    buttons[pret] = function(modal) {
+        setStatutCommande(id, new_statut);
+        modal.closeModal();
+        }
 	$.modal({
 	    content: article,
 	    buttonsAlign: 'center',
@@ -857,7 +872,7 @@ function launchFullScreen(element) {
 
 function isReady(){
 	live();
-    setInterval(live, 5000);
+    setInterval(live, 10000);
     // on empeche la selection et le click droit
     //document.oncontextmenu = new Function("return false");
 	document.onselectstart = new Function ("return false");
@@ -867,7 +882,7 @@ function isReady(){
 		if(first_init == false){
 			first_init = true;
 		}
-		else if(location.pathname != '/' && location.pathname != '#'){
+		else if(location.pathname != '/' && location.pathname != '/frontend_dev.php/' && location.pathname.indexOf("#") !== -1){
 			chargerPage(location.pathname);
 		}
 	      

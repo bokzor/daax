@@ -5545,43 +5545,7 @@ CategoryImprimante:
   CategoryImprimante_7_2:
     Category: Category_7
     Imprimante: Imprimante_2
-Cloture:
-  Cloture_1:
-    nb_transaction_cash: '19'
-    nb_transaction_cb: '0'
-    nb_transaction_ecb: '0'
-    total_transaction_cash: '417'
-    total_transaction_cb: '0'
-    total_transaction_ecb: '0'
-    ServerRecord: sfGuardUser_4
-    total_record: '24'
-    server_id: null
-    created_at: '2013-11-17 13:51:33'
-    updated_at: '2013-11-17 13:51:33'
-  Cloture_7:
-    nb_transaction_cash: '12'
-    nb_transaction_cb: '0'
-    nb_transaction_ecb: '0'
-    total_transaction_cash: '131'
-    total_transaction_cb: '0'
-    total_transaction_ecb: '0'
-    ServerRecord: sfGuardUser_1
-    total_record: '108'
-    server_id: null
-    created_at: '2013-11-17 18:08:37'
-    updated_at: '2013-11-17 18:08:37'
-  Cloture_8:
-    nb_transaction_cash: '44'
-    nb_transaction_cb: '0'
-    nb_transaction_ecb: '0'
-    total_transaction_cash: '758'
-    total_transaction_cb: '0'
-    total_transaction_ecb: '0'
-    ServerRecord: sfGuardUser_7
-    total_record: '150'
-    server_id: null
-    created_at: '2013-11-21 07:30:23'
-    updated_at: '2013-11-21 07:30:23'
+
 Commande:
   Commande_4:
     Server: sfGuardUser_1

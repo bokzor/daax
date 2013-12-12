@@ -6,7 +6,7 @@ setlocale(LC_TIME, 'fr_FR', 'fra');
 
 require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
 
-$configuration = ProjectConfiguration::getApplicationConfiguration('frontend', 'prod', true);
+$configuration = ProjectConfiguration::getApplicationConfiguration('frontend', 'cache', true);
 sfContext::createInstance($configuration)->dispatch();
 
 

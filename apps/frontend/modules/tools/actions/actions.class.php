@@ -61,7 +61,7 @@ class toolsActions extends sfActions
       $this -> articleElements = Doctrine::getTable( 'ArticleElement' )->createQuery( 'a' )->where( 'article_id = ?', $request->getParameter( 'id' ) ) -> execute();
       $this -> elements = Doctrine::getTable( 'Element' )->createQuery( 'a' )-> execute();
     }
-    if( $this->model=='category'){
+    if ( $this->model=='category' ) {
       $this -> categoryImprimantes = Doctrine::getTable( 'categoryImprimante' )->createQuery( 'a' )->where( 'category_id = ?', $request->getParameter( 'id' ) ) -> execute();
       $this -> imprimantes = Doctrine::getTable( 'Imprimante' )->createQuery( 'a' )-> execute();
 
@@ -96,10 +96,13 @@ class toolsActions extends sfActions
     if ( $form->isValid() ) {
       ${$this->model} = $form->save();
 
+      // parametres des relations
+      $rel = ( $request -> getPostParameter( 'rel' ) );
+
       if ( $this->model == 'article' ) {
         Doctrine_Query::create()->delete( 'ArticleElement' )->where( 'article_id = ?', ${$this->model}->getId() ) -> execute();
-        if ( isset( $_POST['id'] ) and isset( $_POST['deduire'] ) ) {
-          $result = array_combine( $_POST['id'], $_POST['deduire'] );
+      if ( isset( $rel['articleElement']['id'] ) and isset( $rel['articleElement']['deduire'] ) ) {
+        $result = array_combine( $rel['articleElement']['id'], $rel['articleElement']['deduire'] );
           foreach ( $result as $id => $deduire ) {
             if ( $deduire>0 and $id >0 ) {
               $articleElement = new ArticleElement();
@@ -111,12 +114,12 @@ class toolsActions extends sfActions
           }
         }
       }
+      elseif ( $this->model == 'category' ) {
 
-      if ( $this->model == 'category' ) {
         Doctrine_Query::create()->delete( 'categoryImprimante' )->where( 'category_id = ?', $category->getId() ) -> execute();
-        if ( isset( $_POST['id'] ) ) {
-          foreach ( $_POST['id'] as $id ) {
-            if($id >0){
+        if ( isset( $rel['categoryImprimante']['id'] ) ) {
+          foreach ( $rel['categoryImprimante']['id'] as $id ) {
+            if ( $id >0 ) {
               $categoryImprimante = new CategoryImprimante();
               $categoryImprimante->setCategoryId ( $category -> getId() );
               $categoryImprimante->setImprimanteId( $id );

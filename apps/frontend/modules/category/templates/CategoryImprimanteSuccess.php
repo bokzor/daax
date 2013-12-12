@@ -1,6 +1,6 @@
 <li>
     <label for="id">Imprimera avec :</label>    
-    <select name="id[]" class="input" >
+    <select name="rel[categoryImprimante][id][]" class="input" >
         <option value=""></option>
         <?php if(isset($imprimantes)): ?>
         <?php foreach($imprimantes as $imprimante): ?>

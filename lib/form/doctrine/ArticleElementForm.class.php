@@ -10,11 +10,13 @@
  */
 class ArticleElementForm extends BaseArticleElementForm
 {
-  public function configure()
-  {
-    unset($this['article_id']);
+	public function configure() {
+		unset( $this['article_id'] );
 
-    $this -> widgetSchema['element_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Element'), 'add_empty' => true));
+		$this -> widgetSchema['element_id'] = new sfWidgetFormDoctrineChoice( array( 
+			'model' => $this->getRelatedModelName( 'Element' ), 
+			'add_empty' => true, 
+			'query' => Doctrine::getTable('Element')->createQuery('c')->orderBy('c.name ASC')))  ) );
 
-  }
+	}
 }

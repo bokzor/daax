@@ -25,7 +25,7 @@
 			<?php foreach($articleElements as $articleElement): ?>
 			<li>
 			<label for="id">Décompte le stock :</label>    
-			<select name="id[]" class="input" >
+			<select name="rel[articleElement][id][]" class="input" >
 			<option value=""></option>	    
 			<?php foreach($elements as $element):
 				if($element->getId() == $articleElement->getElementId()){
@@ -42,12 +42,13 @@
 			</li>
 			<li>
 				<label for="article_temps_prepa">Nombre a décompter:</label>
-				<input class="input" type="number" step="0.01" value="<?php echo $articleElement->getADeduire() ?>" placeholder='Quantitée a déduire du stock' name="deduire[]"/> 
+				<input class="input" type="number" step="0.01" value="<?php echo $articleElement->getADeduire() ?>" placeholder='Quantitée a déduire du stock' name="rel[articleElement][deduire][]"/> 
 			</li>
 			
 			<?php endforeach; ?>
 			<?php endif; ?>
 		</ul>
+		<input type="hidden" name="model" value="<?php echo $model ?>"</input>
 		<div id="button_container" class="modal-buttons align-center"></div>
 	</form>
 </fieldset>

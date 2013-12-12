@@ -36,6 +36,7 @@
  * @property Doctrine_Collection $Server
  * @property Doctrine_Collection $Client
  * @property Doctrine_Collection $ServerRecord
+ * @property Doctrine_Collection $ServerCloture
  * 
  * @method string                getEmailAddress()          Returns the current record's "email_address" value
  * @method string                getAvatar()                Returns the current record's "avatar" value
@@ -68,6 +69,7 @@
  * @method Doctrine_Collection   getServer()                Returns the current record's "Server" collection
  * @method Doctrine_Collection   getClient()                Returns the current record's "Client" collection
  * @method Doctrine_Collection   getServerRecord()          Returns the current record's "ServerRecord" collection
+ * @method Doctrine_Collection   getServerCloture()         Returns the current record's "ServerCloture" collection
  * @method sfGuardUser           setEmailAddress()          Sets the current record's "email_address" value
  * @method sfGuardUser           setAvatar()                Sets the current record's "avatar" value
  * @method sfGuardUser           setFirstName()             Sets the current record's "first_name" value
@@ -99,6 +101,7 @@
  * @method sfGuardUser           setServer()                Sets the current record's "Server" collection
  * @method sfGuardUser           setClient()                Sets the current record's "Client" collection
  * @method sfGuardUser           setServerRecord()          Sets the current record's "ServerRecord" collection
+ * @method sfGuardUser           setServerCloture()         Sets the current record's "ServerCloture" collection
  * 
  * @package    LiveOrder
  * @subpackage model
@@ -257,6 +260,10 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
         $this->hasMany('Cloture as ServerRecord', array(
              'local' => 'id',
              'foreign' => 'id_user_record'));
+
+        $this->hasMany('Cloture as ServerCloture', array(
+             'local' => 'id',
+             'foreign' => 'server_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

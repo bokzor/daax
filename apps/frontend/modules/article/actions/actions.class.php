@@ -92,7 +92,7 @@ class articleActions extends sfActions {
 	function executeArticleElement( sfWebRequest $request ) {
 
 		$this->c = intval( $request->getParameter( 'c' ) );
-		$this->elements = Doctrine::getTable( 'Element' )->createQuery( 'a' )->execute();
+		$this->elements = Doctrine::getTable( 'Element' )->createQuery( 'a' )->orderBy('a.name') -> execute();
 	}
 
 

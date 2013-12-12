@@ -61,8 +61,8 @@
 
 	
 
-		<!-- For Modern Browsers -->
-		<link rel="shortcut icon" href="/image/favicons/favicon.png">
+		<!-- For Modern Browsers 
+		<link rel="shortcut icon" href="/image/favicons/favicon.png"> -->
 		<!-- For everything else -->
 		<link rel="shortcut icon" href="/image/favicons/favicon.ico">
 		<!-- For retina screens -->
@@ -175,7 +175,6 @@
 			<div id="menu-content">
 				<div id="profile">
 					<?php echo showThumb($sf_user->getGuardUser()->getAvatar(), 'avatar', $options = array('alt' => 'Avatar', 'width' => '64', 'height' => '64', 'title' => 'Avatar', 'class' => 'user-icon'), $resize = 'fit', $default = 'default.jpg') ?> 
-					Salut
 					<span class="name"><?php echo $sf_user->getGuardUser()->getFirstName() ?>
 						<b><?php echo $sf_user->getGuardUser()->getLastName() ?></b>
 					</span>
@@ -196,8 +195,8 @@
 					</li>
 					<?php endif; ?>
 					<li>
-						<a href="" class="close-menu" onclick="imprimer(); return false;" id="imprimer" title="Imprimer la commande">
-							<span class="icon-mobile"></span>
+						<a href="" class="close-menu" onclick="imprimer(); return false;" id="imprimer" title="Enregistrer la commande">
+							<span class="icon-paper-plane"></span>
 						</a>
 					</li>
 					<li>
