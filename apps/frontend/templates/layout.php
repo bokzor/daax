@@ -19,37 +19,7 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<!-- For all browsers -->
-		<link rel="stylesheet" href="/css/reset.css">
-		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="/css/colors.css">
-
-		<link rel="stylesheet" media="print" href="/css/print.css">
-		<!-- For progressively larger displays -->
-		<link rel="stylesheet" media="only all and (min-width: 480px)" href="/css/480.css">
-		<link rel="stylesheet" media="only all and (min-width: 768px)" href="/css/768.css">
-		<link rel="stylesheet" media="only all and (min-width: 952px)" href="/css/992.css">
-		<link rel="stylesheet" media="only all and (min-width: 1200px)" href="/css/1200.css">
-		<!-- For Retina displays -->
-		<link rel="stylesheet" media="only all and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)" href="/css/2x.css">
-		<!-- Webfonts -->
-		<!-- Additional styles -->
-		<link rel="stylesheet" href="/css/styles/dashboard.css">
-		<link rel="stylesheet" href="/css/jquery.keypad.css">
-		<link rel="stylesheet" href="/css/styles/jqpagination.css">
-		<link rel="stylesheet" href="/css/styles/form.css">
-		<link rel="stylesheet" href="/css/styles/switches.css">
-		<link rel="stylesheet" href="/css/styles/table.css">
-		<link rel="stylesheet" href="/css/styles/modal.css">
-		<link rel="stylesheet" href="/css/timepicker.css">
-		<link rel="stylesheet" href="/css/mobiscroll.css">
-		<link rel="stylesheet" href="/js/libs/DataTables/jquery.dataTables.css">
-		<link rel="stylesheet" href="/css/new_login/core.css">
-
-	   	<!-- feuille de style pour les clients -->
-		<?php if($sf_user->isAuthenticated() && !$sf_user->hasCredential('manager')): ?>
-		<link rel="stylesheet" href="/css/client.css">
-		<?php endif; ?>
+		<?php include_partial('home/css') ?>
 
 
 
@@ -83,23 +53,16 @@
 
 		<!-- Microsoft clear type rendering -->
 		<meta http-equiv="cleartype" content="on">
-		<!-- Css pour le loader -->
-		<style type = "text/css">
-		    #loading-container {position: absolute; top:50%; left:50%;}
-		    #loading-content {width:800px; text-align:center; margin-left: -400px; height:50px; margin-top:-25px; line-height: 50px;}
-		    #loading-content {font-family: "Helvetica", "Arial", sans-serif; font-size: 18px; color: black; text-shadow: 0px 1px 0px white; }
-		    #loading-graphic {margin-right: 0.2em; margin-bottom:-2px;}
-		    #loading { background-color: #F7F7F7; height:100%; width:100%; overflow:hidden; position: absolute; left: 0; top: 0; z-index: 99999;}
-		</style>
+
 			
 			
 	</head> 
 
 	<body class="clearfix with-menu with-shortcuts" >
-		
+
 		<!-- loader -->
 		<!-- affiche une page tempon le temps que le css et javascript se charge -->
-		<span id="load" style="display: none;">
+		<span id="load" >
 			<img src="/image/new_login/img/load.png"><img src="/image/new_login/img/spinner.png" id="spinner">
 		</span>
 
@@ -107,7 +70,6 @@
 		
 		<!-- Title bar -->
 		<header style="z-index: 999;" role="banner" id="title-bar">
-			
 		<!-- Button to open/hide menu -->
 		<?php if($sf_user->isAuthenticated()): ?>
 			<a href="#" id="open-menu"><span>Commande</span></a>
@@ -116,46 +78,45 @@
 		<?php endif; ?>
 		</header>
 
-
 		
 		<!-- Main content -->
-		<section role="main" id="main" style="display: none;">
+		<section role="main" id="main" class="container" style="opacity: 0;">
 			<?php echo $sf_content ?>
 		</section>
 		<!-- End main content -->
 
 		<!-- Side tabs shortcuts -->
 		
-		<ul id="shortcuts" role="complementary" class="children-tooltip tooltip-right" >
+		<ul style="display:none;" id="shortcuts" role="complementary" class="children-tooltip tooltip-right" >
 			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('manager')): ?>
 			<li >
-				<a href="<?php echo url_for('@full_live_commande') ?>"  class="shortcut-live" title="Commandes Live">Commandes Live</a>
+				<a href="<?php echo url_for('@full_live_commande') ?>" title="Commandes Live">Commandes Live</a>
 			</li>
 			<?php endif; ?>
 			<?php if($sf_user->isAuthenticated()): ?>
 			<li>
-				<a href="<?php echo url_for('@homepage') ?>" class="shortcut-notes" title="Passer une commande">Passer une commande</a>
+				<a href="<?php echo url_for('@homepage') ?>"  title="Passer une commande">Passer une commande</a>
 			</li>
 			<li>
-				<a href="<?php echo url_for('@gestion_commande') ?>" class="shortcut-commande" title="Gestion commande">Gestion des commandes</a>
+				<a href="<?php echo url_for('@gestion_commande') ?>"  title="Gestion commande">Gestion des commandes</a>
 			</li>
 			<?php endif; ?>
 			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('manager')): ?>
 			<li >
-				<a href="<?php echo url_for('@gestion_utilisateur') ?>" class="shortcut-contacts" title="Gestion utilisateur">Gestion des utilisateurs</a>
+				<a href="<?php echo url_for('@gestion_utilisateur') ?>" title="Gestion utilisateur">Gestion des utilisateurs</a>
 			</li>
 			<li>
-				<a href="<?php echo url_for('@gestion_stock') ?>" class="shortcut-stock" title="Gestion stock">Gestion du stock</a>
+				<a href="<?php echo url_for('@gestion_stock') ?>"  title="Gestion stock">Gestion du stock</a>
 			</li>
 			<li>
-				<a href="<?php echo url_for('@gestion_article') ?>"  class="shortcut-article" title="Gestion des articles">Gestion des articles</a>
+				<a href="<?php echo url_for('@gestion_article') ?>"  title="Gestion des articles">Gestion des articles</a>
 			</li>				
 
 			<li>
-				<a href="<?php echo url_for('@stat') ?>"  class="shortcut-stats" title="Statistiques">Statistiques</a>
+				<a href="<?php echo url_for('@stat') ?>" title="Statistiques">Statistiques</a>
 			</li>
 			<li>
-				<a href="<?php echo url_for('@gestion_tools') ?>" class="shortcut-tools" title="Outils">Outils</a>
+				<a href="<?php echo url_for('@gestion_tools') ?>"  title="Outils">Outils</a>
 			</li>
 			<?php endif; ?>
 			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('superadmin')): ?>
@@ -164,7 +125,7 @@
 			</li> -->	
 			<?php endif; ?> 
 			<li>
-				<a href="<?php echo url_for('@sf_guard_signout') ?>" class="shortcut-delete" title="Se déconnecter">Se déconnecter</a>
+				<a href="<?php echo url_for('@sf_guard_signout') ?>"  title="Se déconnecter">Se déconnecter</a>
 			</li>		
 
 		</ul>
@@ -173,38 +134,13 @@
 		<section id="menu" role="complementary">
 			<!-- This wrapper is used by several responsive layouts -->
 			<div id="menu-content">
-				<div id="profile">
-					<?php echo showThumb($sf_user->getGuardUser()->getAvatar(), 'avatar', $options = array('alt' => 'Avatar', 'width' => '64', 'height' => '64', 'title' => 'Avatar', 'class' => 'user-icon'), $resize = 'fit', $default = 'default.jpg') ?> 
-					<span class="name"><?php echo $sf_user->getGuardUser()->getFirstName() ?>
-						<b><?php echo $sf_user->getGuardUser()->getLastName() ?></b>
-					</span>
-				</div>
+			<button id="menu-button" class="button">Menu</button>
+
 
 				<!-- By default, this section is made for 4 icons, see the doc to learn how to change this, in "basic markup explained" -->
-				<ul  class="access children-tooltip">
-					<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('serveur')): ?>
-					<li>
-						<a href="" class="close-menu" onclick="encaisser(0); return false;" title="Encaisser la commande">
-							<span class="icon-green icon-tick"></span>
-						</a>
-					</li>
-					<li>
-						<a href="" class="close-menu" onclick="chargerCommande(); return false;" title="Charger une commande">
-							<span class="icon-inbox"></span>
-						</a>
-					</li>
-					<?php endif; ?>
-					<li>
-						<a href="" class="close-menu" onclick="imprimer(); return false;" id="imprimer" title="Enregistrer la commande">
-							<span class="icon-paper-plane"></span>
-						</a>
-					</li>
-					<li>
-						<a href="" class="close-menu" onclick="clearCommande(); return false;" id="messages-clear" title="Annuler la commande">
-							<span class="icon-cross icon-red"></span>
-						</a>
-					</li>
-				</ul>
+				<div id="controlleurCommande">
+					<?php include_partial('home/controlleurCommande') ?>
+				</div>
 
 
 
@@ -262,46 +198,76 @@
 		
 		<!-- View backbones -->
 		<?php include_partial('js/backboneViews') ?>		
-		
+	<div id="sidebar" style="display: none">
+		<div id="profile">
+			<?php echo showThumb($sf_user->getGuardUser()->getAvatar(), 'avatar', $options = array('alt' => 'Avatar', 'width' => '60', 'height' => '60', 'title' => 'Avatar', 'class' => 'user-icon'), $resize = 'fit', $default = 'default.jpg') ?> 
+			<span class="name"><?php echo $sf_user->getGuardUser()->getFirstName() ?>
+				<b><?php echo $sf_user->getGuardUser()->getLastName() ?></b>
+			</span>
+		</div>
+		<ul class="no-load">
+			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('manager')): ?>
+			<li >
+				<a href="<?php echo url_for('@full_live_commande') ?>"   title="Commandes Live">Commandes Live</a>
+			</li>
+			<?php endif; ?>
+			<?php if($sf_user->isAuthenticated()): ?>
+			<li>
+				<a href="<?php echo url_for('@homepage') ?>" title="Passer une commande">Passer une commande</a>
+			</li>
+			<li>
+				<a href="<?php echo url_for('@gestion_commande') ?>" title="Gestion commande">Gestion des commandes</a>
+			</li>
+			<?php endif; ?>
+			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('manager')): ?>
+			<li >
+				<a href="<?php echo url_for('@gestion_utilisateur') ?>"  title="Gestion utilisateur">Gestion des utilisateurs</a>
+			</li>
+			<li>
+				<a href="<?php echo url_for('@gestion_stock') ?>"  title="Gestion stock">Gestion du stock</a>
+			</li>
+			<li>
+				<a href="<?php echo url_for('@gestion_article') ?>"   title="Gestion des articles">Gestion des articles</a>
+			</li>				
+
+			<li>
+				<a href="<?php echo url_for('@stat') ?>" title="Statistiques">Statistiques</a>
+			</li>
+			<li>
+				<a href="<?php echo url_for('@gestion_tools') ?>"  title="Outils">Outils</a>
+			</li>
+			<?php endif; ?>
+			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('superadmin')): ?>
+			<!-- <li>
+				<a href="<?php echo url_for('@gestion_floor') ?>"  class="shortcut-floor" title="Gestion du plan de table">Gestion du plan de table</a>
+			</li> -->	
+			<?php endif; ?> 
+			<li>
+				<a href="<?php echo url_for('@sf_guard_signout') ?>"  title="Se déconnecter">Se déconnecter</a>
+			</li>	
+		</ul>
+	</div>
+
+	
 	</body>
-	<script src="/js/libs/quo.js"></script>
-	<script src="/js/libs/underscore-min.js"></script>
-	<script src="/js/libs/backbone-min.js"></script>
-	<script src="/js/setup.js"></script>
-
-	<!-- Template functions -->
-	<script src="/js/libs/jquery.jqpagination.min.js"></script>
-	<script src="/js/timepicker-mobiscroll.js"></script>
-	<script src="/js/timepicker.js"></script>		
-	<script src="/js/developr.input.js"></script>
-	<script src="/js/developr.modal.js"></script>
-	<script src="/js/developr.message.js"></script>
-	<script src="/js/developr.notify.js"></script>
-	<script src="/js/developr.scroll.js"></script>
-	<script src="/js/developr.tooltip.js"></script>
-	<script src="/js/jquery.keypad.js"></script>
-	<script src="/js/developr.confirm.js"></script>
-	<script src="/js/developr.wizard.js"></script>
-
-
-	<!-- Must be loaded last -->
-	<script src="/js/developr.tabs.js"></script>
-	<script src="/js/developr.table.js"></script>
-
-	<!-- Must be loaded last -->
-	<script src="/js/libs/jquery.tablesorter.min.js"></script>
-	<script src="/js/libs/DataTables/jquery.dataTables.min.js"></script>
-	<script src="/js.js"></script>
+	<?php include_partial('home/js') ?>
 	<script src="/js/backbone/main.js"></script>
 	<script src="/js/backbone/models.js"></script>
 	<script src="/js/backbone/views.js"></script>
+	<script src="/js/backbone/grid.js"></script>
 	<script>
-	$('#load').fadeIn(400);
 	$(window).load(function () {
-	 $('#load').fadeOut(400, function () {
-	     $('#main').fadeIn(600, function () {});
+	 $('#load').transition({opacity: 0 }, 400, function () {
+	     $('#main').transition({opacity: 1}, 600, function () {});
 	 });
 	});
 	</script>
-
+	<script>
+	$('#menu-button, #open-shortcuts').sidr({
+	  name: 'sidr-main',
+	  source: '#sidebar',
+	  side: 'right',
+	  body: '#menu',
+	});
+</script>
 </html>

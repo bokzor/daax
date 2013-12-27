@@ -10,18 +10,42 @@
 class webserviceActions extends sfActions {
 
 	public function preExecute() {
-		$this -> model = $this -> getRequest() -> getParameter( 'model' );
+		if( $this -> getRequest() -> getParameter( 'model' )) {
+			$this -> model = $this -> getRequest() -> getParameter( 'model' );
 
-		if ( !class_exists( $this -> model ) )
-			//$this -> forward('webservice', 'error');
-			echo '';
+			if ( !class_exists( $this -> model ) )
+				//$this -> forward('webservice', 'error');
+				echo '';
+		}
+		if($this -> model == 'utilisateur'){
+			$this -> model = 'sfGuardRegister';
+		}
 	}
+
+	public function executeGetInfos( sfWebRequest $request){
+		$infos = array();
+		$infos['server_id'] = $this->getUser()->getGuardUser()->getId();
+
+		return $this->renderText(json_encode($infos));
+
+	}
+
+
 
 	public function executeList( sfWebRequest $request ) {
 		if ( $request -> isMethod( sfRequest::POST ) )
 			$this -> forward( 'webservice', 'create' );
+		if($this -> model == 'article'){
+			$this -> objects = Doctrine::getTable( $this -> model )->createQuery('a') 
+			-> leftjoin('a.Category') -> execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+			foreach($this->objects as &$object){
+				$object['category'] = $object['Category']['name'];
+				unset($object['Category']);
+				unset($object['description']);
+			}
+		}
+		return $this->renderText(json_encode($this -> objects, JSON_NUMERIC_CHECK));
 
-		$this -> objects = Doctrine_Core::getTable( $this -> model ) -> findAll();
 	}
 
 	public function executeCreate( sfWebRequest $request ) {

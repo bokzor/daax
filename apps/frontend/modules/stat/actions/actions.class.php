@@ -27,14 +27,13 @@ class statActions extends sfActions {
         } else {
             $this -> dateDebut = $request -> getParameter('date-debut');
             $this -> dateFin = $request -> getParameter('date-fin');
-            $this -> heureDebut = $request -> getParameter('heure-debut');
-            $this -> heureFin = $request -> getParameter('heure-fin');
+            $this -> heureDebut = '00:00';
+            $this -> heureFin = '23:59';
 
             $startTime = date("Y-m-d H:i:s", strtotime($request -> getParameter('date-debut')));
             $endTime = date("Y-m-d H:i:s", strtotime($request -> getParameter('date-fin') . ' 23:59'));
 
         }
-
 
         // on va creer les tableaux pour chaques serveurs.
         $serveurArray = array();
@@ -139,5 +138,57 @@ class statActions extends sfActions {
         $this -> serveurs = Doctrine::getTable('sfGuardUser') -> createQuery('c') -> leftjoin('c.Groups g') -> where('g.id != ?', 4) -> execute();
 
     }
+
+    public function executeProduit(sfWebRequest $request){
+        if (!$request -> getParameter('date-debut')) {
+            // si pas de date recue on set pour le mois en cours
+            $startTime = date("Y-m-d H:i:s", mktime(0, 0, 0, date('m'), 1, date('Y')));
+            $endTime = date("Y-m-d H:i:s", time());
+            $this -> dateDebut = date("m/d/Y", strtotime($startTime));
+
+            $this -> dateFin = date("m/d/Y", time());
+            $this -> heureDebut = '00:00';
+            $this -> heureFin = '23:59';
+        } else {
+            $this -> dateDebut = $request -> getParameter('date-debut');
+            $this -> dateFin = $request -> getParameter('date-fin');
+
+            $startTime = date("Y-m-d H:i:s", strtotime($request -> getParameter('date-debut')));
+            $endTime = date("Y-m-d H:i:s", strtotime($request -> getParameter('date-fin') . ' 23:59'));
+
+        }
+
+        $q = Doctrine::getTable('ArticleCommande') -> createQuery('c')
+        -> select('sum(count) as count, article_id, commande_id, a.name') -> leftjoin('c.Commande co') 
+        -> leftjoin('c.Article a') -> groupBy('article_id')->orderBy('count desc')
+        -> where('co.created_at <= ?', $endTime) -> andWhere('co.created_at >= ?', $startTime);
+
+        $this->articles = $q -> execute();
+    }
+
+    public function executeCategory(sfWebRequest $request){
+        if (!$request -> getParameter('date-debut')) {
+            // si pas de date recue on set pour le mois en cours
+            $startTime = date("Y-m-d H:i:s", mktime(0, 0, 0, date('m'), 1, date('Y')));
+            $endTime = date("Y-m-d H:i:s", time());
+            $this -> dateDebut = date("m/d/Y", strtotime($startTime));
+            $this -> dateFin = date("m/d/Y", time());
+
+        } else {
+            $this -> dateDebut = $request -> getParameter('date-debut');
+            $this -> dateFin = $request -> getParameter('date-fin');
+
+            $startTime = date("Y-m-d H:i:s", strtotime($request -> getParameter('date-debut')));
+            $endTime = date("Y-m-d H:i:s", strtotime($request -> getParameter('date-fin') . ' 23:59'));
+
+        }
+
+        $q = Doctrine::getTable('ArticleCommande') -> createQuery('c')
+        -> select('sum(count) as count, article_id, ca.id, a.id, a.name, c.id, commande_id, ca.name') -> leftjoin('c.Article a') 
+        -> leftjoin('a.Category ca') -> groupBy('a.category_id ')->orderBy('count desc') ->leftjoin('c.Commande co')
+        -> where('co.created_at <= ?', $endTime) -> andWhere('co.created_at >= ?', $startTime);
+
+        $this->articles = $q -> execute();
+    }    
 
 }

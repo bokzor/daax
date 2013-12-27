@@ -18,6 +18,9 @@ class articleActions extends sfActions {
 
 		$this->articles = Doctrine::getTable( 'Article' )->createQuery( 'a' )->leftjoin( 'a.Category' )->execute();
 	}
+	function executeListingTest( sfWebRequest $request ) {
+
+	}
 	public
 	function executeNew( sfWebRequest $request ) {
 

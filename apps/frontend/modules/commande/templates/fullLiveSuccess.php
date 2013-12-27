@@ -40,6 +40,7 @@ function majFullLive() {
 				    statut_commande: data['commande'][i]['statut_commande'],
 				    statut_id: data['commande'][i]['statut_id'],
 				    articles: data['commande'][i]['ArticleCommandes'],
+				    comment: data['commande'][i]['comment'],
 				}
 				if (app.collections.commandeFullLive.get(data['commande'][i]['id']) == undefined) {
 				    app.collections.commandeFullLive.add(commande);

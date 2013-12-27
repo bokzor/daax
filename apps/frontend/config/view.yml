@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [style.css, stylesheet.css, main.css, jquery.autocomplete.css, jquery.gritter.css, bootstrap.css, jquery.multiselect.css, prettyPhoto.css, preloadify.css ]
+  stylesheets:    []
 
-  javascripts:    [script.js, hoverIntent.js, superfish.js, jquery.prettyPhoto.js, interface.js, jquery.gritter.min.js, thumbs.js, bootstrap.min.js, jquery.multiselect.js, jquery.preloadify.min.js ]
+  javascripts:    []
 
   has_layout:     true
   layout:         layout

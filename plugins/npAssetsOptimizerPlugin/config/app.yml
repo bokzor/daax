@@ -1,0 +1,48 @@
+prod:
+  np_assets_optimizer_plugin:
+    enabled: true                         # status of the plugin
+    class: npAssetsOptimizerService       # the plugin service class to use
+    configuration:                        # optimization service configuration
+      javascript:                         # Javascript optimizer configuration
+        enabled: false                    # status of optimization
+        class: npOptimizerJavascript      # the javascript optimizer class to use
+        params:                           # optimizer class configuration
+          driver: JSMin                   # driver name (JSMin, JSMinPlus, etc.)
+          destination: /js/optimized.js   # destination path for optimized .js file
+          timestamp: true                 # add a timestamp to the combined file url
+          files: []                       # list of js files to optimize and combine
+      stylesheet:                         # stylesheets configuration section
+        enabled: true                    # status of optimization
+        class: npOptimizerStylesheet      # the stylesheet optimizer class to use
+        params:                           # optimizer class configuration
+          driver: MinifyCssCompressor                # driver name
+          destination: /css/optimized.css # destination path for optimized .css file
+          timestamp: true                 # add a timestamp to the combined file url
+          files:
+            - /css/480.css
+            - /css/768.css
+            - /css/992.css
+            - /css/1200.css
+            - /css/2x.css
+            - /css/styles/dashboard.css
+            - /css/jquery.keypad.css
+            - /css/styles/jqpagination.css
+            - /css/styles/form.css
+            - /css/styles/switches.css
+            - /css/styles/table.css
+            - /css/styles/modal.css
+            - /css/timepicker.css
+            - /css/mobiscroll.css
+            - /css/new_login/core.css
+      png_image:                          # PNG images configuration section
+        enabled: false                    # status of optimization
+        class: npOptimizerPngImage        # the PNG image optimizer class to use
+        params:                           # optimizer class configuration
+          driver: Pngout                  # driver name
+          folders:                        # folders to scan for PNG files to optimize
+            - %SF_WEB_DIR%/images         # by default, contains the web/images folder
+
+all:
+  np_assets_optimizer_plugin:
+    enabled: false
+    configuration: []

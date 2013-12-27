@@ -28,6 +28,7 @@
 					<div id="sidetab-1" class="with-padding">
 						<button id="montantPerso" step="any" class="mid-margin-bottom button huge full-width">Montant personnalisé</button>
 						<button onclick="encaisser(2)" step="any" class="mid-margin-bottom button huge full-width">Valider</button>
+						<button onclick="encaisser(-2)" step="any" class="mid-margin-bottom button huge full-width">Offrir</button>
 						<ul class="gallery" >
 							<li style="padding: 5px;" class='mid-margin-right'>
 								<a data-price="-5" class="payment" data-title="Billet de 5 euros" title="" href="#"> 									<img src="/uploads/payment/5.png" height="100px" width="150px" />

@@ -3,10 +3,6 @@
 	Your browser does not support JavaScript! Some features won't work as expected...
 </noscript>
 
-<hgroup id="main-title" class="thin">
-	<h1>Liste des utilisateurs</h1>
-</hgroup>
-
 <div class="with-padding">
 
 	<button onclick="editRow('utilisateur')" class="button right-side mid-margin-bottom green-gradient">New</button>
@@ -35,7 +31,6 @@
 		<tbody>
 			<?php foreach($utilisateurs as $utilisateur): ?>
 			<tr id="utilisateur-<?php echo $utilisateur->getId() ?>">
-				<?php //$group = $utilisateur->getGroups()->toArray() ?>
 				<td><?php echo showThumb($utilisateur->getAvatar(), 'avatar', $options = array('alt' => 'Avatar de '.$utilisateur->getUsername().'', 'class' => 'framed', 'width' => '40', 'height' => '40','title' => ''.$utilisateur->getUsername().''), $resize = 'fit', $default = 'default.png') ?></td>
 				<td class="hide-on-mobile-portrait"><?php echo $utilisateur->getUsername() ?></td>
 				<td><?php echo $utilisateur->getFirstName() ?></td>

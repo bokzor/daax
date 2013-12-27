@@ -6,6 +6,11 @@ homepage:
   url:   /
   param: { module: home, action: index }
 
+# route pour initialiser l'app
+get_infos:
+  url: /get/infos
+  param: { module: webservice, action: getInfos }
+
 commande:
   url: /commande
   param: { module: home, action: index }
@@ -21,6 +26,14 @@ payment:
 stat:
   url: /stat
   param: { module: stat, action: index }
+
+stat_produit:
+  url: /stat/produit
+  param: { module: stat, action: produit }
+
+stat_categorie:
+  url: /stat/category
+  param: { module: stat, action: category }
 
 ## listing
 gestion_commande:
@@ -46,6 +59,10 @@ gestion_utilisateur:
 gestion_sfGuardUser:
   url:  /gestion/utilisateur
   param: { module: utilisateur, action: listing }
+
+test_gestion_article:
+  url: /test/gestion/article
+  param: { module: article, action: listingTest }
 
 gestion_tools:
   url: /gestion/outils
@@ -167,7 +184,7 @@ supplement_article:
     id: \d+
 
 add_commentaire:
-  url: /commande/commentaire
+  url: /commande/commentaire/:cid
   param: { module: commande, action: commentaire}
 
 get_commandes_table_id:
@@ -238,6 +255,9 @@ enregistrer_commande:
   url: /save/commande/:table_id
   param: { module: commande, action: new }
 
+modifier_commande:
+  url: /modif/commande
+  param: { module: commande, action: modif }
 
 javascript:
   url: /js.:sf_format

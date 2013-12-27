@@ -15,36 +15,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <!-- For all browsers -->
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/colors.css">
-
-  <link rel="stylesheet" media="print" href="/css/print.css">
-  <!-- For progressively larger displays -->
-  <link rel="stylesheet" media="only all and (min-width: 480px)" href="/css/480.css">
-  <link rel="stylesheet" media="only all and (min-width: 768px)" href="/css/768.css">
-  <link rel="stylesheet" media="only all and (min-width: 992px)" href="/css/992.css">
-  <link rel="stylesheet" media="only all and (min-width: 1200px)" href="/css/1200.css">
-  <!-- For Retina displays -->
-  <link rel="stylesheet" media="only all and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)" href="/css/2x.css">
-
-  <!-- Additional styles -->
-  <link rel="stylesheet" href="/css/styles/form.css?">
-  <link rel="stylesheet" href="/css/styles/switches.css?">
-    <!-- Additional styles -->
-  <link rel="stylesheet" href="/css/styles/dashboard.css">
-  <link rel="stylesheet" href="/css/jquery.keypad.css">
-  <link rel="stylesheet" href="/css/styles/jqpagination.css">
-  <link rel="stylesheet" href="/css/styles/form.css">
-  <link rel="stylesheet" href="/css/styles/switches.css">
-  <link rel="stylesheet" href="/css/styles/table.css">
-  <link rel="stylesheet" href="/css/styles/modal.css">
-  <link rel="stylesheet" href="/css/timepicker.css">
-  <link rel="stylesheet" href="/css/mobiscroll.css">
-  <link rel="stylesheet" href="/js/libs/DataTables/jquery.dataTables.css">
-  <link rel="stylesheet" href="/css/new_login/core.css">
-      <!-- feuille de style pour les clients -->
+  <?php include_partial('home/css') ?>
 
   <!-- For Modern Browsers -->
   <link rel="shortcut icon" href="/image/favicons/favicon.png">
@@ -69,22 +40,15 @@
   <!-- Microsoft clear type rendering -->
   <meta http-equiv="cleartype" content="on">
 
-  <!---CSS Files-->
-  <link rel="stylesheet" href="/css/new_login/core.css">
-  <link rel="stylesheet" href="/css/new_login/login.css">
+
   <!---jQuery Files-->
   <script src="/js/libs/modernizr.custom.js"></script>
   <script src="/js/libs/jquery-1.8.2.min.js"></script>
-  <script src="/js/libs/quo.js"></script>
-
-
-  <script src="/js/libs/underscore-min.js"></script>
-  <script src="/js/libs/backbone-min.js"></script>
 
 </head>
 <body>
 
-  <div id="container" style="display: none">
+  <div id="container" style="opacity: 0;">
   	<div id="wrapper">
 
       <div id="header">
@@ -109,7 +73,7 @@
       
     </div>
 
-    <div style="display:none" id="lg-overlay">
+    <div style="opacity: 0;" id="lg-overlay">
       <div id="quick-lg">
         <form id="lg-form" method="post" action="dashboard.html">
           <div id="field">
@@ -128,40 +92,10 @@
     </span>
   <!---jQuery Code-->
 <script>
-    // javascript pour le loader
-  $('#lg-overlay, #load, #field span img, #forgot-psw, .icon, .notification').hide();
-  $('#load').fadeIn(400);
-  $(window).load(function () {
-      $('#load').fadeOut(400, function () {
-          $('#container').fadeIn(600, function () {});
-      });
-  });
+
 </script>
 </body>
-  <script src="/js/setup.js"></script>
-
-  <!-- Template functions -->
-  <script src="/js/libs/jquery.jqpagination.min.js"></script>
-  <script src="/js/timepicker-mobiscroll.js"></script>
-  <script src="/js/timepicker.js"></script>   
-  <script src="/js/developr.input.js"></script>
-  <script src="/js/developr.modal.js"></script>
-  <script src="/js/developr.message.js"></script>
-  <script src="/js/developr.notify.js"></script>
-  <script src="/js/developr.scroll.js"></script>
-  <script src="/js/developr.tooltip.js"></script>
-  <script src="/js/jquery.keypad.js"></script>
-  <script src="/js/developr.confirm.js"></script>
-  <script src="/js/developr.wizard.js"></script>
-
-
-  <!-- Must be loaded last -->
-  <script src="/js/developr.tabs.js"></script>
-  <script src="/js/developr.table.js"></script>
-
-  <!-- Must be loaded last -->
-  <script src="/js/libs/jquery.tablesorter.min.js"></script>
-  <script src="/js/libs/DataTables/jquery.dataTables.min.js"></script>
+  <?php include_partial('home/js') ?>
   <script type='text/javascript'>
 
 
@@ -176,6 +110,14 @@
               ]
           });
       }
+      // javascript pour le loader
+    $('#lg-overlay, #load, #field span img, #forgot-psw, .icon, .notification').hide();
+    $('#load').transition({opacity: 1 }, 400);
+    $(window).load(function () {
+        $('#load').transition({opacity: 0 }, 400, function () {
+            $('#container').show().transition({opacity: 1 }, 600, function () {});
+        });
+    });
   });
 
 
@@ -183,7 +125,7 @@
     $('#users li').live('click', function() {
         $('#users li').removeClass('active');
         $(this).addClass('active');
-        $('#lg-overlay').fadeIn(400, function () {
+        $('#lg-overlay').show().transition({opacity: 1}, 400, function () {
             $('#quick-input').focus();
         });
     });
@@ -192,7 +134,7 @@
         if ($(e.target).is('#quick-lg, #quick-lg *')) {
             return;
         }
-        $(this).fadeOut(300);
+        $(this).hide().transition({opacity: 0}, 300);
     });
 
     $('#lg-form').live('submit', function(e) {
@@ -201,8 +143,8 @@
         if (pswlgt < 1) {
             e.preventDefault();
             $('#placeholder').text('Entrez votre mot de passe');
-            $('#field span').fadeOut(200, function () {
-                $(this).text('X').css('color', '#e56969').fadeIn(100);
+            $('#field span').hide().transition({opacity: 0}, 200, function () {
+                $(this).text('X').css('color', '#e56969').show().transition({opacity: 1 }, 100);
                 $('#quick-input').val('').focus();
             });
             $('#field').removeClass('success').addClass('error');
@@ -219,13 +161,13 @@
                     },
                     success: function (data) {
                         if (data == 'logged') {
-                            $('#field span').fadeOut(200, function () {
-                                $('#field span').text('=').css('color', '#9fbf2f').fadeIn(100)
+                            $('#field span').hide().transition({opacity: 0 }, 200, function () {
+                                $('#field span').text('=').css('color', '#9fbf2f').show().transition({opacity: 1}, 100);
                             });
                             document.location.href = '<?php echo url_for('@homepage') ?>';
                         } else {
                             $('#field').removeClass('success').addClass('error');
-                            $('#field span').text('X').css('color', '#e56969').fadeIn(100);
+                            $('#field span').text('X').css('color', '#e56969').show().transition({opacity: 1}, 100);
                         }
                     },
                     error: function () {

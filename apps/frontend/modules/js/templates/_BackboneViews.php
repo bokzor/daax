@@ -15,6 +15,8 @@
 		<% if (article.count>1) { %>
 			<span class="count left"><%= article.count %></span>
 		<%} %>	
+	<button onclick="deleteArticleCommande('<%= article.htmlId %>')" class="red-bg delete-article">X</button>		
+
 	</div>
 
 	<% _.each(article.supplements, function (supplement, key, i) { %>
@@ -26,7 +28,6 @@
 		<span class="prix-boisson"><%= prix.toFixed(2) %></span></span>
 	</div>
 	<% }); %>
-	<span onclick="deleteArticleCommande('<%= article.htmlId %>')" class="close-article">X</span>		
 	</div>
 
 	<% }); %>
@@ -116,6 +117,9 @@
 					<%  _.each(article.supplements, function (supplement, key, i) { %>
 			  			<span> -> <%= supplement.name %></span>
 			  		<% }); %>
+			  		<% if(article.comment != 'null'){ console.log(article.comment)%>
+			  			<span>"<%= article.comment %>"</span>
+			  		<%} %>
 			  </span>  |
 		<% }); %>
 		</span>

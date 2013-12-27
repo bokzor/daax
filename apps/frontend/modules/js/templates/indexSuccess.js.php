@@ -1,4 +1,4 @@
-// fonction qui récupére les erreurs ajax
+/* fonction qui récupére les erreurs ajax */
 $(function() {
     $.ajaxSetup({
 	error: function(jqXHR, exception) {
@@ -496,17 +496,17 @@ function clearCommande() {
 
 function dataTableInit(id, options) {
     if(!options){
-        options = {};
+        var options = {}
     }
-    if(options['pagination'] === undefined){
-        options['pagination'] = 7;
+    if(!options['pagination']){
+         option.pagination = 7;
     }
     var table = $('#' + id);
     table.dataTable({
 	'bSort': false,
 	'sPaginationType': 'full_numbers',
 	'sDom': '<"dataTables_header"lfr>t<"dataTables_footer"ip>',
-    "iDisplayLength": options['pagination'],
+    "iDisplayLength": option.pagination,
 	'bJQueryUI': true,
 	'oLanguage': {
 	    "sProcessing": "Traitement en cours...",
@@ -749,7 +749,6 @@ function getArticlesCommande(id) {
         var pret = 'Prête';
         var new_statut = 4;       
     }
-    console.log(data['statut_commande']);
 	var buttons = {
 	    'Encaisser': function(modal) {
 		jsonCommande(id, '');

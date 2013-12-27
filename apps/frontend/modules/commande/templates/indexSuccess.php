@@ -1,6 +1,7 @@
 <?php use_helper('Thumb'); ?>
-<button onclick="supplementArticle()" id="supplement" class="huge full-width button icon-plus">Suppléments</button>
-<input type="text" placeholder='Recherche' class=" virtual-pad input full-width large">
+<!-- affiche le menu pour enregistrer valider et charger une commande -->
+<?php include_partial('home/optionsCommande') ?>
+<input type="text" id="recherche" placeholder='Recherche' class=" virtual-pad input full-width large">
 
 <div class="with-padding container-boisson">
 	<div class="columns">
@@ -27,7 +28,7 @@
 								<?php foreach($tops as $article): ?>
 								<li style=" " class="mid-margin-right mid-margin-left mid-margin-bottom">
 									<figure data-category='<?php echo $article->getCategory()->getId() ?>' data-title="<?php echo $article->getName() ?>"  data-price="<?php echo $article->getPrix() ?>" data-id="<?php echo $article->getId() ?>" >
-											<?php echo showThumb($article->getImg(), 'articles', $options = array('alt' => 'Affiche de '.$article->getName().'', 'class' => 'framed image-commande', 'width' => '170', 'height' => '170','title' => ''.ucfirst($article->getName()).''), $resize = 'fit', $default = 'default.jpg') ?> 
+											<?php echo showThumb($article->getImg(), 'articles', $options = array('alt' => 'Affiche de '.$article->getName().'', 'class' => 'image-commande', 'width' => '170', 'height' => '170','title' => ''.ucfirst($article->getName()).''), $resize = 'fit', $default = 'default.jpg') ?> 
 										
 										<figcaption><?php echo ucfirst($article -> getName()) ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption>
 
@@ -46,7 +47,7 @@
 								<li style=" " class="mid-margin-right mid-margin-left mid-margin-bottom">
 									<figure data-category='<?php echo $category->getId() ?>' data-price="<?php echo $article->getPrix() ?>" data-id="<?php echo $article->getId() ?>" data-title="<?php echo $article->getName() ?>"  >
 										<a class="articles-message" title="<?php echo $article->getName() ?>" href="#">
-											<?php echo showThumb($article->getImg(), 'articles', $options = array('alt' => 'Affiche de '.$article->getName().'', 'class' => 'framed image-commande', 'width' => '170', 'height' => '170','title' => ''.$article->getName().''), $resize = 'fit', $default = 'default.jpg') ?> 
+											<?php echo showThumb($article->getImg(), 'articles', $options = array('alt' => 'Affiche de '.$article->getName().'', 'class' => 'image-commande', 'width' => '170', 'height' => '170','title' => ''.$article->getName().''), $resize = 'fit', $default = 'default.jpg') ?> 
 										</a>
 										<figcaption><?php echo ucfirst($article -> getName()) ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption> 	
 									</figure>
@@ -74,6 +75,7 @@
 </div>
 
 <script>
+
 
 // on revient au dessus de la page
 $('.tabs-content > div').on('showtab', function () {
@@ -117,9 +119,18 @@ function pagination(page) {
     }
 }
 
-function supplementArticle(){
-    $('#supplement').toggleClass('red-gradient white');
-    if($('#supplement').hasClass('red-gradient')){
+function supplementArticle() {
+    $('#supplementB').toggleClass('red-gradient');
+    if ($('#supplementB').hasClass('red-gradient')) {
+        notify('Notification', 'Veuillez choisir un article', {
+            closeDelay: 5000
+        });
+    };
+};
+
+function commentaireArticle() {
+    $('#commentaireB').toggleClass('red-gradient');
+    if ($('#commentaireB').hasClass('red-gradient')) {
         notify('Notification', 'Veuillez choisir un article', {
             closeDelay: 5000
         });
@@ -127,30 +138,29 @@ function supplementArticle(){
 };
 
 $(document).ready(function () {
-        $(document).on('init-queries', function()
-    {
+    $(document).on('init-queries', function () {
         $('#main').widthchange(responsiveCommande);
     });
     // on désactive la pagination sur les petits écrans;
-    
-    function responsiveCommande(){
+
+    function responsiveCommande() {
+        console.log($.template.viewportWidth);
         if ($.template.viewportWidth < 952) {
             $('ul.gallery:visible > li').show();
             $('.pagination').hide();
-            $('.access').insertAfter('#main');
-            $('.access').css('position', 'fixed');
-            $('.access').css('bottom', '0');
-            $('.access').css('z-index', '100');
+            $('#controlleurCommande').insertAfter('#main');
+            $('#controlleurCommande').css('position', 'fixed');
+            $('#controlleurCommande').css('bottom', '0');
+            $('#controlleurCommande').css('z-index', '100');
             $('#main').css('padding-bottom', '55px');
-        }else{
+        } else {
             // on active la pagination
             pagination(1);
-            $('.access').insertAfter('#profile');
-            $('.access').css('bottom', '');
-            $('.access').css('position', '');
-            $('.pagination').show();
+            $('#controlleurCommande').insertAfter('#profile');
+            $('#controlleurCommande').css('bottom', '');
+            $('#controlleurCommande').css('position', '');
+            $('#controlleurCommande').show();
             $('#main').css('padding-bottom', '0px');
-
         }
     }
 
@@ -207,13 +217,13 @@ $(document).ready(function () {
 
     // lors du click d'une categorie on supprime la recherche courrante
     $('#categorie-tabs > li > a').live('click', function () {
-        //$('.virtual-pad').attr('value', '');
-        //searchArticle($('.virtual-pad'));
-        // on calcule le nombre de page
-        nb_page = Math.ceil($('ul.gallery:visible > li').length/16);
-        $('.pagination').jqPagination('option', { 'current_page': 1, 'max_page':nb_page });   
-        
-        // on compte le nombre d'élément dans la catégorie active. Si il n'y en pas on revient sur la page de séléction de catégorie	
+        nb_page = Math.ceil($('ul.gallery:visible > li').length / 16);
+        $('.pagination').jqPagination('option', {
+            'current_page': 1,
+            'max_page': nb_page
+        });
+
+        // on compte le nombre d'élément dans la catégorie active. Si il n'y en pas on revient sur la page de séléction de catégorie    
         var idCat = $(this).attr('href');
         if ($(idCat + ' > ul > li ').length == 0) {
             $('.tab-opened').removeClass('tab-opened');
@@ -238,14 +248,13 @@ $(document).ready(function () {
     var elem = $('.virtual-pad');
     // Save current value of element
     elem.data('oldVal', elem.val());
-    elem.live('change keyup input paste', function () {
+    elem.on('change keyup input paste', function () {
+        console.log('change');
         if (elem.data('oldVal') != elem.val()) {
             // Updated stored value
             elem.data('oldVal', elem.val());
             searchArticle($(this));
-
         }
-
     });
 
 

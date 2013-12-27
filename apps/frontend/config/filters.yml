@@ -3,7 +3,8 @@
 
 rendering: ~
 
-  
+spaceless:
+  class: sfFrontendSpacelessFilter
 remember_me:
   class: sfGuardRememberMeFilter
 security:  ~

@@ -143,7 +143,7 @@
 							if (settings.animate && init)
 							{
 								// Scroll
-								element.stop(true).animate({ scrollLeft: scrollH }, {
+								element.stop(true).transition({ scrollLeft: scrollH }, {
 									step: function()
 									{
 										$(this).refreshInnerTrackedElements();
@@ -294,7 +294,7 @@
 							if (settings.animate && init)
 							{
 								// Scroll
-								element.stop(true).animate({ scrollTop: scrollV }, {
+								element.stop(true).transition({ scrollTop: scrollV }, {
 									step: function()
 									{
 										$(this).refreshInnerTrackedElements();
@@ -419,7 +419,7 @@
 				if (settings.animate && !doNotAnimate && init)
 				{
 					// Scroll
-					element.stop(true).animate({
+					element.stop(true).transition({
 						scrollLeft: scrollH,
 						scrollTop: scrollV
 					}, {
@@ -618,8 +618,8 @@
 		if (object)
 		{
 			element.data('scroll-focus', true);
-			if (object.hscrollbar()) object.hscrollbar().animate({ opacity: 1 });
-			if (object.vscrollbar()) object.vscrollbar().animate({ opacity: 1 });
+			if (object.hscrollbar()) object.hscrollbar().transition({ opacity: 1 });
+			if (object.vscrollbar()) object.vscrollbar().transition({ opacity: 1 });
 		}
 	};
 
@@ -637,8 +637,8 @@
 		if (object)
 		{
 			element.removeData('scroll-focus');
-			if (object.hscrollbar()) object.hscrollbar().animate({ opacity: 0 });
-			if (object.vscrollbar()) object.vscrollbar().animate({ opacity: 0 });
+			if (object.hscrollbar()) object.hscrollbar().transition({ opacity: 0 });
+			if (object.vscrollbar()) object.vscrollbar().transition({ opacity: 0 });
 		}
 	};
 

@@ -1,26 +1,8 @@
+<?php include_partial('home/optionsStat') ?>
 <form method="POST" action="<?php echo url_for('stat')?>">
 <div class="with-padding">
 
 	<div class="columns no-margin">
-		<!--
-		<div class="margin-right margin-bottom">
-			<h6>Selectionnez la periode</h6>
-			<span class="button-group">
-				<label for="radio-buttons-1" class="button green-active">
-					<input onclick="listDay(actualYear, actualMonth, actualWeek)" type="radio" name="radio-buttons" id="radio-buttons-1" value="1">
-					Jour
-				</label>
-				<label for="radio-buttons-2" class="button green-active">
-					<input onclick="listMonth(actualYear)" type="radio" name="radio-buttons" id="radio-buttons-2" checked value="2">
-					Mois
-				</label>
-				<label for="radio-buttons-3" class="button green-active">
-					<input onclick="listYear()" type="radio" name="radio-buttons" id="radio-buttons-3" value="3">
-					Année
-				</label>
-			</span>
-		</div>
-	-->
 		<div class="margin-right margin-bottom">
 			<h6>Selectionnez les serveurs</h6>
 			<p class="button-height">
@@ -38,12 +20,7 @@
 				<span class="icon-calendar"></span>
 				<input type="text" name="date-debut" value="<?php echo $dateDebut ?>" id="date-debut" class="datetimepicker input-unstyled datepicker" value="">
 			</span>
-			
-			<h6>Début créneau horaire</h6>	
-			<span class="input margin-bottom ">	
-				<span class="icon-clock"></span>		
-				<input type="text" name="heure-debut" value="<?php echo $heureDebut ?>"id="date-debut-heure" class="input-unstyled timepicker" value="">
-			</span>			
+
 		</div>
 		<div class="margin-right margin-bottom">
 
@@ -52,11 +29,7 @@
 				<span class="icon-calendar"></span>
 				<input type="text" name="date-fin" value="<?php echo $dateFin ?>" id="date-fin" class="datetimepicker input-unstyled datepicker" value="">
 			</span>
-			<h6>Fin créneau horaire</h6>	
-			<span class="input margin-bottom ">	
-				<span class="icon-clock"></span>		
-				<input type="text" name="heure-fin" value="<?php echo $heureFin ?>" id="date-fin-heure" class="input-unstyled timepicker" value="">
-			</span>	
+
 		</div>
 		
 	</div>
@@ -102,64 +75,7 @@
 
 	<script type="text/javascript" src="/js/google_chart_api/04.js"></script>
 	<script>
-		function listMonth(year){
-			var listeM = '';
-			var months = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'];
-			for(var i = 0; i < months.length; i++){
-				listeM += '<li><span class="event-date">' + (i+1) + '</span><a onclick="listWeek(' + year + ',' + i + ')" data-year="' + year + '" data-month="'+ i + '" href="#" class="event-description"><h4>' + months[i] + '</h4></a></li>';
-			}
-			$('#radio-buttons-2').attr('checked', true);
-			$('#radio-buttons-2').parent().addClass('active');
-			$('#radio-buttons-3').parent().removeClass('active');
-			$('#radio-buttons-3').attr('checked', false);
-			$('.events').html(listeM);
-		}
-
-		function listDay(year, month, week){
-			xdate = new XDate();
-			xdate.setWeek(1, year);
-			xdate.addWeeks(week - 1);
-			var listeM = '';
-			var days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-			while(xdate.getMonth() != month){
-				xdate.addDays(1);
-			}
-			while(xdate.getWeek() == week && xdate.getMonth() == month){
-				listeM += '<li><span class="event-date">' + xdate.getDate() + '</span><a href="#" class="event-description"><h4>' + days[xdate.getDay()] + '</h4></a></li>';
-				xdate.addDays(1);
-			}
-			$('.events').html(listeM);		
-		}
-
-		function listWeek(year, month){
-			xdate = new XDate(year, month, 1, 0, 0, 0, 0);
-			var listeM = '';
-			while(xdate.getMonth() == month){
-				var week = xdate.getWeek();
-				listeM += '<li><span class="event-date">' + week + '</span><a onclick="listDay(' + year + ',' + month + ',' + week + ')" data-year="' + year + '" data-week="' + week +'" href="#" class="event-description"><h4>Semaine</h4></a></li>';
-				xdate.addWeeks(1);
-			}
-			$('.events').html(listeM);
-			$('#radio-buttons-1').attr('checked', true);
-			$('#radio-buttons-1').parent().addClass('active');
-			$('#radio-buttons-2').parent().removeClass('active');
-			$('#radio-buttons-2').attr('checked', false);	
-		}
-
-		function listYear(){
-			xdate = new XDate();
-			var listeM = '';
-			var year = xdate.getFullYear();
-			for(var i = year; i >= year - 4; i--){
-				listeM += '<li style="padding-left: 20px;"><a onclick="listMonth(' + i + ')" data-date="' + i + '"  href="#" class="event-description"><h4>' + i + '</h4></a></li>';
-			}
-			$('.events').html(listeM);	
-		}
-		//xdate = new XDate();
-		//actualYear = xdate.getFullYear();
-		//actualMonth = xdate.getMonth();
-		//actualWeek = xdate.getWeek();
-		//listMonth(actualYear);
+		
 
         
 		var chartInit = false;

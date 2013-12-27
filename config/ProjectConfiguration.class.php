@@ -9,7 +9,9 @@ class ProjectConfiguration extends sfProjectConfiguration {
 		$this -> enablePlugins('sfDoctrineGuardPlugin');
 		$this -> enablePlugins('sfImageTransformPlugin');
 		$this -> enablePlugins('sfTCPDFPlugin');
-	}
+		$this -> enablePlugins('sfFrontendOptimizerPlugin');
+	    $this->enablePlugins('npAssetsOptimizerPlugin');
+  }
 
 	public function configureDoctrine(Doctrine_Manager $manager) {
 		$manager -> setAttribute(Doctrine_Core::ATTR_AUTO_FREE_QUERY_OBJECTS, true);

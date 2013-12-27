@@ -1,17 +1,12 @@
 /**
- *
- * '||''|.                            '||
- *  ||   ||    ....  .... ...   ....   ||    ...   ... ...  ... ..
- *  ||    || .|...||  '|.  |  .|...||  ||  .|  '|.  ||'  ||  ||' ''
- *  ||    || ||        '|.|   ||       ||  ||   ||  ||    |  ||
- * .||...|'   '|...'    '|     '|...' .||.  '|..|'  ||...'  .||.
- *                                                  ||
- * --------------- By Display:inline ------------- '''' -----------
- *
+ 
  * Styles override for high resolution screens
  */
 
-/* Class used to determine which media queries are on */
-#mediaquery-checker {
-	height: 20px;
+@media only all and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5){
+    /* Class used to determine which media queries are on */
+    #mediaquery-checker {
+    	height: 20px;
+    }
+
 }
