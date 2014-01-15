@@ -7,3 +7,6 @@ all:
   fr:     
     format_date : "d/m/Y"     
     format_date_horaire: "d/m/Y H:i"
+  url_mobile: 'http://m.lespoules2.order/'
+  url_desktop: 'http://lespoules2.order'
+  url_generic: '.lespoules2.order'

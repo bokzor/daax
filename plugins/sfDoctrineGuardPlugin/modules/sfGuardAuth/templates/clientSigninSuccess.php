@@ -24,20 +24,9 @@
 	<link rel="stylesheet" href="/css/reset.css?v=1">
 	<link rel="stylesheet" href="/css/style.css?v=1">
 	<link rel="stylesheet" href="/css/colors.css?v=1">
-	<link rel="stylesheet" href="/css/jquery.keypad.css">
-
-	<link rel="stylesheet" media="print" href="/css/print.css?v=1">
-	<!-- For progressively larger displays -->
-	<link rel="stylesheet" media="only all and (min-width: 480px)" href="/css/480.css?v=1">
-	<link rel="stylesheet" media="only all and (min-width: 768px)" href="/css/768.css?v=1">
-	<link rel="stylesheet" media="only all and (min-width: 992px)" href="/css/992.css?v=1">
-	<link rel="stylesheet" media="only all and (min-width: 1200px)" href="/css/1200.css?v=1">
-	<!-- For Retina displays -->
-	<link rel="stylesheet" media="only all and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)" href="css/2x.css?v=1">
 
 	<!-- Additional styles -->
 	<link rel="stylesheet" href="/css/styles/form.css?v=1">
-	<link rel="stylesheet" href="/css/styles/switches.css?v=1">
 
 	<!-- Login pages styles -->
 	<link rel="stylesheet" media="screen" href="/css/login.css?v=1">
@@ -120,11 +109,8 @@
 	<script src="/js/setup.js"></script>
 
 	<!-- Template functions -->
-	<script src="/js/developr.input.js"></script>
 	<script src="/js/developr.message.js"></script>
 	<script src="/js/developr.notify.js"></script>
-	<script src="/js/developr.tooltip.js"></script>
-	<script src="/js/jquery.keypad.js"></script>
 
 	<script>
 
@@ -187,9 +173,6 @@
 					displayLoading('Verification des autorisations...');
 					event.preventDefault();
 
-					// Stop normal behavior
-					event.preventDefault();
-
 					
 
 					 $.ajax('<?php echo url_for('@check_login') ?>', {
@@ -198,6 +181,10 @@
 					 			'signin[username]':	login,
 					  			'signin[password]':	pass
 					  		},
+				            xhrFields: {
+				                withCredentials: true
+				            },
+				            crossDomain: true,
 					  		success: function(data)
 					  		{
 					  			
@@ -345,17 +332,6 @@
 			$(this).remove();
 			$('body').removeAttr('style');
 		    });
-
-		    // si c'est pas tactile, on active le clavier virtuel
-			if ($.template.mediaQuery.has('tablet-landscape'))
-			{
-				$('.virtual-pad').keypad({keypadOnly: false, 
-			    layout: ['azertyuiop' + $.keypad.CLOSE, 
-			        'qsdfghjklm' + $.keypad.CLEAR, 
-			        'wxcvbn' + $.keypad.SPACE + $.keypad.SPACE + $.keypad.BACK]
-			 	});				
-			}
-
 		});
 	</script>
 </body>

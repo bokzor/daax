@@ -11,6 +11,8 @@ class ProjectConfiguration extends sfProjectConfiguration {
 		$this -> enablePlugins('sfTCPDFPlugin');
 		$this -> enablePlugins('sfFrontendOptimizerPlugin');
 	    $this->enablePlugins('npAssetsOptimizerPlugin');
+
+	    
   }
 
 	public function configureDoctrine(Doctrine_Manager $manager) {

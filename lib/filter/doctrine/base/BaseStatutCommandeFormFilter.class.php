@@ -13,11 +13,13 @@ abstract class BaseStatutCommandeFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'name' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'name'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'realId' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'name' => new sfValidatorPass(array('required' => false)),
+      'name'   => new sfValidatorPass(array('required' => false)),
+      'realId' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('statut_commande_filters[%s]');
@@ -37,8 +39,9 @@ abstract class BaseStatutCommandeFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'   => 'Number',
-      'name' => 'Text',
+      'id'     => 'Number',
+      'name'   => 'Text',
+      'realId' => 'Number',
     );
   }
 }

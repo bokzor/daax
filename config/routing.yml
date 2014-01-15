@@ -1,0 +1,48 @@
+## web service
+  
+ws_list:
+  url: /rest/:model.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: list }
+  requirements:
+    sf_method: [GET]
+    sf_format: (?:html|xml|json)
+
+ws_create:
+  url: /rest/:model.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: create }
+  requirements:
+    sf_method: [POST]
+    sf_format: (?:html|xml|json)
+
+ws_get:
+  url: /rest/:model/:id.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: get, column: id }
+  requirements:
+    id: \d+
+    sf_method: [GET]
+    sf_format: (?:html|xml|json)
+
+ws_update:
+  url: /rest/:model/:id.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: update, column: id }
+  requirements:
+    id: \d+
+    sf_method: [PUT]
+    sf_format: (?:html|xml|json)
+
+ws_delete:
+  url: /rest/:model/:id.:sf_format
+  class: sfRequestRoute
+  param: { module: webservice, action: delete, column: id }
+  requirements:
+    id: \d+
+    sf_method: [DELETE]
+    sf_format: (?:html|xml|json)
+
+check_login:
+  url: /login
+  param: { module: sfGuardAuth, action: signin }

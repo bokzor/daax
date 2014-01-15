@@ -4,3 +4,6 @@ default:
 
 inscription:
   is_secure: false
+
+sfGuardUser:
+  is_secure: false

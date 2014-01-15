@@ -75,6 +75,7 @@ sfGuardUser:
     credit:         { type: integer, default: 0 }
     identifiant:    { type: integer, unique: true }
     code:           { type: integer(4), unsigned: true, unique: true }
+    uid:            { type: string(20), unique: true }
   indexes:
     is_active_idx:
       fields: [is_active]

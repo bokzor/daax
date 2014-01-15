@@ -19,18 +19,22 @@ var app = {
     this.views.commandeLive = new this.Views.commandeLive({collection : this.collections.commandeLive});
     this.models.infos = new this.Models.infos;
     //this.views.commandeFullLive = new this.Views.commandeFullLive({collection : this.collections.commandeFullLive});
-  
+    console.log('app is init');
+    // Call template init (optional, but faster if called manually)
+    $.template.init();    
+    isReady();
+    // Init payment layout
+    payment();
+    var event = document.createEvent('Event');
+    event.initEvent('appInit', true, true);
+    document.dispatchEvent(event);
+
   }
 };
 
 $(document).ready(function () {
   // On lance l'application une fois que notre HTML est chargé
   app.init();
-  // Call template init (optional, but faster if called manually)
-  $.template.init();  
-  //
-  isReady();
-  // Init payment layout
-  payment();
+
   
 });

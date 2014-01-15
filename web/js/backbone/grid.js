@@ -16,11 +16,6 @@ function grid(){
         }
     });
 
-    // Fetch some data
-    if(app.collections.articles == undefined)
-      app.init();
-      app.collections.articles.fetch({reset: true});
-
     var columns = [{
     name: "id", // The key of the model attribute
     label: "ID", // The name to display in the header
@@ -84,6 +79,5 @@ function grid(){
 
   // Add some space to the filter and move it to the right
   filter.$el.css({float: "right", margin: "20px"});
-
 
 }

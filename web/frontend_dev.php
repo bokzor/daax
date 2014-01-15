@@ -1,4 +1,5 @@
 <?php
+
 date_default_timezone_set('Europe/Paris');
 setlocale(LC_TIME, 'fr_FR', 'fra');
 // this check prevents access to debug front controllers that are deployed by accident to production servers.
@@ -6,7 +7,7 @@ setlocale(LC_TIME, 'fr_FR', 'fra');
 
 require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
 
-$configuration = ProjectConfiguration::getApplicationConfiguration('frontend', 'dev', true);
+$configuration = ProjectConfiguration::getApplicationConfiguration('frontend', 'prod', true);
 sfContext::createInstance($configuration)->dispatch();
 
 

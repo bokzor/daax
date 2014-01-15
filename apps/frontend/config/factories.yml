@@ -44,11 +44,10 @@ all:
         param:
           automatic_cleaning_factor: 0
           lifetime:                  31556926
-  storage:
-    param:
-      session_name: LiveOrder
 
- 
+
+
+
   view_cache:
     class: sfAPCCache
 

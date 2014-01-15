@@ -27,6 +27,7 @@
  * @property integer $credit
  * @property integer $identifiant
  * @property integer $code
+ * @property string $uid
  * @property Doctrine_Collection $Groups
  * @property Doctrine_Collection $Permissions
  * @property Doctrine_Collection $sfGuardUserGroup
@@ -60,6 +61,7 @@
  * @method integer               getCredit()                Returns the current record's "credit" value
  * @method integer               getIdentifiant()           Returns the current record's "identifiant" value
  * @method integer               getCode()                  Returns the current record's "code" value
+ * @method string                getUid()                   Returns the current record's "uid" value
  * @method Doctrine_Collection   getGroups()                Returns the current record's "Groups" collection
  * @method Doctrine_Collection   getPermissions()           Returns the current record's "Permissions" collection
  * @method Doctrine_Collection   getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
@@ -92,6 +94,7 @@
  * @method sfGuardUser           setCredit()                Sets the current record's "credit" value
  * @method sfGuardUser           setIdentifiant()           Sets the current record's "identifiant" value
  * @method sfGuardUser           setCode()                  Sets the current record's "code" value
+ * @method sfGuardUser           setUid()                   Sets the current record's "uid" value
  * @method sfGuardUser           setGroups()                Sets the current record's "Groups" collection
  * @method sfGuardUser           setPermissions()           Sets the current record's "Permissions" collection
  * @method sfGuardUser           setSfGuardUserGroup()      Sets the current record's "sfGuardUserGroup" collection
@@ -209,6 +212,11 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'unsigned' => true,
              'unique' => true,
              'length' => 4,
+             ));
+        $this->hasColumn('uid', 'string', 20, array(
+             'type' => 'string',
+             'unique' => true,
+             'length' => 20,
              ));
 
 

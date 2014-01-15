@@ -59,6 +59,7 @@ Category:
 StatutCommande:
   columns:
     name:              { type: string(100), notnull: true, unique: true }
+    realId:            { type: integer }
 
 Fournisseur:
   actAs:
@@ -260,4 +261,6 @@ CategoryImprimante:
   relations:
     Imprimante:          { class: Imprimante, onDelete: CASCADE, foreign: id, local: imprimante_id }
     Category:            { class: Category, onDelete: CASCADE, foreign: id, local: category_id }
+
+
 

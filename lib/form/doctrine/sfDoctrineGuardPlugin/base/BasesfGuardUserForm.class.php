@@ -38,6 +38,7 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'credit'           => new sfWidgetFormInputText(),
       'identifiant'      => new sfWidgetFormInputText(),
       'code'             => new sfWidgetFormInputText(),
+      'uid'              => new sfWidgetFormInputText(),
       'created_at'       => new sfWidgetFormDateTime(),
       'updated_at'       => new sfWidgetFormDateTime(),
       'groups_list'      => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup')),
@@ -68,6 +69,7 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'credit'           => new sfValidatorInteger(array('required' => false)),
       'identifiant'      => new sfValidatorInteger(array('required' => false)),
       'code'             => new sfValidatorInteger(array('required' => false)),
+      'uid'              => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'created_at'       => new sfValidatorDateTime(),
       'updated_at'       => new sfValidatorDateTime(),
       'groups_list'      => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup', 'required' => false)),
@@ -79,6 +81,7 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
         new sfValidatorDoctrineUnique(array('model' => 'sfGuardUser', 'column' => array('username'))),
         new sfValidatorDoctrineUnique(array('model' => 'sfGuardUser', 'column' => array('identifiant'))),
         new sfValidatorDoctrineUnique(array('model' => 'sfGuardUser', 'column' => array('code'))),
+        new sfValidatorDoctrineUnique(array('model' => 'sfGuardUser', 'column' => array('uid'))),
       ))
     );
 

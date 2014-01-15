@@ -62,8 +62,9 @@ class utilisateurActions extends sfActions {
 					$request->getParameter( 'id' )
 				) ) , sprintf( 'Object article does not exist (%s).', $request->getParameter( 'id' ) ) );
 		$this->form = new sfGuardRegisterForm( $utilisateur );
-		$this->processForm( $request, $this->form );
+		$redirect = $this->processForm( $request, $this->form );
 		$this->setTemplate( 'update' );
+		//if($redirect)
 		$this->redirect( '@gestion_utilisateur' );
 	}
 	public
@@ -91,6 +92,10 @@ class utilisateurActions extends sfActions {
 				$userGroup->setGroupId( 4 );
 				$userGroup->save();
 			}
+			return true;
+		}
+		else{
+			return false;
 		}
 	}
 }

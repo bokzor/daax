@@ -1,0 +1,5 @@
+HTTPSignin:
+  is_secure: false
+
+Facebook:
+  is_secure: false

@@ -144,23 +144,23 @@ $(document).ready(function () {
     // on désactive la pagination sur les petits écrans;
 
     function responsiveCommande() {
-        console.log($.template.viewportWidth);
         if ($.template.viewportWidth < 952) {
             $('ul.gallery:visible > li').show();
             $('.pagination').hide();
-            $('#controlleurCommande').insertAfter('#main');
-            $('#controlleurCommande').css('position', 'fixed');
-            $('#controlleurCommande').css('bottom', '0');
-            $('#controlleurCommande').css('z-index', '100');
-            $('#main').css('padding-bottom', '55px');
+            var control = $('#controlleurCommande');
+            //control.insertAfter('#main');
+            //control.css('position', 'fixed');
+            //control.css('bottom', '0');
+            //control.css('z-index', '100');
+            //control.css('padding-bottom', '55px');
         } else {
-            // on active la pagination
+            var control = $('#controlleurCommande');
             pagination(1);
-            $('#controlleurCommande').insertAfter('#profile');
-            $('#controlleurCommande').css('bottom', '');
-            $('#controlleurCommande').css('position', '');
-            $('#controlleurCommande').show();
-            $('#main').css('padding-bottom', '0px');
+            //control.insertAfter('#profile');
+            //control.css('bottom', '');
+            //control.css('position', '');
+            //control.show();
+            //$('#main').css('padding-bottom', '0px');
         }
     }
 

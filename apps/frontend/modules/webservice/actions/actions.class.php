@@ -10,6 +10,13 @@
 class webserviceActions extends sfActions {
 
 	public function preExecute() {
+		$referer = parse_url($_SERVER['HTTP_REFERER']);
+		$scheme = $referer['scheme'];
+		$referer = $referer['host'];
+		$response = $this->getResponse();
+		$response->setHttpHeader('Access-Control-Allow-Origin', $scheme.'://'.$referer);
+		$response->setHttpHeader('Access-Control-Allow-Credentials', 'true');
+	
 		if( $this -> getRequest() -> getParameter( 'model' )) {
 			$this -> model = $this -> getRequest() -> getParameter( 'model' );
 
@@ -40,10 +47,16 @@ class webserviceActions extends sfActions {
 			-> leftjoin('a.Category') -> execute(array(), Doctrine_Core::HYDRATE_ARRAY);
 			foreach($this->objects as &$object){
 				$object['category'] = $object['Category']['name'];
+				$object['id_article'] = $object['id'];
+				unset($object['id']);				
 				unset($object['Category']);
 				unset($object['description']);
 			}
+		}elseif($this->model = 'category'){
+			$this -> objects = Doctrine::getTable( $this -> model )->createQuery('a') 
+			-> execute(array(), Doctrine_Core::HYDRATE_ARRAY);	
 		}
+
 		return $this->renderText(json_encode($this -> objects, JSON_NUMERIC_CHECK));
 
 	}

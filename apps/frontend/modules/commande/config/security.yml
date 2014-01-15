@@ -2,6 +2,10 @@ index:
   is_secure:   true
   credentials: client
 
+modif:
+  is_secure:   true
+  credentials: client
+  
 listing:
   is_secure:   true
   credentials: client
@@ -10,7 +14,7 @@ getOne:
   is_secure: true
   credentials: client
   
-new:
+New:
   is_secure: true
   credentials: client
 
@@ -23,9 +27,12 @@ archiver:
   credentials: serveur
   
 get:
-  is_secure: true
+  is_secure: false
   credentials: serveur
-  
+
+getOne:
+  is_secure: false
+
 imprimerCommandes:
   is_secure: true
   credentials: serveur
