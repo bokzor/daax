@@ -1,5 +1,11 @@
 ## web service
-  
+
+get_user:
+  url: /rest/user.json
+  param: { module: webservice, action: user }
+  requirements:
+    sf_format: (?:html|xml|json)
+
 ws_list:
   url: /rest/:model.:sf_format
   class: sfRequestRoute
@@ -42,6 +48,8 @@ ws_delete:
     id: \d+
     sf_method: [DELETE]
     sf_format: (?:html|xml|json)
+
+
 
 check_login:
   url: /login

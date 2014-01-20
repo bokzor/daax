@@ -67,14 +67,14 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
                 $this -> getUser() -> getGuardUser() -> save();
             }
             // on regarde si on trouve l'utilisateur grace a son email
-            elseif ( $user = Doctrine::getTable( 'sfGuardUser' )->findOneByEmailAddress( $result['email'] ) ) {
+            elseif ( isset($result['email'] ) && $user = Doctrine::getTable( 'sfGuardUser' )->findOneByEmailAddress( $result['email'] ) ) 
+            {
                 $this -> getUser() -> signin( $user );
                 $this -> getUser() -> getGuardUser() -> setUid( $result['id'] );
                 $this -> getUser() -> getGuardUser() -> save();
             }
             // sinon on creer l'utilisateur
             else {
-
                 $user = new sfGuardUser();
                 $user->setUsername( $result['username'] );
                 if ( $result['gender'] == 'male' ) {
@@ -82,6 +82,15 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
                 }else {
                     $user->setGenre( 'F' );
                 }
+
+                $url = 'http://graph.facebook.com/'.$result['id'].'/picture?width=400&height=400';
+                $headers = get_headers($url, 1);
+                $url = $headers['Location']; //image URL
+                $name = sha1(time()).'.jpg';
+                if(copy($url, sfConfig::get('sf_upload_dir') . '/avatar/'.$name.'.jpg')){
+                    $user->setAvatar($name);
+                }
+                
                 $user->setEmailAddress( $result['email'] );
                 $user->setCity( $result['location']['name'] );
                 $user->setFirstName( $result['first_name'] );
@@ -94,6 +103,8 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
                 $user->setLastLogin( date( "Y-m-d H:i:s" ) );
                 $user->setPassword( 'test' );
                 $user->save();
+
+                // on cree un nouveau groupe
                 $group = new sfGuardUserGroup();
                 $group->setUserId( $user->getId() );
                 $group->setGroupId( 4 );
@@ -102,6 +113,8 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
                 $this -> getUser() -> signin( $user );
 
             }
+
+            // on attribue les permissions a l'utilisateur
             foreach ( $user->getGroups() as $group ) {
                 foreach ( $group->getPermissions() as $permission ) {
                     $this->getUser()->addCredentials( $permission->getName() );
@@ -109,6 +122,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
             }
 
             return $this->renderText( 'logged' );
+
         }else{
             $header_message = "Basic realm=\"$message\"";
             $this -> getResponse() -> setStatusCode( 401 );

@@ -60,7 +60,10 @@ class commandeActions extends sfActions
         $commande_id = $request->getParameter('commande_id');
         
 
-        
+        if(count($articles) == 0){
+            $commande = Doctrine::getTable('Commande')->findOneById($commande_id);
+            $commande -> delete();
+        }      
         
         
         $articleTick      = array();

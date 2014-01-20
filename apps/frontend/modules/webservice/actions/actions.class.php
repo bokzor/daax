@@ -150,4 +150,23 @@ class webserviceActions extends sfActions {
 		$this -> error = ( $model != null ) ? "Invalid model: " . $model : "Undefined model";
 	}
 
+	public function executeUser(sfWebRequest $request){
+			$user = Doctrine::getTable('sfGuardUser')->createQuery('a')-> where('id = ?', $this->getUser()->getGuardUser()->getId())
+			-> execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+			$object = array();
+			if(count($user) === 1){
+				$user = $user[0];
+				$object['hash'] = $user['salt'];
+				$object['first_name'] = $user['first_name'];
+				$object['last_name'] = $user['last_name'];
+				$object['avatar'] = $user['avatar'];
+			}
+
+		
+
+		return $this->renderText(json_encode($object, JSON_NUMERIC_CHECK));
+
+
+	}
+
 }
