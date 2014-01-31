@@ -10,3 +10,4 @@ all:
   url_mobile: 'http://m.lespoules2.order/'
   url_desktop: 'http://lespoules2.order'
   url_generic: '.lespoules2.order'
+  test: ''
