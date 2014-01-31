@@ -1,4 +1,6 @@
 <?php use_helper('Thumb'); ?>
+<?php use_helper('Accent'); ?>
+
 <!-- affiche le menu pour enregistrer valider et charger une commande -->
 <?php include_partial('home/optionsCommande') ?>
 <input type="text" id="recherche" placeholder='Recherche' class=" virtual-pad input full-width large">
@@ -30,7 +32,7 @@
 									<figure data-category='<?php echo $article->getCategory()->getId() ?>' data-title="<?php echo $article->getName() ?>"  data-price="<?php echo $article->getPrix() ?>" data-id="<?php echo $article->getId() ?>" >
 											<?php echo showThumb($article->getImg(), 'articles', $options = array('alt' => 'Affiche de '.$article->getName().'', 'class' => 'image-commande', 'width' => '170', 'height' => '170','title' => ''.ucfirst($article->getName()).''), $resize = 'fit', $default = 'default.jpg') ?> 
 										
-										<figcaption><?php echo ucfirst($article -> getName()) ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption>
+										<figcaption><?php echo ucfirst(replaceAccent($article -> getName())) ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption>
 
 									</figure>
 								</li>
@@ -49,7 +51,7 @@
 										<a class="articles-message" title="<?php echo $article->getName() ?>" href="#">
 											<?php echo showThumb($article->getImg(), 'articles', $options = array('alt' => 'Affiche de '.$article->getName().'', 'class' => 'image-commande', 'width' => '170', 'height' => '170','title' => ''.$article->getName().''), $resize = 'fit', $default = 'default.jpg') ?> 
 										</a>
-										<figcaption><?php echo ucfirst($article -> getName()) ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption> 	
+										<figcaption><?php echo ucfirst(replaceAccent($article -> getName())) ?> <span class="icon-plus float-right icon-green icon-size3 large-margin-right"></span></figcaption> 	
 									</figure>
 								</li>
 								<?php endforeach; ?>

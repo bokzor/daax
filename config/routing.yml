@@ -6,6 +6,12 @@ get_user:
   requirements:
     sf_format: (?:html|xml|json)
 
+get_users:
+  url: /rest/users.json
+  param: { module: webservice, action: users }
+  requirements:
+    sf_format: (?:html|xml|json)
+
 ws_list:
   url: /rest/:model.:sf_format
   class: sfRequestRoute

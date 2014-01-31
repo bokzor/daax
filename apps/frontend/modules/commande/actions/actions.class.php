@@ -469,7 +469,24 @@ class commandeActions extends sfActions
         $new_array = self::executeJson($commandes);
         return $this->renderText(json_encode($new_array, JSON_NUMERIC_CHECK));
     }
-    
+ 
+    public 
+    // fonction qui rÃ©cupere les articles d'une table
+        function executeGetClient(sfWebRequest $request)
+    {
+        
+        $param  = $request->getParameter('param');
+        if(strlen($param) === 32){
+            $user = Doctrine::getTable('sfGuardUser')->findOneBySalt($param);
+
+        }else{
+            $user = Doctrine::getTable('sfGuardUser')->findOneByUsername($param);
+        }
+        $commandes = Doctrine::getTable('Commande')->createQuery('a')->where('a.client_id = ?', $user->getId())->leftjoin('a.Articles')->leftjoin('a.ArticleCommande b')->andwhere('a.statut_id != ?', 2)->andwhere('a.statut_id != ?', 5)->leftjoin('a.Articles')->leftJoin('b.Supplements s')->execute();
+        $new_array = self::executeJson($commandes);
+        return $this->renderText(json_encode($new_array, JSON_NUMERIC_CHECK));
+    }
+
     // fonction qui rÃ©cupere une commande en fonction de son id
     
     function executeGetOne(sfWebRequest $request)

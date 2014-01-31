@@ -1,2 +1,6 @@
 list:
   is_secure: false
+
+users:
+  is_secure:   true
+  credentials: serveur

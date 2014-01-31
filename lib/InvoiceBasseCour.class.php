@@ -45,7 +45,7 @@ class InvoiceBasseCour extends TCPDF {
 		// commmande pour imprimer de ticket, ici on utilise cups
 		$commande = '/usr/bin/lp -d '.$data['printer'].' '.$location;
 		exec($commande, $output);
-		unlink($location);
+		//unlink($location);
 	}
 	
 	# Page header and footer code.
@@ -110,6 +110,14 @@ class InvoiceBasseCour extends TCPDF {
 				$this->Cell( $col * 2.5 + $col, $line, $prix. ' €', 0, 0, 'R' );
 				$this->Ln();				
 			}
+			if(isset($item['comment']) && $item['comment'] !== ''){
+				$arrayComment = $this->SplitString($item['comment']);
+				foreach($arrayComment as $comment){
+					$this->Cell( 2 * $wideCol, $line, $comment, 0, 0, 'R' );
+					$this->Ln();
+				}	
+			}
+
 		}
 
 		# Table Total row
@@ -156,9 +164,24 @@ class InvoiceBasseCour extends TCPDF {
 		$this->Cell( $indent );
 		$this->Cell( $col * 7, $line, 'Serveur : '.$this->serveur, 0, 0, 'L' );
 		
-		
-
-
-
 	}
+	function SplitString($myString, $length = 40)
+	{
+	    $splitted = array();
+	     
+	    do
+	    {
+	        // On ajoute une case au tableau avec les XXX caractÃ¨res
+	        $splitted[] = substr($myString, 0, $length);
+	         
+	        // On supprime le dÃ©but de la chaine
+	        $myString = substr($myString, $length, strlen($myString));
+	    }
+	    while(strlen($myString) > $length);
+	     
+	     
+	    return $splitted;
+	}
+
+
 }

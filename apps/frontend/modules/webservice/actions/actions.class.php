@@ -161,12 +161,19 @@ class webserviceActions extends sfActions {
 				$object['last_name'] = $user['last_name'];
 				$object['avatar'] = $user['avatar'];
 			}
-
-		
-
 		return $this->renderText(json_encode($object, JSON_NUMERIC_CHECK));
-
-
 	}
+
+	public function executeUsers(sfWebRequest $request){
+			$users = Doctrine::getTable('sfGuardUser')->createQuery('a') -> select('a.id, a.first_name, a.last_name, a.avatar, a.credit, a.username')
+			-> execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+			$object = array();
+			foreach($users as &$object){
+				$object['name'] = $object['first_name'] . ' ' . $object['last_name'];
+				unset($object['id']);
+			}
+		return $this->renderText(json_encode($users, JSON_NUMERIC_CHECK));
+	}
+
 
 }
