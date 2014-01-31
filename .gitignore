@@ -15,3 +15,13 @@ lib/model/doctrine/*Plugin/base/Base*
 lib/model/om/*
 lib/model/map/*
 web/*Plugin/*
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
