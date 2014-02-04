@@ -45,7 +45,7 @@ class InvoiceBasseCour extends TCPDF {
 		// commmande pour imprimer de ticket, ici on utilise cups
 		$commande = '/usr/bin/lp -d '.$data['printer'].' '.$location;
 		exec($commande, $output);
-		//unlink($location);
+		unlink($location);
 	}
 	
 	# Page header and footer code.
@@ -56,15 +56,21 @@ class InvoiceBasseCour extends TCPDF {
 		$bigFont = 12;
 		$imageScale = ( 128.0 / 26.0 ) * $bigFont;
 		$smallFont = 8;
-		$this->ImagePngAlpha(sfConfig::get('sf_web_dir').'/uploads/facture/basse_cour.png', 0, 0, 220, 98, '', '', 'PNG', null, 'T', false, 72, 'L' );
+		// on recupere les infos du logo
+		$logo = sfConfig::get('sf_web_dir').'/image/facture_header/'.sfConfig::get('app_logo_facture');
+		$infos_img = getimagesize($logo);
+		$img_width = $infos_img[0];
+		$img_height = $infos_img[1];
+
+		$this->ImagePngAlpha($logo, 0, 0, $img_width, $img_height, '', '', 'PNG', null, 'T', false, 72, 'L' );
 		$this->SetY( 70, true );
 		$this->SetFont('times', 'i', $smallFont );
 		$this->setCellPaddings('10', 0 , 0, 0);
 		$this->Cell( 0, 0, '', 0, 1 );
-		$this->Cell( 0, 0, 'Place du marché aux légumes 12,', 0, 1 );
-		$this->Cell( 0, 0, 'Namur, Belgique', 0, 1 );
-		$this->Cell( 0, 0, '0496/79.78.10', 0, 1 );
-		$this->Cell( 0, 0, 'TVA: BE0501.656.383', 0, 1 );
+		$this->Cell( 0, 0, sfConfig::get('app_adresse_rue'), 0, 1 );
+		$this->Cell( 0, 0, sfConfig::get('app_adresse_ville'), 0, 1 );
+		$this->Cell( 0, 0, sfConfig::get('app_adresse_tel'), 0, 1 );
+		$this->Cell( 0, 0, sfConfig::get('app_tva'), 0, 1 );
 		$this->SetY( 0, true );
 		$this->SetLineStyle( array( 'width' => 2, 'color' => array( $webcolor['black'] ) ) );
 		$this->Line( 10, 135, $this->getPageWidth() - 72, 135 );

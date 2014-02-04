@@ -191,6 +191,8 @@ supplement_article:
   requirements:
     id: \d+
 
+
+
 add_commentaire:
   url: /commande/commentaire/:cid
   param: { module: commande, action: commentaire}
@@ -298,6 +300,26 @@ cloture:
   param: { module: commande, action: cloture }
 
 
+## bourse
+calculer_prix:
+  url: /calculer_prix/:id
+  param: { module: article, action: calculerPrix}
+  requirements:
+    id: \d+
+
+bourse:
+  url: /bourse
+  param: { module: bourse, action: index }
+
+bourse_json:
+  url: /bourse.json
+  param: { module: bourse, action: bourseJson }
+
+begin_bourse:
+  url: /start
+  param: { module: bourse, action: start }
+
+## fin bourse
 
 
 test:

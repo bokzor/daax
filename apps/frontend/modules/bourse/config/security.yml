@@ -1,0 +1,5 @@
+index:
+  is_secure: false
+
+bourseJson:
+  is_secure: false

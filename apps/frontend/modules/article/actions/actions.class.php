@@ -98,6 +98,45 @@ class articleActions extends sfActions {
 		$this->elements = Doctrine::getTable( 'Element' )->createQuery( 'a' )->orderBy('a.name') -> execute();
 	}
 
+	//calcul le prix, en fonction des promos, ou de si la bourse est activé
+	public
+	function executeCalculerPrix( sfWebRequest $request ) {
 
+		$id = intval( $request->getParameter( 'id' ) );
+		if(sfConfig::get('sf_environment') === 'bourse'){
+			$q = Doctrine_Manager::getInstance()->getCurrentConnection();
+
+			$result = $q->execute( 'SELECT article_id, SUM(count) as total FROM article_commande where article_id = '.$id.' GROUP BY article_id' );
+			$result = $result -> fetchAll();
+			if ( isset( $result[0] ) ) {
+				$total = $result[0]['total'];
+			}
+			else {
+				$total = 1;
+			}
+			$result = $q->execute( 'select avg(total) as moyenne from(SELECT article_id, SUM(count) as total FROM article_commande  GROUP BY article_id) as A' );
+			$result = $result -> fetchAll();
+			if ( isset( $result[0] ) and $result[0]['moyenne'] != 0 ) {
+				$moyenne =  $result[0]['moyenne'];
+			}
+			else {
+				$moyenne = 1;
+			}
+			$prix_base = Doctrine_Core::getTable( 'Article' ) -> findOneById( $id ) -> getPrix();
+			$prix_min = round( $prix_base - ( $prix_base/2.5 ), 1 );
+			$index = round( ( $prix_min/4 ), 1 );
+
+			$prix = round( ( $total/$moyenne * $index + $prix_min ), 1 );
+
+			if ( $prix < $prix_min ) {
+				$prix = $prix_min;
+			}				
+
+		}else{
+			$prix = Doctrine_Core::getTable( 'Article' ) -> findOneById( $id ) -> getPrix();
+		}
+
+		return $this->renderText( $prix );	
+	}
 
 }

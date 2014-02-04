@@ -34,7 +34,8 @@ class commandeActions extends sfActions
         // $q1->useResultCache(true, 3600, 'articles');
         
         $this->categories = $q1->execute();
-        $q2               = Doctrine::getTable('Article')->createQuery('a')->orderBy('a.count desc')->limit('16');
+        $q2 = Doctrine::getTable('Article')->createQuery('a')->orderBy('a.count desc')->limit(sfConfig::get('app_nombre_articles'));
+        $this->nombre_articles = sfConfig::get('app_nombre_articles');
         
         // $q2->useResultCache(true, 3600, 'top_articles');
         
@@ -190,12 +191,12 @@ class commandeActions extends sfActions
         $total_prix_achat = 0;
         $statut_id        = $request->getParameter('statut_id');
         
-        // on recupere le numÃ©ro de la table
+        // on recupere le numéro de la table
         
         $tableId = intval($request->getParameter('table_id'));
         $commande->setTableId($tableId);
         
-        // on recupere l'id de la personne connectÃ©e si c'est pas un serveur
+        // on recupere l'id de la personne connectée si c'est pas un serveur
         
         if (!$this->getUser()->hasCredential('serveur')) {
             
@@ -207,7 +208,7 @@ class commandeActions extends sfActions
             $commande->setServerId($this->getUser()->getGuardUser()->getId());
         }
         
-        // la commande n'est pas payÃ©e
+        // la commande n'est pas payé
         
         $commande->setStatutId(1);
         $commande->save();
@@ -246,7 +247,7 @@ class commandeActions extends sfActions
             }
             
             // on retrouve l'objet article en fonction de son id
-            
+            @
             $article = Doctrine::getTable('Article')->findOneById($articleArray['id_article']);
             if (isset($articleArray['supplements'])) {
                 
@@ -274,7 +275,7 @@ class commandeActions extends sfActions
                 $articlesInvoice[$imprimante->getSlug()][] = array(
                     'name' => $article->getName(),
                     'count' => $count,
-                    'prix' => $article->getPrix(),
+                    'prix' => $articleArray['prix'],
                     'supplements' => $articleArray['supplements'],
                     'comment' => $comment
                 );
@@ -282,7 +283,7 @@ class commandeActions extends sfActions
             
             // on augmente le total de la commande
             
-            $total_commande += $article->getPrix() * $count;
+            $total_commande += $articleArray['prix'] * $count;
             $total_commande += $total_prix_supplement;
             
             // on augmente le prix d'achat de la commande
@@ -297,7 +298,7 @@ class commandeActions extends sfActions
             $articleCommande->setCount($count);
             if (isset($articleArray['comment']))
                 $articleCommande->setComment($articleArray['comment']);
-            $articleCommande->setPrix($article->getPrix());
+            $articleCommande->setPrix($articleArray['prix']);
             $articleCommande->save();
             
             // on enregistre les Supplements en base de donnÃ©e

@@ -104,13 +104,13 @@ function pagination(page) {
     if ($.template.viewportWidth >= 952) {
         $('ul.gallery:visible').find('li').each(function () {
             if (page == 1) {
-                if (i > page * 16) {
+                if (i > page * <?php echo $nombre_articles ?>) {
                     $(this).hide();
                 } else {
                     $(this).show();
                 }
             } else {
-                if (i > page * 16 || i < (page - 1) * 16 + 1) {
+                if (i > page * <?php echo $nombre_articles ?> || i < (page - 1) * <?php echo $nombre_articles ?> + 1) {
                     $(this).hide();
                 } else {
                     $(this).show();

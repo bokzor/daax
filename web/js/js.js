@@ -94,7 +94,6 @@ function imprimer() {
     //si on a pas déja chargé la commande, c'est que c'est une nouvelle
 
     if ((isNaN(table_id) || table_id == '') && (isNaN(commande_id) || commande_id == 0)) {
-        console.log(commande_id);
         var commande = articleJson();
         // if the list is empty we do nothing
         if (commande == 0) {
@@ -135,7 +134,7 @@ function imprimer() {
         }
     } else {
         // we send the list
-        console.log('t');
+
         $.ajax({
             type: 'POST',
             url: '/modif/commande',
@@ -353,118 +352,94 @@ function Commentaire(id) {
 function payment() {
     $('ul.gallery li figure').unbind('click');
     $('ul.gallery li figure').click(function(event) {
-        if (event.target.tagName == 'SPAN')
+        if (event.target.tagName == 'SPAN') {
             return;
-        // ca veut dire qu'on a cliqué sur supplement
+        }
         var name = $(this).data('title');
-        var price = $(this).data('price');
         var id_cat = $(this).data('category');
         var idBoisson = $(this).data('id');
-        if ($('#supplementB').hasClass('red-gradient')) {
-            var buttons = {
-                // callback lors qu'on click sur valider
-                'Valider': function(modal) {
-                    $('#supplementB').toggleClass('red-gradient');
+        $.get('/calculer_prix/' + idBoisson, function(data) {
+            var price = data;
+            // ca veut dire qu'on a cliqué sur supplement
+            if ($('#supplementB').hasClass('red-gradient')) {
+                var buttons = {
+                    // callback lors qu'on click sur valider
+                    'Valider': function(modal) {
+                        $('#supplementB').toggleClass('red-gradient');
 
-                    var inputs = modal.find('span.checked').find('input');
-                    var supplements = new Object();
-                    var count = modal.find('input[name=count]').val();
-                    if (count < 1) {
-                        count = 1;
-                    }
-
-                    inputs.each(function() {
-                        var name = $(this).attr('name');
-                        var id_supp = $(this).data('id');
-                        var fois_prix = $(this).data('fois-prix');
-                        var plus_prix = $(this).data('plus-prix');
-                        var value = $(this).val();
-                        supplements[id_supp] = {
-                            'id': id_supp,
-                            'fois_prix': fois_prix,
-                            'plus_prix': plus_prix,
-                            'name': name,
-                        };
-                    });
-                    if (inputs.length == 0)
-                        supplements = undefined;
-                    for (i = 0; i < count; i++) {
-                        var boisson = {
-                            'prix': price,
-                            'name': name,
-                            'id': idBoisson,
-                            'supplements': supplements
+                        var inputs = modal.find('span.checked').find('input');
+                        var supplements = new Object();
+                        var count = modal.find('input[name=count]').val();
+                        if (count < 1) {
+                            count = 1;
                         }
-                        addBoisson(boisson);
-                    }
-                    modal.closeModal();
-                },
-                'Annuler': function(modal) {
-                    modal.closeModal();
-                }
-            };
-            $.modal({
-                title: 'Edition',
-                resizable: false,
-                url: '/article/supplement/' + id_cat,
-                buttonsAlign: 'center',
-                buttons: buttons,
-            });
-            return false;
-        } else if ($('#commentaireB').hasClass('red-gradient')) {
-            var boisson = {
-                'prix': price,
-                'name': name,
-                'id': idBoisson,
-                'supplements': undefined
-            }
-            id = addBoisson(boisson);
-            boisson = app.collections.commande.findWhere({
-                id_article: id
-            });
-            Commentaire(boisson.get('htmlId'));
-            $('#commentaireB').toggleClass('red-gradient');
-        } else {
-            var boisson = {
-                'prix': price,
-                'name': name,
-                'id': idBoisson,
-                'supplements': undefined
-            }
-            addBoisson(boisson);
-        }
 
+                        inputs.each(function() {
+                            var name = $(this).attr('name');
+                            var id_supp = $(this).data('id');
+                            var fois_prix = $(this).data('fois-prix');
+                            var plus_prix = $(this).data('plus-prix');
+                            var value = $(this).val();
+                            supplements[id_supp] = {
+                                'id': id_supp,
+                                'fois_prix': fois_prix,
+                                'plus_prix': plus_prix,
+                                'name': name,
+                            };
+                        });
+                        if (inputs.length == 0)
+                            supplements = undefined;
+                        for (i = 0; i < count; i++) {
+                            var boisson = {
+                                'prix': price,
+                                'name': name,
+                                'id': idBoisson,
+                                'supplements': supplements
+                            }
+                            addBoisson(boisson);
+                        }
+                        modal.closeModal();
+                    },
+                    'Annuler': function(modal) {
+                        modal.closeModal();
+                    }
+                };
+                $.modal({
+                    title: 'Edition',
+                    resizable: false,
+                    url: '/article/supplement/' + id_cat,
+                    buttonsAlign: 'center',
+                    buttons: buttons,
+                });
+                return false;
+            } else if ($('#commentaireB').hasClass('red-gradient')) {
+                var boisson = {
+                    'prix': price,
+                    'name': name,
+                    'id': idBoisson,
+                    'supplements': undefined
+                }
+                id = addBoisson(boisson);
+                boisson = app.collections.commande.findWhere({
+                    id_article: id
+                });
+                Commentaire(boisson.get('htmlId'));
+                $('#commentaireB').toggleClass('red-gradient');
+            } else {
+                var boisson = {
+                    'prix': price,
+                    'name': name,
+                    'id': idBoisson,
+                    'supplements': undefined
+                }
+                addBoisson(boisson);
+            }
+
+        });
     });
 
     //lors d'un clic long on peut rajouter plusieurs articles
 }
-
-function calculette(param) {
-    var name = param.parent().parent().data('title');
-    var price = param.parent().parent().data('price');
-    var idBoisson = param.parent().parent().data('id');
-    $.modal.prompt('Entrez le nombre d\'article', function(value) {
-        value = parseInt(value);
-        if (isNaN(value)) {
-            $(this).getModalContentBlock().message('Valeur incorrecte', {
-                append: false,
-                type: 'number',
-                classes: ['red-gradient']
-            });
-            return false;
-        }
-        for (i = 0; i < value; i++) {
-            event.preventDefault();
-            var boisson = {
-                'prix': price,
-                'name': name,
-                'id': idBoisson,
-                'supplements': undefined
-            }
-            addBoisson(boisson);
-        }
-    });
-};
 
 // fonction qui ajoute un element a la commande
 
@@ -788,7 +763,9 @@ function chargerPage(page) {
                 opacity: 1
             }, 600, function() {});
             payment();
-            history.pushState(null, null, page);
+            if (page !== 'payment' && page !== '/payment') {
+                history.pushState(null, null, page);
+            }
             app.models.infos.set('page', page);
             $.sidr('close', 'sidr-main');
         });
@@ -948,7 +925,7 @@ function live() {
             }
         }
         if (new_order === true || ready_order === true) {
-            $.ionSound.play("bell_ring");
+            //$.ionSound.play("bell_ring");
         }
 
     });
@@ -1016,9 +993,6 @@ function isReady() {
             first_init = true;
         } else if (location.pathname != '/' && location.pathname != '/frontend_dev.php/') {
             chargerPage(location.pathname);
-        } else {
-            console.log(location.pathname);
-            console.log(location.pathname.indexOf("#"));
         }
 
     });
