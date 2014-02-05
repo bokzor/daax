@@ -1,4 +1,4 @@
-<?php
+è<?php
 
 /**
  * sfGuardAuth actions.
@@ -16,14 +16,18 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
         $request = $this->getRequest();
         $response = $this->getResponse();
         $user = $this->getUser();
-
+        if ( $this->getUser()->isAuthenticated() ) {
+            if($this->getUser()->hasCredential('serveur')){
+                return $this->renderText( 'serveur' );    
+            }else{
+                return $this->renderText( 'client' );
+            }
+        }
         $class = sfConfig::get( 'app_sf_guard_plugin_signin_form', 'sfGuardFormSignin' );
         $this -> form = new $class();
-        $message = 'Authentification required';
 
-        if ( isset( $_SERVER['PHP_AUTH_USER'] ) ) {
-            $request -> setParameter( 'signin', array( 'username' => $_SERVER['PHP_AUTH_USER'], 'password' => $_SERVER['PHP_AUTH_PW'], ) );
-        }
+        $request -> setParameter( 'signin', array( 'username' => $request->getParameter('username'), 'password' => $request -> getParameter('password'), ) );
+        
         $this -> form -> bind( $request -> getParameter( 'signin' ) );
         if ( $this -> form -> isValid() ) {
             $values = $this -> form -> getValues();
@@ -35,12 +39,15 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
                     $this->getUser()->addCredentials( $permission->getName() );
                 }
             }
-            return $this->renderText( 'logged' );
+            if($this->getUser()->hasCredential('serveur')){
+                return $this->renderText( 'serveur' );    
+            }else{
+                return $this->renderText( 'client' );
+            }
+            
         }
         else {
-            $header_message = "Basic realm=\"$message\"";
-            $this -> getResponse() -> setStatusCode( 401 );
-            $this -> getResponse() -> setHttpHeader( 'WWW_Authenticate', $header_message );
+            return $this->renderText( 'error' );            
         }
     }
 
@@ -56,7 +63,11 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
         if ( $this->getUser()->isAuthenticated() ) {
             $this -> getUser() -> getGuardUser() -> setUid( $result['id'] );
             $this -> getUser() -> getGuardUser() -> save();
-            return $this->renderText( 'logged' );
+            if($this->getUser()->hasCredential('serveur')){
+                return $this->renderText( 'serveur' );    
+            }else{
+                return $this->renderText( 'client' );
+            }
         }
         elseif(isset($result['id'])) {
 
@@ -124,10 +135,8 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
             return $this->renderText( 'logged' );
 
         }else{
-            $header_message = "Basic realm=\"$message\"";
-            $this -> getResponse() -> setStatusCode( 401 );
-            $this -> getResponse() -> setHttpHeader( 'WWW_Authenticate', $header_message );
-            return sfView::None;
+            return $this->renderText( 'error' );            
+
         }
     }
 }
