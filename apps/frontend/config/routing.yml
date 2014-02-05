@@ -205,10 +205,10 @@ get_commandes_table_id:
     sf_format: (json)
 
 get_commandes_client_id:
-  url: /get/commande/client/:param.:sf_format
+  url: /get/commande/client/:param
   param: { module: commande, action: getClient }
-  requirements:
-    sf_format: (json)
+  options:
+      segment_separators: [/]
 
 live_commande:
   url: /live/commande/:type
