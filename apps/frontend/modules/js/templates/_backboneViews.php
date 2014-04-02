@@ -1,7 +1,7 @@
 <!-- template pour afficher les articles de la commande en cours -->
 <script type="text/template" id="actualOrder">
 	<% _.each(commande, function (article, i) { %>
-	<div id="article-<%= article.htmlId %>"  class="message" style="display: block; ">
+	<div onclick="Commentaire('<%= article.htmlId %>')" id="article-<%= article.htmlId %>"  class="message" style="display: block; ">
 	<% if(article.comment != undefined && article.comment != ''){
 		var color = 'red';
 		}
@@ -9,15 +9,16 @@
 		var color = '';
 		}
 	%>
-	<div><a href="#" class="icon-chat <%= color %>" onclick="Commentaire('<%= article.htmlId %>')"><%= article.name.substring(0,20) %></a>
+	<div   style="display: inline;"><a href="#" class="icon-chat <%= color %>" ><%= article.name.substring(0,20) %></a>
 		<span class="list-count">
 		<span class="prix-boisson"><%= article.prix %></span></span>
 		<% if (article.count>1) { %>
 			<span class="count left"><%= article.count %></span>
 		<%} %>	
-	<button onclick="deleteArticleCommande('<%= article.htmlId %>')" class="red-bg delete-article">X</button>		
-
 	</div>
+	<button onclick="deleteArticleCommande('<%= article.htmlId %>', event)" class="red-bg delete-article">X</button>		
+
+
 
 	<% _.each(article.supplements, function (supplement, key, i) { %>
 	<% var prix = parseFloat(supplement.fois_prix) * parseFloat(article.prix) - parseFloat(article.prix) + parseFloat(supplement.plus_prix);

@@ -1,10 +1,5 @@
 <ul  class="access children-tooltip">
-	<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('serveur')): ?>
-	<li>
-		<a href="" class="close-menu" onclick="encaisser(0); return false;" title="Encaisser la commande">
-			<span class="icon-green icon-tick"></span>
-		</a>
-	</li>
+	<?php if($sf_user->hasCredential('serveur')): ?>
 	<li>
 		<a href="" class="close-menu" onclick="chargerCommande(); return false;" title="Charger une commande">
 			<span class="icon-inbox"></span>

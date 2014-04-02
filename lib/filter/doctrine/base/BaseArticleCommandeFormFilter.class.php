@@ -14,6 +14,7 @@ abstract class BaseArticleCommandeFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'article_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Article'), 'add_empty' => true)),
+      'promo_id'         => new sfWidgetFormFilterInput(),
       'commande_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Commande'), 'add_empty' => true)),
       'count'            => new sfWidgetFormFilterInput(),
       'prix'             => new sfWidgetFormFilterInput(),
@@ -23,6 +24,7 @@ abstract class BaseArticleCommandeFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'article_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Article'), 'column' => 'id')),
+      'promo_id'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'commande_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Commande'), 'column' => 'id')),
       'count'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'prix'             => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
@@ -67,6 +69,7 @@ abstract class BaseArticleCommandeFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'               => 'Number',
       'article_id'       => 'ForeignKey',
+      'promo_id'         => 'Number',
       'commande_id'      => 'ForeignKey',
       'count'            => 'Number',
       'prix'             => 'Number',

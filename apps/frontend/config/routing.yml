@@ -40,6 +40,25 @@ gestion_commande:
   url: /gestion/commande
   param: { module: commande, action: listing }
 
+gestion_GroupeReduction:
+  url: /gestion/reduction
+  param: { module: reduction, action: listing }
+
+gestion_reduction:
+  url: /gestion/reduction
+  param: { module: reduction, action: listing }
+
+listing_reduction:
+  url: /gestion/reduction/:id
+  param: { module: reduction, action: listingReduction }
+  requirements: 
+    id: \d+
+
+get_reduction:
+  url: /get/reduction.json
+  param: { module: reduction, action: getActiveReduction }
+
+
 gestion_stock:
   url:  /gestion/stock
   param: { module: element, action: listing }
@@ -90,6 +109,46 @@ gestion_imprimante:
 ## fin listing
 
 ## ajout
+new_GroupeReduction:
+  url: /new/GroupeReduction
+  param: { module: reduction, action: newGroupe }
+
+create_GroupeReduction:
+  url: /create/GroupeReduction
+  param: { module: reduction, action: createGroupe }
+  
+edit_GroupeReduction:
+  url: /edit/GroupeReduction/:id
+  param: { module: reduction, action: editGroupe }
+  requirements:
+    id: \d+
+
+new_reductionCommande:
+  url: /new/reductionCommande/:id
+  param: { module: reduction, action: newCommande }
+  requirements:
+    id: \d+
+
+create_reduction:
+  url: /create/reduction
+  param: { module: reduction, action: createReduction }
+
+edit_reduction:
+  url: /edit/Reduction/:id
+  param: { module: reduction, action: editReduction }
+  requirements:
+    id: \d+
+
+update_reduction:
+  url: /update/reduction/:id
+  param: { module: reduction, action: updateReduction }
+  requirements:
+    id: \d+
+
+new_reductionArticle:
+  url: /new/reductionArticle/:id
+  param: { module: reduction, action: newArticle }
+
 new_utilisateur:
   url: /new/utilisateur
   param: { action: new, module: utilisateur }
@@ -121,6 +180,12 @@ edit_utilisateur:
   requirements:
     id: \d+
 
+edit_groupeReduction:
+  url: /edit/groupeReduction/:id
+  param: { action: editGroupe, module: reduction }
+  requirements:
+    id: \d+
+
 edit_model:
   url: /edit/:model/:id
   param: { action: edit, module: tools }
@@ -131,6 +196,7 @@ edit_model:
 edit_floor:
   url: /edit/floor
   param: { module: floor, action: sap }
+
 
 
 ## fin edit

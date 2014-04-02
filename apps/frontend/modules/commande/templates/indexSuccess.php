@@ -1,8 +1,7 @@
 <?php use_helper('Thumb'); ?>
 <?php use_helper('Accent'); ?>
-
-<!-- affiche le menu pour enregistrer valider et charger une commande -->
 <?php include_partial('home/optionsCommande') ?>
+<!-- affiche le menu pour enregistrer valider et charger une commande -->
 <input type="text" id="recherche" placeholder='Recherche' class=" virtual-pad input full-width large">
 
 <div class="with-padding container-boisson">
@@ -79,30 +78,18 @@
 <script>
 
 
-// on revient au dessus de la page
-$('.tabs-content > div').on('showtab', function () {
-    $('body').animate({
-        scrollTop: 0
-    }, 'fast');
 
-});
 
-$('.tabs-content > div').on('hidetab', function () {
-    $('body').animate({
-        scrollTop: 0
-    }, 'fast');
-
-});
-
-$('ul.gallery figcaption span').click(function () {
-    calculette($(this));
-});
 
 
 function pagination(page) {
     var i = 1;
     if ($.template.viewportWidth >= 952) {
         $('ul.gallery:visible').find('li').each(function () {
+            if(i == 1){
+                $('ul.gallery').find('li').removeClass('selected');
+                $(this).addClass('selected');
+            }
             if (page == 1) {
                 if (i > page * <?php echo $nombre_articles ?>) {
                     $(this).hide();
@@ -118,51 +105,99 @@ function pagination(page) {
             }
             i++;
         });
+        $('.pagination').find('input').val(page)
+        $('li.selected').removeClass('selected');
+        selectArticle(0);
     }
 }
 
-function supplementArticle() {
-    $('#supplementB').toggleClass('red-gradient');
-    if ($('#supplementB').hasClass('red-gradient')) {
-        notify('Notification', 'Veuillez choisir un article', {
-            closeDelay: 5000
-        });
-    };
-};
+// on navigue dans les éléments
+function selectArticle(i){
 
-function commentaireArticle() {
-    $('#commentaireB').toggleClass('red-gradient');
-    if ($('#commentaireB').hasClass('red-gradient')) {
-        notify('Notification', 'Veuillez choisir un article', {
-            closeDelay: 5000
-        });
-    };
-};
+    var test = false;
+    // on navigue dans les élements visibles
+    $('ul.gallery:visible').find('li:visible').each(function (index) { 
+        if(test === false){
+            if($(this).hasClass('selected')){
+                $('li.selected').removeClass('selected');
+                // on selectionne uniquement les index de 0 a 11 (12-1)
+                if(index + i < <?php echo $nombre_articles ?>){
+                    $('ul.gallery:visible').find('li:visible').eq(index + i).addClass('selected');
+                    console.log(index);
+                    test = true;
+                }
+                // on verifier si on doit changer de page.
+                var current_page = $('.pagination').find('input').val();
+
+                if(index + i >= <?php echo $nombre_articles ?>){
+                    pagination(parseInt(current_page) + 1);
+                }else if(index + i < 0 && current_page != 1){
+                    pagination(parseInt(current_page) - 1);
+                }
+            } 
+        }
+    });
+    if(test === false){
+        $('li.selected').removeClass('selected');
+        // on selectionne le premier article visible
+        $('ul.gallery:visible').find('li:visible').eq(0).addClass('selected');
+    }
+     
+}
+
+
 
 $(document).ready(function () {
     $(document).on('init-queries', function () {
         $('#main').widthchange(responsiveCommande);
     });
-    // on désactive la pagination sur les petits écrans;
+    pagination(1);
 
+    // on initialise le listiner pour les racourcis claviers
+    var listener = new window.keypress.Listener();
+    listener.simple_combo('shift', function() {
+        $('#recherche').focus();
+    });
+
+    // on navigue dans articles
+    var listener = new window.keypress.Listener();
+    listener.simple_combo('right', function() {
+        selectArticle(1);
+    });
+
+    listener.simple_combo('left', function() {
+        selectArticle(-1);
+    });
+    listener.simple_combo('hyphen', function() {
+        var article = $('li.selected').find('figure');
+        var id = article.data('id');
+        console.log(id);
+        var article = app.collections.commande.where({id_article: id});
+        app.collections.remove(article);
+    });
+
+    listener.simple_combo('up', function() {
+        selectArticle(-5);
+    });
+
+    listener.simple_combo('down', function() {
+        selectArticle(5);
+    });
+    listener.simple_combo('enter', function() {
+        var article = $('li.selected').find('figure');
+        var boisson = { 'name': article.data('title'), 'id': article.data('id'), 'prix':  article.data('price')}
+        addBoisson(boisson);
+    });
+
+    // on désactive la pagination sur les petits écrans;
     function responsiveCommande() {
         if ($.template.viewportWidth < 952) {
             $('ul.gallery:visible > li').show();
             $('.pagination').hide();
             var control = $('#controlleurCommande');
-            //control.insertAfter('#main');
-            //control.css('position', 'fixed');
-            //control.css('bottom', '0');
-            //control.css('z-index', '100');
-            //control.css('padding-bottom', '55px');
         } else {
             var control = $('#controlleurCommande');
             pagination(1);
-            //control.insertAfter('#profile');
-            //control.css('bottom', '');
-            //control.css('position', '');
-            //control.show();
-            //$('#main').css('padding-bottom', '0px');
         }
     }
 
@@ -170,6 +205,7 @@ $(document).ready(function () {
     $('.pagination').jqPagination({
         link_string: '/?page={page_number}',
         max_page: null,
+        page_string: '{current_page}',
         paged: function (page) {
             pagination(page);
         }
@@ -219,7 +255,7 @@ $(document).ready(function () {
 
     // lors du click d'une categorie on supprime la recherche courrante
     $('#categorie-tabs > li > a').live('click', function () {
-        nb_page = Math.ceil($('ul.gallery:visible > li').length / 16);
+        var nb_page = Math.ceil($('ul.gallery:visible > li').length / 16);
         $('.pagination').jqPagination('option', {
             'current_page': 1,
             'max_page': nb_page
@@ -244,15 +280,19 @@ $(document).ready(function () {
             $('.gallery:not(:first)>li').show().not(':contains(' + input_content + ')').hide();
             $('.sidetab').show();
             $('.side-tabs').addClass('tab-opened');
+            $('li.selected').removeClass('selected');
+            selectArticle(1);
         }
+       
+
     }
 
     var elem = $('.virtual-pad');
     // Save current value of element
     elem.data('oldVal', elem.val());
     elem.on('change keyup input paste', function () {
-        console.log('change');
         if (elem.data('oldVal') != elem.val()) {
+
             // Updated stored value
             elem.data('oldVal', elem.val());
             searchArticle($(this));
@@ -280,6 +320,12 @@ $(document).ready(function () {
             $("#categorie-tabs").prepend('<li class="goStart"><a class="white">Retour</a></li>');
         }
     });
+
+    // reset de la recherche lorsqu'on click dessus
+    $('#recherche').on('click', function(){
+        $(this).val('');
+        pagination(1);
+    })
 
 });
 

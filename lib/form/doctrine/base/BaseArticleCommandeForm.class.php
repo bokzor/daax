@@ -17,6 +17,7 @@ abstract class BaseArticleCommandeForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'               => new sfWidgetFormInputHidden(),
       'article_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Article'), 'add_empty' => true)),
+      'promo_id'         => new sfWidgetFormInputText(),
       'commande_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Commande'), 'add_empty' => true)),
       'count'            => new sfWidgetFormInputText(),
       'prix'             => new sfWidgetFormInputText(),
@@ -27,6 +28,7 @@ abstract class BaseArticleCommandeForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'article_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Article'), 'required' => false)),
+      'promo_id'         => new sfValidatorInteger(array('required' => false)),
       'commande_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Commande'), 'required' => false)),
       'count'            => new sfValidatorInteger(array('required' => false)),
       'prix'             => new sfValidatorNumber(array('required' => false)),

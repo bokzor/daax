@@ -102,13 +102,13 @@
 
 .gigantic.pagination a {
 	height: 60px;
-	width: 60px;
+	width: 110px;
 	font-size: 50px;
 	line-height: 50px;
 }
 
 .gigantic.pagination input {
-	width: 300px;
+	width: 100px;
 	height: 60px;
 	font-size: 30px;
 }

@@ -14,8 +14,8 @@
 			</p>
 		</div>
 		
-		<div class="margin-right">
-			<h6>Selectionnez date de début</h6>
+		<div class="margin-right margin-bottom">
+			<h6>Début de la période</h6>
 			<span class="input margin-bottom">			
 				<span class="icon-calendar"></span>
 				<input type="text" name="date-debut" value="<?php echo $dateDebut ?>" id="date-debut" class="datetimepicker input-unstyled datepicker" value="">
@@ -24,14 +24,31 @@
 		</div>
 		<div class="margin-right margin-bottom">
 
-			<h6>Selectionnez date de fin</h6>
+			<h6>Fin de la période</h6>
 			<span class="input margin-bottom">			
 				<span class="icon-calendar"></span>
 				<input type="text" name="date-fin" value="<?php echo $dateFin ?>" id="date-fin" class="datetimepicker input-unstyled datepicker" value="">
 			</span>
 
 		</div>
-		
+		<div class="margin-right margin-bottom">
+
+			<h6>Début du créneau horaire</h6>
+			<span class="input margin-bottom">			
+				<span class="icon-calendar"></span>
+				<input type="text" name="heure-debut" value="<?php echo $heureDebut ?>" id="date-fin" class="timepicker input-unstyled datepicker" value="">
+			</span>
+
+		</div>
+		<div class="margin-right margin-bottom">
+
+			<h6>Fin du créneau horaire</h6>
+			<span class="input margin-bottom">			
+				<span class="icon-calendar"></span>
+				<input type="text" name="heure-fin" value="<?php echo $heureFin ?>" id="date-fin" class="timepicker input-unstyled datepicker" value="">
+			</span>
+
+		</div>		
 	</div>
     <button type="submit" class="button mid-margin-right">
         <span class="green-gradient button-icon"><span class="icon-tick"></span></span>
@@ -163,17 +180,29 @@
 		//$('#demo-chart').widthchange(drawVisitorsChart);
 
 		// Respond.js hook (media query polyfill)
-		$(window).load(function(){ 
+		$(window).ready(function(){ 
+
+		    $('.datetimepicker').datetimepicker({
+		        timepicker:false,
+		        lang: 'fr',
+		        format:'m/d/Y'
+		    });
+		    $('.timepicker').datetimepicker({
+		        datepicker:false,
+		        format:'H:i',
+		        lang: 'fr'
+	    	});
+		});
+
+		$(window).load(function(){
 			var divWidth = $.template.mediaQuery.is('mobile') ? $( window ).width() : $( window ).width() - 450
 			$.template.mediaQuery.is('mobile') 
 			drawVisitorsChart(divWidth - 30);
 			$(document).on('sizechange', function(event) { 
-			var divWidth = $.template.mediaQuery.is('mobile') ? $( window ).width() : $( window ).width() - 450
-			drawVisitorsChart(divWidth - 30); 
-		});
-
-
-		});
+				var divWidth = $.template.mediaQuery.is('mobile') ? $( window ).width() : $( window ).width() - 450
+				drawVisitorsChart(divWidth - 30); 
+			});
+		})
 
 
 	</script>

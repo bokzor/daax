@@ -7,6 +7,7 @@
  * 
  * @property integer $id
  * @property integer $article_id
+ * @property integer $promo_id
  * @property integer $commande_id
  * @property integer $count
  * @property float $prix
@@ -18,6 +19,7 @@
  * 
  * @method integer             getId()                Returns the current record's "id" value
  * @method integer             getArticleId()         Returns the current record's "article_id" value
+ * @method integer             getPromoId()           Returns the current record's "promo_id" value
  * @method integer             getCommandeId()        Returns the current record's "commande_id" value
  * @method integer             getCount()             Returns the current record's "count" value
  * @method float               getPrix()              Returns the current record's "prix" value
@@ -28,6 +30,7 @@
  * @method Doctrine_Collection getArticleSupplement() Returns the current record's "ArticleSupplement" collection
  * @method ArticleCommande     setId()                Sets the current record's "id" value
  * @method ArticleCommande     setArticleId()         Sets the current record's "article_id" value
+ * @method ArticleCommande     setPromoId()           Sets the current record's "promo_id" value
  * @method ArticleCommande     setCommandeId()        Sets the current record's "commande_id" value
  * @method ArticleCommande     setCount()             Sets the current record's "count" value
  * @method ArticleCommande     setPrix()              Sets the current record's "prix" value
@@ -53,6 +56,9 @@ abstract class BaseArticleCommande extends sfDoctrineRecord
              'autoincrement' => true,
              ));
         $this->hasColumn('article_id', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('promo_id', 'integer', null, array(
              'type' => 'integer',
              ));
         $this->hasColumn('commande_id', 'integer', null, array(

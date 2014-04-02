@@ -21,16 +21,12 @@
 <link rel="stylesheet" href="/css/styles/switches.css">
 <link rel="stylesheet" href="/css/styles/table.css">
 <link rel="stylesheet" href="/css/styles/modal.css">
-<link rel="stylesheet" href="/css/timepicker.css">
-<link rel="stylesheet" href="/css/mobiscroll.css">
 <link rel="stylesheet" href="/css/slidemenu/jquery.sidr.dark.css">
 <link rel="stylesheet" href="/css/new_login/core.css">
 <link rel="stylesheet" href="/js/libs/DataTables/jquery.dataTables.css">
-<link rel="stylesheet" href="/css/libs/backbones/backgrid-filter.css">
-<link rel="stylesheet" href="/css/libs/backbones/backgrid-paginator.min.css">
-<link rel="stylesheet" href="/css/libs/backbones/backgrid.min.css">
+<link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css">
 
 	<!-- feuille de style pour les clients -->
-<?php if($sf_user->isAuthenticated() && !$sf_user->hasCredential('manager')): ?>
+<?php if($sf_user->isAuthenticated() && !$sf_user->hasCredential('serveur')): ?>
 <link rel="stylesheet" href="/css/client.css">
 <?php endif; ?>

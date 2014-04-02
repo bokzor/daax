@@ -94,8 +94,9 @@ Commande:
 #Chaques commande est composée de un ou plusu
 ArticleCommande:
   columns:
-    id:                  { type: integer, primary:true, autoincrement: true }
+    id:                  { type: integer, primary: true, autoincrement: true }
     article_id:          { type: integer }
+    promo_id:            { type: integer } 
     commande_id:         { type: integer }
     count:               { type: integer, default: 1 }
     prix:                { type: float, default: 0.00 }
@@ -262,5 +263,30 @@ CategoryImprimante:
     Imprimante:          { class: Imprimante, onDelete: CASCADE, foreign: id, local: imprimante_id }
     Category:            { class: Category, onDelete: CASCADE, foreign: id, local: category_id }
 
+GroupeReduction:
+  columns:
+    name: { type: string(100), notnull: true, unique: true }
+    is_active: { type: boolean, default: true }
 
+Reduction:
+  columns:
+    article_id: { type: integer, notnull: false }
+    groupe_id: { type: integer, notnull: true }
+    nb_acheter: { type: integer, default: 0 }
+    nb_offert: { type: integer, default: 0 }
+    new_price: { type: integer, default: null }
+    pourcent_article: { type: integer, default: 0 }
+    pourcent_commande: { type: integer, default: 0 }
+    is_publish: { type: boolean, default: true }
+    code: { type: string(20), notnull: false, default: null }
+    always_activate: { type: boolean, default: true }
+    auto_reduction: { type: boolean, default: true }
+    start_date: { type: date }
+    end_date: { type: date }
+    start_time: { type: time,  }
+    end_time: { type: time }
+    type: { type: integer }
+  relations:
+    Groupe: { onDelete: CASCADE, class: GroupeReduction, local: groupe_id, foreign: id }
+    Article: { onDelete: CASCADE, class: Article, local: article_id, foreign: id }
 

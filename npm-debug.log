@@ -1,0 +1,56 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', '-g', 'install', 'sails' ]
+2 info using npm@1.3.21
+3 info using node@v0.10.24
+4 verbose cache add [ 'sails', null ]
+5 verbose cache add name=undefined spec="sails" args=["sails",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'sails',
+6 verbose parsed url   path: 'sails',
+6 verbose parsed url   href: 'sails' }
+7 silly lockFile e20e6cdc-sails sails
+8 verbose lock sails /Users/adrienbokor/.npm/e20e6cdc-sails.lock
+9 silly lockFile e20e6cdc-sails sails
+10 silly lockFile e20e6cdc-sails sails
+11 verbose addNamed [ 'sails', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 5291d548-sails sails@
+14 verbose lock sails@ /Users/adrienbokor/.npm/5291d548-sails.lock
+15 silly addNameRange { name: 'sails', range: '*', hasData: false }
+16 verbose url raw sails
+17 verbose url resolving [ 'https://registry.npmjs.org/', './sails' ]
+18 verbose url resolved https://registry.npmjs.org/sails
+19 info trying registry request attempt 1 at 22:42:16
+20 http GET https://registry.npmjs.org/sails
+21 info retry will retry, error on last attempt: Error: SELF_SIGNED_CERT_IN_CHAIN
+22 info trying registry request attempt 2 at 22:42:29
+23 http GET https://registry.npmjs.org/sails
+24 info retry will retry, error on last attempt: Error: SELF_SIGNED_CERT_IN_CHAIN
+25 info trying registry request attempt 3 at 22:43:30
+26 http GET https://registry.npmjs.org/sails
+27 silly lockFile 5291d548-sails sails@
+28 silly lockFile 5291d548-sails sails@
+29 error network getaddrinfo ENOTFOUND
+29 error network This is most likely not a problem with npm itself
+29 error network and is related to network connectivity.
+29 error network In most cases you are behind a proxy or have bad network settings.
+29 error network
+29 error network If you are behind a proxy, please make sure that the
+29 error network 'proxy' config is set properly.  See: 'npm help config'
+30 error System Darwin 13.1.0
+31 error command "node" "/usr/local/bin/npm" "-g" "install" "sails"
+32 error cwd /Applications/MAMP/htdocs/daax
+33 error node -v v0.10.24
+34 error npm -v 1.3.21
+35 error syscall getaddrinfo
+36 error code ENOTFOUND
+37 error errno ENOTFOUND
+38 verbose exit [ 1, true ]

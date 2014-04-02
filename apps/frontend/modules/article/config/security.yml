@@ -2,3 +2,5 @@ supplement:
   is_secure:   true
   credentials: client
 
+calculerPrix:
+  is_secure: false

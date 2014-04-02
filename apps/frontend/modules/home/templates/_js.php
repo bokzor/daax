@@ -1,13 +1,13 @@
 <script src="/js/libs/jquery.transit.min.js"></script>
 <script src="/js/slidemenu/jquery.sidr.min.js"></script>
+<script src="/js/libs/bootstrap-datetimepicker.min.js"></script>
+
 <script src="/js/libs/ion.sound.min.js"></script>
 <script src="/js/libs/backbones/underscore-min.js"></script>
 <script src="/js/libs/backbones/backbone-min.js"></script>
-<script src="/js/libs/backbones/backgrid.min.js"></script>
-<script src="/js/libs/backbones/backbone-pageable.js"></script>
-<script src="/js/libs/backbones/lunr.js"></script>
-<script src="/js/libs/backbones/backgrid-filter.min.js"></script>
-<script src="/js/libs/backbones/backgrid-paginator.js"></script>
+<script src="/js/libs/keypress-2.0.1.min.js"></script>
+
+
 <script src="/js/setup.js"></script>
 
 <!-- Template functions -->

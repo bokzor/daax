@@ -18,6 +18,7 @@
  * @property Doctrine_Collection $Elements
  * @property Doctrine_Collection $ArticleCommande
  * @property Doctrine_Collection $ArticleElement
+ * @property Doctrine_Collection $Reduction
  * 
  * @method string              getName()            Returns the current record's "name" value
  * @method string              getImg()             Returns the current record's "img" value
@@ -32,6 +33,7 @@
  * @method Doctrine_Collection getElements()        Returns the current record's "Elements" collection
  * @method Doctrine_Collection getArticleCommande() Returns the current record's "ArticleCommande" collection
  * @method Doctrine_Collection getArticleElement()  Returns the current record's "ArticleElement" collection
+ * @method Doctrine_Collection getReduction()       Returns the current record's "Reduction" collection
  * @method Article             setName()            Sets the current record's "name" value
  * @method Article             setImg()             Sets the current record's "img" value
  * @method Article             setIsPublish()       Sets the current record's "is_publish" value
@@ -45,6 +47,7 @@
  * @method Article             setElements()        Sets the current record's "Elements" collection
  * @method Article             setArticleCommande() Sets the current record's "ArticleCommande" collection
  * @method Article             setArticleElement()  Sets the current record's "ArticleElement" collection
+ * @method Article             setReduction()       Sets the current record's "Reduction" collection
  * 
  * @package    LiveOrder
  * @subpackage model
@@ -116,6 +119,10 @@ abstract class BaseArticle extends sfDoctrineRecord
              'foreign' => 'article_id'));
 
         $this->hasMany('ArticleElement', array(
+             'local' => 'id',
+             'foreign' => 'article_id'));
+
+        $this->hasMany('Reduction', array(
              'local' => 'id',
              'foreign' => 'article_id'));
 

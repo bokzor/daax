@@ -20,15 +20,14 @@ class statActions extends sfActions {
             $startTime = date("Y-m-d H:i:s", mktime(0, 0, 0, date('m'), 1, date('Y')));
             $endTime = date("Y-m-d H:i:s", time());
             $this -> dateDebut = date("m/d/Y", strtotime($startTime));
-
             $this -> dateFin = date("m/d/Y", time());
             $this -> heureDebut = '00:00';
             $this -> heureFin = '23:59';
         } else {
             $this -> dateDebut = $request -> getParameter('date-debut');
             $this -> dateFin = $request -> getParameter('date-fin');
-            $this -> heureDebut = '00:00';
-            $this -> heureFin = '23:59';
+            $this -> heureDebut = $request -> getParameter('heure-debut');
+            $this -> heureFin = $request -> getParameter('heure-fin');
 
             $startTime = date("Y-m-d H:i:s", strtotime($request -> getParameter('date-debut')));
             $endTime = date("Y-m-d H:i:s", strtotime($request -> getParameter('date-fin') . ' 23:59'));

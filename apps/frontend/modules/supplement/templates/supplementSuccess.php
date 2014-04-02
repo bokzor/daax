@@ -1,11 +1,5 @@
 <form>
 	<ul class="inputs large">
-		<li>
-			<label>Nombre d'article</label>
-			<span class="number input margin-right">
-				<input type="number" placeholder="1" style="width: 40px" name="count" style="width" class="virtual-pad-num input">
-			</span>
-		</li>
 		<?php foreach($supplements as $supplement): ?>
 		<li>
 			<label><?php echo $supplement -> getName() ?></label>
@@ -15,16 +9,6 @@
 
 	</ul>
 </form>
-<script>
-	if($.template.touchOs == false){
-		$('.virtual-pad-num').keypad({
-		    keypadOnly: true,
-		});
-		$('.virtual-pad-num').keypad('show');
-	}else{
-		$('.virtual-pad-num').focus();
-	}
-</script>
 
 
 

@@ -85,50 +85,7 @@
 		</section>
 		<!-- End main content -->
 
-		<!-- Side tabs shortcuts -->
-		
-		<ul style="display:none;" id="shortcuts" role="complementary" class="children-tooltip tooltip-right" >
-			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('manager')): ?>
-			<li >
-				<a href="<?php echo url_for('@full_live_commande') ?>" title="Commandes Live">Commandes Live</a>
-			</li>
-			<?php endif; ?>
-			<?php if($sf_user->isAuthenticated()): ?>
-			<li>
-				<a href="<?php echo url_for('@homepage') ?>"  title="Passer une commande">Passer une commande</a>
-			</li>
-			<li>
-				<a href="<?php echo url_for('@gestion_commande') ?>"  title="Gestion commande">Gestion des commandes</a>
-			</li>
-			<?php endif; ?>
-			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('manager')): ?>
-			<li >
-				<a href="<?php echo url_for('@gestion_utilisateur') ?>" title="Gestion utilisateur">Gestion des utilisateurs</a>
-			</li>
-			<li>
-				<a href="<?php echo url_for('@gestion_stock') ?>"  title="Gestion stock">Gestion du stock</a>
-			</li>
-			<li>
-				<a href="<?php echo url_for('@gestion_article') ?>"  title="Gestion des articles">Gestion des articles</a>
-			</li>				
-
-			<li>
-				<a href="<?php echo url_for('@stat') ?>" title="Statistiques">Statistiques</a>
-			</li>
-			<li>
-				<a href="<?php echo url_for('@gestion_tools') ?>"  title="Outils">Outils</a>
-			</li>
-			<?php endif; ?>
-			<?php if($sf_user->isAuthenticated() && $sf_user->hasCredential('superadmin')): ?>
-			<!-- <li>
-				<a href="<?php echo url_for('@gestion_floor') ?>"  class="shortcut-floor" title="Gestion du plan de table">Gestion du plan de table</a>
-			</li> -->	
-			<?php endif; ?> 
-			<li>
-				<a href="<?php echo url_for('@sf_guard_signout') ?>"  title="Se déconnecter">Se déconnecter</a>
-			</li>		
-
-		</ul>
+	
 		<!-- Sidebar/drop-down menu -->
 		<?php if($sf_user->isAuthenticated()): ?>
 		<section id="menu" role="complementary">
@@ -143,9 +100,7 @@
 				</div>
 
 
-
-				<details open id="commandeDetails" class="details margin-bottom">
-				<summary role="button" aria-expanded="false">Nouvelle commande</summary>
+				<!-- right column of the layout displaying the actual order -->
 					<div class="linen">
 						<div class="boxed white-bg " id="message-block"></div>
 					</div>
@@ -168,7 +123,7 @@
 						</li>
 	
 					</ul>
-					<ul class="unstyled-list">
+					<ul class="unstyled-list" style="display: none;" >
 						<li class="title-menu">
 							Cashback :
 						</li>
@@ -178,14 +133,11 @@
 	
 					</ul>
 					<?php endif; ?>
-					<div class="boxed white-bg " id="payment-block"></div>
-				
-					
-				</details>
-				<details id="commandeLiveDetails" class="scrollable details">
-				<summary role="button" aria-expanded="false">Commandes Live</summary>
+					<div class="boxed white-bg " id="payment-block"></div>	
+				<!-- end right column of the layout displaying the actual order -->
+				<!-- displaying new commande trhought backone js -->
 				<div id="commandeLiveContainer"></div>
-				</details>
+				<!-- end right column of the layout displaying the actual order -->
 			
 			<!-- End content wrapper -->
 		<input type="hidden" id="table-id" value="" />
@@ -228,6 +180,9 @@
 			</li>
 			<li>
 				<a href="<?php echo url_for('@gestion_article') ?>"   title="Gestion des articles">Gestion des articles</a>
+			</li>	
+			<li>
+				<a href="<?php echo url_for('@gestion_reduction') ?>"  title="Gestion des réductions">Gestion des réductions</a>
 			</li>				
 
 			<li>

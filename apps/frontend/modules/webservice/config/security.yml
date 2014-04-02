@@ -4,3 +4,7 @@ list:
 users:
   is_secure:   true
   credentials: serveur
+
+getInfos:
+  is_secure: true
+  credentials: client

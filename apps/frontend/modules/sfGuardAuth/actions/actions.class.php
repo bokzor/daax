@@ -1,4 +1,4 @@
-è<?php
+<?php
 
 /**
  * sfGuardAuth actions.
@@ -12,43 +12,53 @@ require_once sfConfig::get( 'sf_plugins_dir' ).'/sfDoctrineGuardPlugin/modules/s
 class sfGuardAuthActions extends BasesfGuardAuthActions
 {
     public function executeHTTPSignin() {
-        // get somme interesting stuff!
+        // array with infos of the user
+        $array = array();
         $request = $this->getRequest();
         $response = $this->getResponse();
         $user = $this->getUser();
         if ( $this->getUser()->isAuthenticated() ) {
             if($this->getUser()->hasCredential('serveur')){
-                return $this->renderText( 'serveur' );    
+                $array['role'] = 'serveur';
             }else{
-                return $this->renderText( 'client' );
+                $array['role'] = 'client';
             }
         }
-        $class = sfConfig::get( 'app_sf_guard_plugin_signin_form', 'sfGuardFormSignin' );
-        $this -> form = new $class();
+        else{
 
-        $request -> setParameter( 'signin', array( 'username' => $request->getParameter('username'), 'password' => $request -> getParameter('password'), ) );
-        
-        $this -> form -> bind( $request -> getParameter( 'signin' ) );
-        if ( $this -> form -> isValid() ) {
-            $values = $this -> form -> getValues();
-            $this -> getUser() -> signin( $values['user'], array_key_exists( 'remember', $values ) ? $values['remember'] : false );
-            $this -> getUser() -> getGuardUser() -> setLastLogin( date( "Y-m-d H:i:s" ) );
-            $this -> getUser() -> getGuardUser() -> save();
-            foreach ( $values['user']->getGroups() as $group ) {
-                foreach ( $group->getPermissions() as $permission ) {
-                    $this->getUser()->addCredentials( $permission->getName() );
-                }
-            }
-            if($this->getUser()->hasCredential('serveur')){
-                return $this->renderText( 'serveur' );    
-            }else{
-                return $this->renderText( 'client' );
-            }
+            $class = sfConfig::get( 'app_sf_guard_plugin_signin_form', 'sfGuardFormSignin' );
+            $this -> form = new $class();
+
+            $request -> setParameter( 'signin', array( 'username' => $request->getParameter('username'), 'password' => $request -> getParameter('password'), ) );
             
+            $this -> form -> bind( $request -> getParameter( 'signin' ) );
+            if ( $this -> form -> isValid() ) {
+                $values = $this -> form -> getValues();
+                $user -> signin( $values['user'], array_key_exists( 'remember', $values ) ? $values['remember'] : false );
+                $user -> getGuardUser() -> setLastLogin( date( "Y-m-d H:i:s" ) );
+                $user -> getGuardUser() -> save();
+                foreach ( $values['user']->getGroups() as $group ) {
+                    foreach ( $group->getPermissions() as $permission ) {
+                        $user -> addCredentials( $permission->getName() );
+                    }
+                }
+                if($user->hasCredential('serveur')){
+                    $array['role'] = 'serveur'; 
+                }else{
+                    $array['role'] = 'client';
+                }
+                
+            }
+            else {
+                $array = 'error';
+            }
         }
-        else {
-            return $this->renderText( 'error' );            
-        }
+
+        $array['last_name'] = $user -> getGuardUser() -> getLastName();
+        $array['first_name'] = $user -> getGuardUser() -> getFirstName();
+        $array['avatar'] = $user -> getGuardUser() -> getAvatar();
+        
+        return $this->renderText(json_encode($array, JSON_NUMERIC_CHECK));
     }
 
     public function executeFacebook() {
@@ -58,15 +68,17 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
         $result = json_decode( curl_exec( $ch ), true );
         curl_close( $ch );
+        $array = array();
+
 
         // si il est déja connecté. On lie son compte facebook
         if ( $this->getUser()->isAuthenticated() ) {
             $this -> getUser() -> getGuardUser() -> setUid( $result['id'] );
             $this -> getUser() -> getGuardUser() -> save();
             if($this->getUser()->hasCredential('serveur')){
-                return $this->renderText( 'serveur' );    
+                $array['role'] = 'serveur';
             }else{
-                return $this->renderText( 'client' );
+                $array['role'] = 'client';
             }
         }
         elseif(isset($result['id'])) {
@@ -132,11 +144,17 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
                 }
             }
 
-            return $this->renderText( 'logged' );
+            
 
         }else{
-            return $this->renderText( 'error' );            
-
+            $array = 'error';            
         }
+
+        $array['last_name'] = $this -> getUser() -> getGuardUser() -> getLastName();
+        $array['first_name'] = $this -> getUser() -> getGuardUser() -> getFirstName();
+        $array['avatar'] = $this -> getUser() -> getGuardUser() -> getAvatar();
+        
+        return $this->renderText(json_encode($array, JSON_NUMERIC_CHECK));
+
     }
 }

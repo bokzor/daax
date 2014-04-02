@@ -122,11 +122,16 @@ class articleActions extends sfActions {
 			else {
 				$moyenne = 1;
 			}
-			$prix_base = Doctrine_Core::getTable( 'Article' ) -> findOneById( $id ) -> getPrix();
-			$prix_min = round( $prix_base - ( $prix_base/2.5 ), 1 );
-			$index = round( ( $prix_min/4 ), 1 );
+			$ranking = $total/$moyenne;
 
-			$prix = round( ( $total/$moyenne * $index + $prix_min ), 1 );
+			if($ranking > 6){
+				$ranking = 6;
+			}
+
+			$prix_base = Doctrine_Core::getTable( 'Article' ) -> findOneById( $id ) -> getPrix();
+			$prix_min = round( $prix_base*(2/3), 1 );
+			$index = round( ( $prix_base/4), 1 );
+			$prix = round( ( $ranking * $index + $prix_min ), 1 );
 
 			if ( $prix < $prix_min ) {
 				$prix = $prix_min;

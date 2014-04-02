@@ -166,21 +166,7 @@ function encaisser(bancontact) {
     var cashback = 0;
     var commande = '';
     var statut = 0;
-    // on compte le nombre de cash
-    if (billet > 0) {
-        $('#payment-block > p.message').each(function(i) {
-            cash += Math.abs(parseFloat($(this).find(".prix-billet").text()));
-        });
-    }
-    var argent = 0;
-    $('#payment-block > .message').each(function(i) {
-        nb_billet = 1;
-        var prix = parseFloat($('.prix-billet', this).text());
-        if ($('.count', this).length) nb_billet = $('.count', this).text();
-        argent += prix * nb_billet;
-    });
 
-    // fin du compte de cache
 
     // on set la table_id zero si il n'y en a pas
     if ($('#table-id').val() > 0) {
@@ -199,11 +185,11 @@ function encaisser(bancontact) {
     //on regarde si la commande est vide
     var total = parseFloat($('.total-euro').text());
     var a_rendre = parseFloat($('.rendre-euro').text());
-    if (total == 0 && billet == 0) {
+    if (app.collections.commande.length === 0) {
         notify('Erreur', 'La commande est vide', {
             closeDelay: 3000
         });
-    } else if ((Math.abs(argent) >= total) || (bancontact == 1 || bancontact == 2 || bancontact == -2)) {
+    } else if ((bancontact == 1 || bancontact == 2 || bancontact == -2)) {
         // on recupere le montant du cashback
         if ($('.cashback').text()) {
             var prix = parseFloat($('.cashback').text());
@@ -249,7 +235,7 @@ function encaisser(bancontact) {
         // imprimer ticket + enregistrer le montant reçus + mention déja payé pour les factures payées
         // enregistrer la commande ou mettre a jour
         clearCommande();
-        chargerPage('/');
+        // chargerPage('/');
     } else if (Math.abs(argent) < total && billet != 0 && bancontact == 0) {
         notify('Erreur', 'Il manque de l\'argent !', {
             closeDelay: 3000
@@ -281,7 +267,7 @@ function chargerCommande() {
             }
             jsonCommande('', table_id);
             $('#table_id').attr('val', table_id);
-            chargerPage('/payment');
+            //chargerPage('/payment');
         });
     }
 }
@@ -309,7 +295,8 @@ function jsonCommande(id, table_id) {
                         'name': val['name'],
                         'id': val['id'],
                         'supplements': val['supplements'],
-                        'comment': val['comment']
+                        'comment': val['comment'],
+                        'promo_id': val['promo_id']
                     };
                     addBoisson(boisson);
                 }
@@ -326,13 +313,39 @@ function jsonCommande(id, table_id) {
 // fonction qui ajoute un commentaire a un article
 
 function Commentaire(id) {
+
+
     var buttons = {
+        // on définit la fonction valider qui va mettre a jour l'objet backbone
         'Valider': function(modal) {
-            var comment = $('#commentaire').val();
+            // on recupere l'objet a modifier
             findArticle = app.collections.commande.get(id);
-            findArticle.set({
-                comment: comment
+            // on recupere la valeur du commentaire
+            var comment = $('#commentaire').val();
+            // on recupere les suppléments actifs
+            var inputs = $('#suppContainer').find('span.checked').find('input');
+            var supplements = new Object();
+
+            // on ajoute les suppléments dans un tableau
+            inputs.each(function() {
+                var name = $(this).attr('name');
+                var id_supp = $(this).data('id');
+                var fois_prix = $(this).data('fois-prix');
+                var plus_prix = $(this).data('plus-prix');
+                var value = $(this).val();
+                supplements[id_supp] = {
+                    'id': id_supp,
+                    'fois_prix': fois_prix,
+                    'plus_prix': plus_prix,
+                    'name': name,
+                };
+
             });
+            findArticle.set({
+                comment: comment,
+                supplements: supplements
+            });
+
             modal.closeModal();
         },
         'Annuler': function(modal) {
@@ -361,79 +374,15 @@ function payment() {
         $.get('/calculer_prix/' + idBoisson, function(data) {
             var price = data;
             // ca veut dire qu'on a cliqué sur supplement
-            if ($('#supplementB').hasClass('red-gradient')) {
-                var buttons = {
-                    // callback lors qu'on click sur valider
-                    'Valider': function(modal) {
-                        $('#supplementB').toggleClass('red-gradient');
 
-                        var inputs = modal.find('span.checked').find('input');
-                        var supplements = new Object();
-                        var count = modal.find('input[name=count]').val();
-                        if (count < 1) {
-                            count = 1;
-                        }
-
-                        inputs.each(function() {
-                            var name = $(this).attr('name');
-                            var id_supp = $(this).data('id');
-                            var fois_prix = $(this).data('fois-prix');
-                            var plus_prix = $(this).data('plus-prix');
-                            var value = $(this).val();
-                            supplements[id_supp] = {
-                                'id': id_supp,
-                                'fois_prix': fois_prix,
-                                'plus_prix': plus_prix,
-                                'name': name,
-                            };
-                        });
-                        if (inputs.length == 0)
-                            supplements = undefined;
-                        for (i = 0; i < count; i++) {
-                            var boisson = {
-                                'prix': price,
-                                'name': name,
-                                'id': idBoisson,
-                                'supplements': supplements
-                            }
-                            addBoisson(boisson);
-                        }
-                        modal.closeModal();
-                    },
-                    'Annuler': function(modal) {
-                        modal.closeModal();
-                    }
-                };
-                $.modal({
-                    title: 'Edition',
-                    resizable: false,
-                    url: '/article/supplement/' + id_cat,
-                    buttonsAlign: 'center',
-                    buttons: buttons,
-                });
-                return false;
-            } else if ($('#commentaireB').hasClass('red-gradient')) {
-                var boisson = {
-                    'prix': price,
-                    'name': name,
-                    'id': idBoisson,
-                    'supplements': undefined
-                }
-                id = addBoisson(boisson);
-                boisson = app.collections.commande.findWhere({
-                    id_article: id
-                });
-                Commentaire(boisson.get('htmlId'));
-                $('#commentaireB').toggleClass('red-gradient');
-            } else {
-                var boisson = {
-                    'prix': price,
-                    'name': name,
-                    'id': idBoisson,
-                    'supplements': undefined
-                }
-                addBoisson(boisson);
+            var boisson = {
+                'prix': price,
+                'name': name,
+                'id': idBoisson,
+                'supplements': undefined
             }
+            addBoisson(boisson);
+
 
         });
     });
@@ -449,9 +398,17 @@ function addBoisson(boisson) {
     var id = boisson.id;
     var supplements = boisson.supplements;
     var comment = boisson.comment;
+    if (boisson.promo_id != undefined) {
+        var promo_id = boisson.promo_id
+    } else {
+        var promo_id = 0;
+    }
+
 
 
     var findArticle = undefined;
+    var findPromo = undefined;
+
     notify('Ajout d\'un article', name, {
         closeDelay: 500
     });
@@ -469,18 +426,24 @@ function addBoisson(boisson) {
         id_article: id,
         supplements: supplements,
         comment: comment,
+        promo_id: promo_id
     }
 
     findArticle = app.collections.commande.findWhere({
         'id_article': id
     });
-    if (findArticle != undefined && JSON.stringify(findArticle.get('supplements')) == JSON.stringify(supplements)) {
+    findPromo = app.collections.commande.findWhere({
+        'promo_id': promo_id
+    });
+    if (findArticle != undefined && JSON.stringify(findArticle.get('supplements')) == JSON.stringify(supplements) && article.prix !== 0) {
         count = findArticle.get('count') + 1;
         findArticle.set({
             'count': count
         });
-    } else {
+    } else if (promo_id == 0 || (promo_id != 0 && prix > 0)) {
         app.collections.commande.add(article);
+    } else {
+        console.log(article)
     }
 
     $('#commandeDetails').attr('open', 'open');
@@ -492,7 +455,137 @@ function addBoisson(boisson) {
 // Function to update the total price
 
 function updatePrixTotal() {
+    function checkTime(reduction) {
+        if (reduction.get('start_time') == null || reduction.get('end_time') == null) {
+            return true;
+        } else {
+            var date = new Date();
+            var time = reduction.get('start_time').split(':');
+            var startHour = parseInt(time[0]);
+            var startMin = parseInt(time[1]);
+            var time = reduction.get('end_time').split(':');
+            var endHour = parseInt(time[0]);
+            var endMin = parseInt(time[1]);
+            // on est tot le matin
+
+            var startDate = new Date(date.getFullYear(), date.getMonth(), date.getUTCDate(), startHour, startMin, 0);
+            if (date.getHours() < 12) {
+                var endDate = new Date(date.getFullYear(), date.getMonth(), date.getUTCDate() + 1, endHour, endMin, 0);
+            } else {
+                var endDate = new Date(date.getFullYear(), date.getMonth(), date.getUTCDate(), endHour, endMin, 0);
+            }
+            if (date.getTime() > startDate.getTime() && date.getTime() < endDate.getTime()) {
+                return true;
+            }
+
+
+
+        }
+
+    }
+
+
+
+    //nous allons parcourir chaques réduction pour l'article et voir si il y en a une qui correspond
     var total = 0;
+    app.collections.reduction.each(function(reduction) {
+        // on vérifie que la reduction est active par rapport a l'heure
+        if (checkTime(reduction)) {
+            countArticle = 0;
+            app.collections.commande.each(function(article) {
+                // on compte le nombre d'article qui n'est pas gratuit
+                if (article.get('prix') > 0 && article.get('id_article') === reduction.get('article_id')) {
+                    countArticle = parseInt(countArticle) + parseInt(article.get('count'));
+                    name = article.get('name');
+                }
+            })
+            // on va rajouter les articles gratuis
+            if (reduction.get('article_id') !== null && reduction.get('nb_offert') > 0) {
+                // on calcule le nombre d'article gratuit
+                var article_gratuit = Math.floor(parseInt(countArticle) / parseInt(reduction.get('nb_acheter')));
+
+                console.log(article_gratuit);
+                // si il y a des articles gratuits on les rajoutes
+                if (article_gratuit !== 0) {
+                    // on recupere l'article "promo"
+                    findPromo = app.collections.commande.findWhere({
+                        'promo_id': reduction.get('id')
+                    });
+                    // si il existe on set le count
+                    if (findPromo != undefined) {
+                        findPromo.set({
+                            'count': article_gratuit
+                        });
+                    } else {
+                        // sinon on rajoute l'article promo
+                        var article = {
+                            prix: 0,
+                            name: 'Promo ' + name,
+                            id_article: reduction.get('article_id'),
+                            count: 1,
+                            promo_id: reduction.get('id')
+                        }
+                        // on ajoute la promo
+                        app.collections.commande.add(article);
+                        console.log('On ajoute un article a la promo');
+                    }
+                } else {
+                    console.log('dqf')
+                    // sinon on supprime les articles promos
+                    var promo = app.collections.commande.findWhere({
+                        promo_id: reduction.get('id')
+                    })
+                    app.collections.commande.remove(promo);
+                }
+                // dans le cas ou la reduction change le prix de l'article
+            } else if (reduction.get('article_id') !== null && reduction.get('new_price') != null && reduction.get('new_price') > 0) {
+                // on selectionne les articles sans promos
+                var toModif = app.collections.commande.where({
+                    id_article: reduction.get('article_id'),
+                    promo_id: 0,
+                });
+                // on modifie le prix des articles
+                toModif.forEach(function(article) {
+                    article.set({
+                        prix: reduction.get('new_price'),
+                        promo_id: reduction.get('id'),
+                    })
+                })
+                // pourcentage de reduction sur l'article
+            } else if (reduction.get('article_id') !== null && reduction.get('pourcent_article') != 0) {
+                // on selectionne les articles sans promos
+                var toModif = app.collections.commande.where({
+                    id_article: reduction.get('article_id'),
+                    promo_id: 0,
+                });
+
+                // on modifie le prix des articles
+                toModif.forEach(function(article) {
+                    var new_prix = article.get('prix') - parseFloat(article.get('prix')) / 100 * reduction.get('pourcent_article');
+                    article.set({
+                        prix: new_prix,
+                        promo_id: reduction.get('id')
+                    })
+                })
+            } else if (reduction.get('article_id') == null && reduction.get('pourcent_commande') != 0) {
+                console.log('pourcent_commande');
+                // reduction sur la commande
+                var toModif = app.collections.commande.where({
+                    promo_id: 0,
+                });
+
+                // on modifie le prix des articles
+                toModif.forEach(function(article) {
+                    var new_prix = article.get('prix') - parseFloat(article.get('prix')) / 100 * reduction.get('pourcent_commande');
+                    article.set({
+                        prix: new_prix,
+                        promo_id: reduction.get('id')
+                    })
+                })
+            }
+        }
+    });
+
     app.collections.commande.each(function(article) {
         var articlePrix = parseFloat(article.get('prix'));
         var supplements = article.get('supplements');
@@ -565,7 +658,7 @@ function dataTableInit(id, options) {
     table.dataTable({
         'bSort': true,
         'aaSorting': options.aaSorting,
-        'bStateSave': true,
+        'bStateSave': false,
         'sPaginationType': 'full_numbers',
         'sDom': '<"dataTables_header"lfr>t<"dataTables_footer"ip>',
         "iDisplayLength": options.pagination,
@@ -835,13 +928,6 @@ function getArticlesCommande(id) {
                 jsonCommande(id, '');
                 modal.closeModal();
             },
-            'Encaisser': function(modal) {
-                jsonCommande(id, '');
-                chargerPage('payment');
-                $('.menu-open').removeClass('menu-open');
-                modal.closeModal();
-
-            },
             'Annuler': function(modal) {
                 modal.closeModal();
             }
@@ -860,10 +946,16 @@ function getArticlesCommande(id) {
 
 // on supprime l'article et son objet javascript assoscié
 
-function deleteArticleCommande(id) {
+function deleteArticleCommande(id, evt) {
+    if (evt !== undefined) {
+        evt.stopPropagation();
+        evt.preventDefault();
+    }
+
     findArticle = app.collections.commande.get(id);
     app.collections.commande.remove(findArticle);
     updatePrixTotal();
+    return false;
 }
 
 
@@ -970,28 +1062,28 @@ function launchFullScreen(element) {
 
 // fonction qui va initialiser l'application
 function getInfos() {
+    // on recupere les informations de bases
     var url = '/get/infos';
     $.getJSON(url, function(data) {
         app.models.infos.set('serverId', data.server_id);
     });
+    app.collections.reduction.fetch();
 }
 
 function isReady() {
     getInfos();
-    app.collections.articles.fetch({
-        reset: true
-    });
+
     live();
     setInterval(live, 30000);
     // on empeche la selection et le click droit
-    document.oncontextmenu = new Function("return false");
-    document.onselectstart = new Function("return false");
+    //document.oncontextmenu = new Function("return false");
+    //document.onselectstart = new Function("return false");
     var first_init = false;
     // on s'occupe de l'historique
     window.addEventListener('popstate', function(e) {
         if (first_init == false) {
             first_init = true;
-        } else if (location.pathname != '/' && location.pathname != '/frontend_dev.php/') {
+        } else if (location.pathname != '/' && location.pathname != '/frontend_dev.php/' && location.pathname != '#') {
             chargerPage(location.pathname);
         }
 

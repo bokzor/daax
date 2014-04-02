@@ -76,7 +76,10 @@ class bourseActions extends sfActions
 			$arrayBourse[$i]['id'] = $article['id'];
 			$arrayBourse[$i]['prixBase'] = $article['prix'];
 			$arrayBourse[$i]['name'] = $article['name'];
-			$arrayBourse[$i]['prix'] = $prix;				
+			$arrayBourse[$i]['prix'] = $prix;	
+			if($article['prix'] == 0){
+				$article['prix'] = 1;
+			}			
 			$arrayBourse[$i]['variation'] = round(abs(($article['prix'] - $prix)/ $article['prix'] * 100),1);				
 
 
@@ -111,11 +114,12 @@ class bourseActions extends sfActions
 		else {
 			$moyenne = 1;
 		}
-		$prix_base = Doctrine_Core::getTable( 'Article' ) -> findOneById( $id ) -> getPrix();
-		$prix_min = round( $prix_base - ( $prix_base/2.5 ), 1 );
-		$index = round( ( $prix_min/4 ), 1 );
+		$ranking = $total/$moyenne;
 
-		$prix = round( ( $total/$moyenne * $index + $prix_min ), 1 );
+		$prix_base = Doctrine_Core::getTable( 'Article' ) -> findOneById( $id ) -> getPrix();
+		$prix_min = round( $prix_base*(3/4), 1 );
+		$index = round( ( $prix_base/4 * $ranking), 1 );
+		$prix = round( ( $ranking * $index + $prix_min ), 1 );
 
 		if ( $prix < $prix_min ) {
 			$prix = $prix_min;

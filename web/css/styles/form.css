@@ -19,6 +19,7 @@ input:focus, .input:focus {
 /* IE7 */
 label {
 	zoom: 1;
+	padding-right: 10px;
 }
 
 /* Standard text input */

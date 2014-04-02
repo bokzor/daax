@@ -10,12 +10,6 @@
 class webserviceActions extends sfActions {
 
 	public function preExecute() {
-		$referer = parse_url($_SERVER['HTTP_REFERER']);
-		$scheme = $referer['scheme'];
-		$referer = $referer['host'];
-		$response = $this->getResponse();
-		$response->setHttpHeader('Access-Control-Allow-Origin', $scheme.'://'.$referer);
-		$response->setHttpHeader('Access-Control-Allow-Credentials', 'true');
 	
 		if( $this -> getRequest() -> getParameter( 'model' )) {
 			$this -> model = $this -> getRequest() -> getParameter( 'model' );

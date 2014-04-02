@@ -12,13 +12,7 @@ class commandeActions extends sfActions
     
     public function preExecute()
     {
-        $referer  = parse_url($_SERVER['HTTP_REFERER']);
-        $scheme   = $referer['scheme'];
-        $referer  = $referer['host'];
-        $response = $this->getResponse();
-        $response->setHttpHeader('Access-Control-Allow-Origin', $scheme . '://' . $referer);
-        $response->setHttpHeader('Access-Control-Allow-Credentials', 'true');
-        
+
         
         
     }
@@ -153,9 +147,10 @@ class commandeActions extends sfActions
                 $articleCommande->setCommandeId($commande->getId());
                 $articleCommande->setArticleId($article->getId());
                 $articleCommande->setCount($count);
+                $articleCommande->setPromoId($articleArray['promo_id']);
                 if (isset($articleArray['comment']))
                     $articleCommande->setComment($articleArray['comment']);
-                $articleCommande->setPrix($article->getPrix());
+                $articleCommande->setPrix($articleArray['prix']);
                 $articleCommande->save();
                 
                 // on enregistre les Supplements en base de donnée
@@ -238,8 +233,9 @@ class commandeActions extends sfActions
         }
         
         // on parcours les articles et on calcule le total de la commande
-        
+   
         foreach ($articleTick as $articleArray) {
+
             $total_prix_supplement = 0;
             $count                 = $articleArray['count'];
             if ($count < 1) {
@@ -296,9 +292,11 @@ class commandeActions extends sfActions
             $articleCommande->setCommandeId($commande->getId());
             $articleCommande->setArticleId($article->getId());
             $articleCommande->setCount($count);
+            $articleCommande->setPromoId($articleArray['promo_id']);
             if (isset($articleArray['comment']))
                 $articleCommande->setComment($articleArray['comment']);
             $articleCommande->setPrix($articleArray['prix']);
+            echo $articleArray['prix'];
             $articleCommande->save();
             
             // on enregistre les Supplements en base de donnÃ©e
@@ -517,12 +515,13 @@ class commandeActions extends sfActions
                 
                 $new_array['articles'][] = array(
                     'name' => $articleCommande->getArticle()->getName(),
-                    'prix' => $articleCommande->getArticle()->getPrix(),
+                    'prix' => $articleCommande->getPrix(),
                     'id' => $articleCommande->getArticle()->getId(),
                     'supplements' => $articleCommande->getSupplements()->toArray(),
                     'count' => $articleCommande->getCount(),
                     'comment' => $comment,
-                    'commande_id' => $articleCommande->getCommandeId()
+                    'commande_id' => $articleCommande->getCommandeId(),
+                    'promo_id' => $articleCommande->getPromoId()
                 );
             }
         }

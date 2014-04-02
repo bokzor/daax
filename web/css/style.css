@@ -4151,7 +4151,7 @@ body.reversed #menu header {
 
 .access > li {
     float: left;
-    width: 25%;
+    width: 33%;
     height: 62px;
     font-size: 26px;
     line-height: 62px;
@@ -5589,7 +5589,7 @@ p > .button-group {
     position: relative;
     border-width: 1px;
     border-style: solid;
-    line-height: 16px;
+    line-height: 30px;
     -webkit-background-clip: padding-box;
 	/*-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -6256,6 +6256,11 @@ h6 {
     float: none;
 }
 
+.gallery > li.selected figcaption{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
 figcaption {
     text-align: left;
     height: 40px;
@@ -6674,7 +6679,7 @@ img.av-sg {
     width: 100%;
 }
 #optionsControlleur li{
-    width: 50%;
+    width: 33.33%;
 }
 #optionsStat li{
     width: 33.33%;
@@ -6693,10 +6698,23 @@ img.av-sg {
     display: none;
 }
 .sidr-class-name{
-    vertical-align: middle;
+    float: left;
+    padding-top: 20px;
+}
+.sidr-class-user-icon{
+    float:left;
+}
+#sidr-id-profile{
+    height: 60px;
 }
 .delete-article{
-    position: absolute;
-    right: 10px;
+    position: relative;
+    /* right: 10px; */
     padding-bottom: 0px;
+    float: right;
+    height: 20px;
+    line-height: 10px;
+    margin-top: 5px;
 }
+
+

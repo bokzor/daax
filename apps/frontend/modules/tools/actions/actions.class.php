@@ -40,7 +40,7 @@ class toolsActions extends sfActions
     ${$this->model} = new $this -> model();
     $classForm = $this -> model . 'Form';
     $this->form = new $classForm( ${$this->model} );
-    $this->setTemplate( 'update', $this->model );
+    $this->setTemplate( 'new', $this->model );
   }
   public
   function executeCreate( sfWebRequest $request ) {
@@ -50,7 +50,7 @@ class toolsActions extends sfActions
     $this -> form = new $classForm();
     $this->processForm( $request, $this->form );
     $this->setTemplate( 'update', $this->model );
-    $this->redirect( '@gestion_'.$this -> model );
+    //$this->redirect( '@gestion_'.$this -> model );
   }
   public
   function executeEdit( sfWebRequest $request ) {

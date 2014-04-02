@@ -20,7 +20,7 @@
         padding: 0;
         border: 0;
         outline: 0;
-        font-size: 130%;
+        font-size: 115%;
         vertical-align: baseline;
         background: transparent;
         }
@@ -37,7 +37,6 @@
         /*This is not important*/
         body{
         font-family:Arial, Helvetica, sans-serif;
-        background: url(background.jpg);
         overflow:hidden; 
 
         }
@@ -225,11 +224,11 @@
         </style>
         <script src="/js/libs/modernizr.custom.js"></script>
         <script src="/js/libs/jquery-1.8.2.min.js"></script>
-        <script src="/js/libs/underscore-min.js"></script>
-        <script src="/js/libs/backbone-min.js"></script>
-        <script src="/js/backbone/main.js"></script>
-        <script src="/js/backbone/models.js"></script>
-        <script src="/js/backbone/views.js"></script>
+        <script src="/js/libs/backbones/underscore-min.js"></script>
+        <script src="/js/libs/backbones/backbone-min.js"></script>
+        <script src="/js/bourse/main.js"></script>
+        <script src="/js/bourse/models.js"></script>
+        <script src="/js/bourse/views.js"></script>
 
     </head>
     <body>
